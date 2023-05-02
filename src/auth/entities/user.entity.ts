@@ -1,6 +1,6 @@
-import { Product } from "../../products/entities/product.entity";
 import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { ApiProperty } from '@nestjs/swagger/dist/decorators';
+import { Todo } from "src/todo/entities/todo.entity";
 @Entity({ name: 'users' })
 export class User {
 
@@ -49,13 +49,14 @@ export class User {
         array: true,
         default: ['user']
     })
-    roles: string[]
+    roles: string[];
 
     @OneToMany(
-        () => Product,
-        (product) => product.user,
+        () => Todo,
+        (todo) => todo.user,
+        { eager: true}
     )
-    products: Product;
+    todo?: Todo[];
 
     @BeforeInsert()
     checkfieldsBeforeInsert() {

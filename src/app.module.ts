@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductsModule } from './products/products.module';
 import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
-import { FilesModule } from './files/files.module';
 import { AuthModule } from './auth/auth.module';
+import { TodoModule } from './todo/todo.module';
 
 @Module({
  imports: [
@@ -20,11 +19,10 @@ import { AuthModule } from './auth/auth.module';
     autoLoadEntities: true,
     synchronize: true,
   }),
-  ProductsModule,
   CommonModule,
   SeedModule,
-  FilesModule,
   AuthModule,
+  TodoModule,
 ],
 })
 export class AppModule {}

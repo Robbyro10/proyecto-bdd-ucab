@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/auth/entities/user.entity';
-import { ProductsService } from 'src/products/products.service';
 import { Repository } from 'typeorm';
 import { initialData } from './data/seed-data';
+import { TodoService } from 'src/todo/todo.service';
 
 @Injectable()
 export class SeedService {
   constructor(
-    private readonly productsService: ProductsService,
+    private readonly todoService: TodoService,
     
     @InjectRepository( User )
     private readonly userRepository: Repository<User>
@@ -17,12 +17,12 @@ export class SeedService {
   async runSeed() {
     await this.deleteTables();
     const adminUser = await this.insertUsers();
-    await this.insertNewPoducts(adminUser);
+    await this.insertNewTodos(adminUser);
     return `SEED EXECUTED`;
   }
 
   private async deleteTables() {
-    await this.productsService.removeAll()
+    await this.todoService.removeAll()
     const queryBuilder = this.userRepository.createQueryBuilder();
     await queryBuilder
       .delete()
@@ -40,15 +40,15 @@ export class SeedService {
     return dbUsers[0];
   }
 
-  private async insertNewPoducts(user: User) {
-    this.productsService.removeAll();
+  private async insertNewTodos(user: User) {
+    this.todoService.removeAll();
     
-    const products = initialData.products;
+    const todos = initialData.todos;
 
     const insertPromises = [];
 
-    products.forEach((product) => {
-      insertPromises.push(this.productsService.create(product, user))
+    todos.forEach((todo) => {
+      insertPromises.push(this.todoService.create(todo, user))
     });
 
     await Promise.all( insertPromises );

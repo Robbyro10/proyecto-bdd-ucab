@@ -3,7 +3,9 @@
 </p>
 
 
-# Teslo API
+# Proyecto Bases de Datos UCAB
+
+Steps to follow:
 
 1. Clone project
 2. ```yarn install```
