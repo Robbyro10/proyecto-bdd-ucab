@@ -2,6 +2,7 @@ import * as bcrypt from "bcrypt";
 interface SeedTodo {
     description: string;
     title: string;
+    complete: boolean;
 }
 
 interface SeedUser {
@@ -36,23 +37,28 @@ export const initialData: SeedData = {
     todos: [
         {
             title: "Tarea de Calculo",
-            description: "Realizar los 10 ejercicios que mandaron en la guia sobre derivadas e integrales"
+            description: "Realizar los 10 ejercicios que mandaron en la guia sobre derivadas e integrales",
+            complete: false
         },
         {
             title: "Estudiar Quimica",
-            description: "Leer el libro de quimica organica y repasar las ultimas clases de este mes"
+            description: "Leer el libro de quimica organica y repasar las ultimas clases de este mes",
+            complete: true
         },
         {
             title: "Ir al Gimnasio",
-            description: "Media hora de cardio y media hora de brazos"
+            description: "Media hora de cardio y media hora de brazos",
+            complete: true
         },
         {
             title: "Visitar a la abuela",
-            description: "Hoy en la tarde pasar por casa de la abuela y almorzar con la familia"
+            description: "Hoy en la tarde pasar por casa de la abuela y almorzar con la familia",
+            complete: false
         },
         {
             title: "Practica de Guitarra",
-            description: "5 minutos de escalas, 20 minutos de improvisacion y 30 minutos aprendiendo una nueva cancion"
+            description: "5 minutos de escalas, 20 minutos de improvisacion y 30 minutos aprendiendo una nueva cancion",
+            complete: true
         },
     ]
 }

@@ -1,13 +1,16 @@
 import { IsBoolean, IsOptional, IsString, MinLength } from "class-validator";
-import { User } from "src/auth/entities/user.entity";
 
 export class CreateTodoDto {
     @IsString()
     @MinLength(1)
+    @IsOptional()
     title: string;
 
     @IsString()
     @IsOptional()
     description?: string;
 
+    @IsBoolean()
+    @IsOptional()
+    complete: boolean;
 }

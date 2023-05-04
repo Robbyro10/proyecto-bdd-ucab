@@ -14,7 +14,6 @@ export class TodoService {
   constructor(
     @InjectRepository(Todo)
     private readonly todoRepository: Repository<Todo>,
-    private readonly dataSource: DataSource,
     private readonly commonService: CommonService
   ) {}
 
@@ -50,14 +49,13 @@ export class TodoService {
     return todo;
   }
 
-  async update(id: string, updateTodoDto: UpdateTodoDto, user: User) {
+  async update(id: string, updateTodoDto: UpdateTodoDto) {
 
     const todo = await this.todoRepository.preload({ id: id, ...updateTodoDto });
 
     if ( !todo ) throw new NotFoundException(`Todo with id: ${ id } not found`);
 
     try {
-      todo.user = user;
       await this.todoRepository.save(todo);
       return todo;
       

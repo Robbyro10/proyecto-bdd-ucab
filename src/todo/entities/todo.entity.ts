@@ -25,6 +25,7 @@ export class Todo {
     @ManyToOne(
         () => User,
         (user) => user.todo,
+        { eager: true}
     )
     user: User;
 }

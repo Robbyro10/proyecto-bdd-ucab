@@ -42,9 +42,8 @@ export class TodoController {
   update(
     @Param('id', ParseUUIDPipe) id: string,
     @Body() updateTodoDto: UpdateTodoDto,
-    @GetUser() user: User,
   ) {
-    return this.todoService.update(id, updateTodoDto, user);
+    return this.todoService.update(id, updateTodoDto);
   }
 
   @Delete(':id')

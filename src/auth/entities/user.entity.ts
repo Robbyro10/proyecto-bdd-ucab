@@ -54,7 +54,6 @@ export class User {
     @OneToMany(
         () => Todo,
         (todo) => todo.user,
-        { eager: true}
     )
     todo?: Todo[];
 
