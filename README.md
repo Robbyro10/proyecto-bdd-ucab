@@ -19,7 +19,3 @@ docker-compose up -d
 ```
 yarn start:dev
 ```
-7. Execute SEED
-```
-http://localhost:3000/api/seed
-```
