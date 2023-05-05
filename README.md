@@ -3,13 +3,13 @@
 </p>
 
 
-# Proyecto Bases de Datos UCAB
+# TooDoo Backend
 
 Steps to follow:
 
 1. Clone project
 2. ```yarn install```
-3. Clone ```.env.template``` and rename to ```.env.template```
+3. Clone ```.env.template``` and rename to ```.env```
 4. Change environment variables
 5. Run database
 ```
