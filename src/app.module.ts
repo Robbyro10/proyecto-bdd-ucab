@@ -5,6 +5,11 @@ import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
 import { AuthModule } from './auth/auth.module';
 import { TodoModule } from './todo/todo.module';
+import { IntegrantesModule } from './integrantes/integrantes.module';
+import { EscuelasModule } from './escuelas/escuelas.module';
+import { SambaModule } from './samba/samba.module';
+import { PatrocinantesModule } from './patrocinantes/patrocinantes.module';
+import { TelefonosModule } from './telefonos/telefonos.module';
 
 @Module({
  imports: [
@@ -23,6 +28,11 @@ import { TodoModule } from './todo/todo.module';
   SeedModule,
   AuthModule,
   TodoModule,
+  IntegrantesModule,
+  EscuelasModule,
+  SambaModule,
+  PatrocinantesModule,
+  TelefonosModule,
 ],
 })
 export class AppModule {}
