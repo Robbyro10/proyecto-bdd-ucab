@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Lugar } from "./lugar.entity";
 
 @Entity({ name: 'Premio_especial' })
 export class Premio_especial {
@@ -17,6 +18,10 @@ export class Premio_especial {
     @Column('text')
     tipo: string;
 
-    // id_lugar
+    @ManyToOne(
+        ()=> Lugar,
+        (lugar)=> lugar.premio_especial 
+    )
+    lugar: Lugar;
 
 }

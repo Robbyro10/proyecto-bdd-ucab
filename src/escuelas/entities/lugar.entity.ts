@@ -1,5 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Escuela_Samba } from "./escuela_samba.entity";
+import { Premio_especial } from "./premio_especial.entity";
 
 @Entity({ name: 'Lugar' })
 export class Lugar {
@@ -25,4 +26,9 @@ export class Lugar {
         () => Escuela_Samba,
         (escuela) => escuela.lugar)
     escuela_samba: Escuela_Samba[]
+
+    @OneToMany(
+        () => Premio_especial,
+        (premio) => premio.lugar)
+    premio_especial: Premio_especial[]
 }

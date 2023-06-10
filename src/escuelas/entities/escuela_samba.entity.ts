@@ -4,6 +4,7 @@ import { Hist_Titulo_Carnaval } from "./Hist_Titulo_Carnaval.entity";
 import { Evento_Anual_Sem } from "./evento_anual_sem.entity";
 import { Color } from "./color.entity";
 import { Hist_Int } from "src/integrantes/entities/hist_int.entity";
+import { Hist_Patrocinio } from "src/patrocinantes/entities/hist_patrocinio.entity";
 
 @Entity({ name: 'Escuela_Samba' })
 export class Escuela_Samba {
@@ -50,4 +51,10 @@ export class Escuela_Samba {
         name: 'E_C'
     })
     colores: Color[]
+
+    @OneToMany(
+        () => Hist_Patrocinio,
+        (hist) => hist.escuela
+    )
+    hist_patrocinio: Hist_Patrocinio[]
 }

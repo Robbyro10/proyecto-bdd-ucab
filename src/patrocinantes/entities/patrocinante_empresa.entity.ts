@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Hist_Patrocinio } from "./hist_patrocinio.entity";
 
 @Entity({ name: 'Patrocinante_empresa' })
 export class Patrocinante_empresa {
@@ -17,5 +18,10 @@ export class Patrocinante_empresa {
     @Column('text')
     mision: string;
 
+    @OneToMany(
+        () => Hist_Patrocinio,
+        (hist_patrocinio) => hist_patrocinio.empresa
+    )
+    hist_patrocinio: Hist_Patrocinio[]
 }
 

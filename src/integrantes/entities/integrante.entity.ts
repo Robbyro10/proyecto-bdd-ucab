@@ -1,5 +1,6 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Hist_Int } from "./hist_int.entity";
+import { Habilidad } from "./habilidad.entity";
 
 enum Genero {
     Masculino = "M",
@@ -56,4 +57,10 @@ export class Integrante {
         (hist) => hist.integrante
     )
     hist_int: Hist_Int[];
+
+    @ManyToMany(() => Habilidad, (habilidad) => habilidad.integrantes)
+    @JoinTable({
+        name: 'Int_hab'
+    })
+    habilidades: Habilidad[];
 }
