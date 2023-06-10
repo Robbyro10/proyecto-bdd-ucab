@@ -2,14 +2,20 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { EscuelasService } from './escuelas.service';
 import { CreateEscuelaDto } from './dto/create-escuela.dto';
 import { UpdateEscuelaDto } from './dto/update-escuela.dto';
+import { CreateLugarDto } from './dto/create-lugar.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
   constructor(private readonly escuelasService: EscuelasService) {}
 
   @Post()
-  create(@Body() createEscuelaDto: CreateEscuelaDto) {
+  createEscuela(@Body() createEscuelaDto: CreateEscuelaDto) {
     return this.escuelasService.create(createEscuelaDto);
+  }
+
+  @Post('/lugar')
+  createLugar(@Body() createLugarDto: CreateLugarDto) {
+    return this.escuelasService.createLugar(createLugarDto);
   }
 
   @Get()

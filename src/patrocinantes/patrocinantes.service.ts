@@ -1,11 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { CreatePatrocinanteDto } from './dto/create-patrocinante.dto';
-import { UpdatePatrocinanteDto } from './dto/update-patrocinante.dto';
+import { CreateEmpresaDto } from './dto/create-patrocinante_empresa.dto';
+import { CreatePersonaDto } from './dto/create-patrocinante_persona.dto';
+import { UpdateEmpresaDto } from './dto/update-patrocinante_empresa.dto';
+import { UpdatePersonaDto } from './dto/update-patrocinante_persona.dto';
 
 @Injectable()
 export class PatrocinantesService {
-  create(createPatrocinanteDto: CreatePatrocinanteDto) {
-    return 'This action adds a new patrocinante';
+  createEmpresa(createEmpresaDto: CreateEmpresaDto) {
+    return 'This action adds a new patrocinante empresa';
+  }
+
+  createPersona(createPersonaDto: CreatePersonaDto) {
+    return 'This action adds a new patrocinante persona';
   }
 
   findAll() {
@@ -16,8 +22,12 @@ export class PatrocinantesService {
     return `This action returns a #${id} patrocinante`;
   }
 
-  update(id: number, updatePatrocinanteDto: UpdatePatrocinanteDto) {
-    return `This action updates a #${id} patrocinante`;
+  updateEmpresa(id: number, updateEmpresaDto: UpdateEmpresaDto) {
+    return `This action updates a #${id} patrocinante empresa`;
+  }
+
+  updatePersona(id: number, updatePersonaDto: UpdatePersonaDto) {
+    return `This action updates a #${id} patrocinante persona`;
   }
 
   remove(id: number) {

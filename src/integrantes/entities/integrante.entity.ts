@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Hist_Int } from "./hist_int.entity";
 
 enum Genero {
     Masculino = "M",
@@ -49,4 +50,10 @@ export class Integrante {
 
     @Column('text')
     nacionalidad: string;
+
+    @OneToMany(
+        ()=> Hist_Int,
+        (hist) => hist.integrante
+    )
+    hist_int: Hist_Int[];
 }

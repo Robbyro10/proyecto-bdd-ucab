@@ -10,6 +10,7 @@ import { EscuelasModule } from './escuelas/escuelas.module';
 import { SambaModule } from './samba/samba.module';
 import { PatrocinantesModule } from './patrocinantes/patrocinantes.module';
 import { TelefonosModule } from './telefonos/telefonos.module';
+import { DataSource } from 'typeorm';
 
 @Module({
  imports: [

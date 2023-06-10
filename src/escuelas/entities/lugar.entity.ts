@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Escuela_Samba } from "./escuela_samba.entity";
 
 @Entity({ name: 'Lugar' })
 export class Lugar {
@@ -14,5 +15,14 @@ export class Lugar {
     @Column('text')
     tipo: string;
 
-    // id_lugar_padre
+    @ManyToOne(() => Lugar, (lugar) => lugar.lugar_hijo)
+    id_lugar_padre: Lugar
+
+    @OneToMany(() => Lugar, (lugar) => lugar.id_lugar_padre)
+    lugar_hijo: Lugar[]
+
+    @OneToMany(
+        () => Escuela_Samba,
+        (escuela) => escuela.lugar)
+    escuela_samba: Escuela_Samba[]
 }

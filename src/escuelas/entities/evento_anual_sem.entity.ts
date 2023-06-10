@@ -1,11 +1,16 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Escuela_Samba } from "./escuela_samba.entity";
 
 @Entity({ name: 'Evento_Anual_Sem' })
 export class Evento_Anual_Sem {
     @PrimaryGeneratedColumn()
     id: number;
 
-    //Id_Escuela
+    @ManyToOne(
+        () => Escuela_Samba,
+        (escuela) => escuela.eventos
+    )
+    escuela: number;
 
     @Column({
         type: 'text',
