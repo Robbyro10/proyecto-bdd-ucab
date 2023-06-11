@@ -25,7 +25,7 @@ export class Lugar {
     @OneToMany(
         () => Escuela_Samba,
         (escuela) => escuela.lugar)
-    escuela_samba: Escuela_Samba[]
+    escuelas: Escuela_Samba[]
 
     @OneToMany(
         () => Premio_especial,

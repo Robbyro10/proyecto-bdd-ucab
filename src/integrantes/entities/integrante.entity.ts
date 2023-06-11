@@ -1,6 +1,7 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Hist_Int } from "./hist_int.entity";
 import { Habilidad } from "./habilidad.entity";
+import { Parentesco } from "./parentesco.entity";
 
 enum Genero {
     Masculino = "M",
@@ -63,4 +64,8 @@ export class Integrante {
         name: 'Int_hab'
     })
     habilidades: Habilidad[];
+
+    //todo: needs work
+    @OneToMany(()=> Parentesco, (parentesco) => parentesco.integrante1)
+    parentesco: Parentesco[];
 }

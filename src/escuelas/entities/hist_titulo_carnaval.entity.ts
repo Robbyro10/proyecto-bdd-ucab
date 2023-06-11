@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Escuela_Samba } from "./escuela_samba.entity";
 
 enum Grupo {
@@ -10,7 +10,7 @@ enum Grupo {
 
 @Entity({ name: 'Hist_Título_Carnaval' })
 export class Hist_Titulo_Carnaval {
-    @PrimaryGeneratedColumn()
+    @PrimaryColumn('int')
     año: number;
 
     @Column({

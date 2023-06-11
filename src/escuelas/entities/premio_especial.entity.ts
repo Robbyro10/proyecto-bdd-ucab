@@ -1,4 +1,5 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Ganador } from "./ganador.entity";
 import { Lugar } from "./lugar.entity";
 
 @Entity({ name: 'Premio_especial' })
@@ -23,5 +24,11 @@ export class Premio_especial {
         (lugar)=> lugar.premio_especial 
     )
     lugar: Lugar;
+
+    @OneToMany(
+        ()=> Ganador,
+        (ganador) => ganador.premio
+    )
+    ganadores: Ganador[];
 
 }

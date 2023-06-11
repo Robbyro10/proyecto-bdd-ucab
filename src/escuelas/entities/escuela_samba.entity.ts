@@ -5,6 +5,8 @@ import { Evento_Anual_Sem } from "./evento_anual_sem.entity";
 import { Color } from "./color.entity";
 import { Hist_Int } from "src/integrantes/entities/hist_int.entity";
 import { Hist_Patrocinio } from "src/patrocinantes/entities/hist_patrocinio.entity";
+import { Telefono } from "src/telefonos/entities/telefono.entity";
+import { Ganador } from "./ganador.entity";
 
 @Entity({ name: 'Escuela_Samba' })
 export class Escuela_Samba {
@@ -25,7 +27,7 @@ export class Escuela_Samba {
 
     @ManyToOne(
         () => Lugar,
-        (lugar) => lugar.escuela_samba)
+        (lugar) => lugar.escuelas)
     lugar: Lugar
 
     @OneToMany(
@@ -57,4 +59,17 @@ export class Escuela_Samba {
         (hist) => hist.escuela
     )
     hist_patrocinio: Hist_Patrocinio[]
+
+    @OneToMany(
+        () => Telefono,
+        (telefono) => telefono.escuela
+    )
+    telefono: Telefono[];
+
+    @OneToMany(
+        () => Telefono,
+        (telefono) => telefono.escuela
+    )
+    ganadores: Ganador[];
+
 }

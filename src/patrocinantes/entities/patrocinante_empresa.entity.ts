@@ -1,3 +1,4 @@
+import { Telefono } from "src/telefonos/entities/telefono.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Hist_Patrocinio } from "./hist_patrocinio.entity";
 
@@ -22,6 +23,12 @@ export class Patrocinante_empresa {
         () => Hist_Patrocinio,
         (hist_patrocinio) => hist_patrocinio.empresa
     )
-    hist_patrocinio: Hist_Patrocinio[]
+    hist_patrocinio: Hist_Patrocinio[];
+
+    @OneToMany(
+        () => Telefono,
+        (telefono) => telefono.empresa
+    )
+    telefonos: Telefono[];
 }
 

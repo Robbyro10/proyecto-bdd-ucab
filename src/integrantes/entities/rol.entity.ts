@@ -1,4 +1,5 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Org_carnaval } from "./org_carnaval.entity";
 
 @Entity({ name: 'Rol' })
 export class Rol {
@@ -10,5 +11,11 @@ export class Rol {
 
     @Column('text')
     descripcion: string;
+
+    @OneToMany(
+        () => Org_carnaval,
+        (org) => org.rol
+    )
+    org_carnaval: Org_carnaval;
 
 }
