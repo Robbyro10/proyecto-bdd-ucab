@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Integrante } from "./integrante.entity";
 
-@Entity({ name: 'Habilidad' })
+@Entity({ name: 'habilidad' })
 export class Habilidad {
     @PrimaryGeneratedColumn('uuid')
     id: string;

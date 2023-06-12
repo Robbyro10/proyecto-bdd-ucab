@@ -8,7 +8,7 @@ enum Genero {
     Femenino = "F",
 }
 
-@Entity({ name: 'Integrantes' })
+@Entity({ name: 'integrantes' })
 export class Integrante {
     @PrimaryGeneratedColumn()
     id_escuela: number;
@@ -61,11 +61,10 @@ export class Integrante {
 
     @ManyToMany(() => Habilidad, (habilidad) => habilidad.integrantes)
     @JoinTable({
-        name: 'Int_hab'
+        name: 'int_hab'
     })
     habilidades: Habilidad[];
 
-    //todo: needs work
     @OneToMany(()=> Parentesco, (parentesco) => parentesco.integrante1)
     parentesco: Parentesco[];
 }

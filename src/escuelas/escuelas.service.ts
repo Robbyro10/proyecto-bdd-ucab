@@ -19,11 +19,14 @@ export class EscuelasService {
   ) {}
 
   async create(createEscuelaDto: CreateEscuelaDto) {
-    // this.dataSource.query(
-    //   `
-    //   INSERT INTO Escuela_Samba
-    //   VALUES ('${createEscuelaDto.nombre}', '${createEscuelaDto.direccion_sede}', '${createEscuelaDto.resumen_hist}');
-    //   `)
+
+    const data = this.dataSource.query(
+      `
+      INSERT INTO Escuela_Samba (nombre, direccion_sede, resumen_hist)
+      VALUES ('${createEscuelaDto.nombre}', '${createEscuelaDto.direccion_sede}', '${createEscuelaDto.resumen_hist}')
+      `);
+
+      return data;
 
     // const escuela = this.dataSource.createQueryBuilder()
     // .insert()
@@ -33,18 +36,18 @@ export class EscuelasService {
     // )
     // .execute();
 
-    const queryBuilder = this.escuelaRepository.createQueryBuilder();
-    const escuela = await queryBuilder
-      .insert()
-      .into(Escuela_Samba)
-      .values({
-        nombre: createEscuelaDto.nombre,
-        direccion_sede: createEscuelaDto.direccion_sede,
-        resumen_hist: createEscuelaDto.resumen_hist,
-      })
-      .execute();
+    // const queryBuilder = this.escuelaRepository.createQueryBuilder();
+    // const escuela = await queryBuilder
+    //   .insert()
+    //   .into(Escuela_Samba)
+    //   .values({
+    //     nombre: createEscuelaDto.nombre,
+    //     direccion_sede: createEscuelaDto.direccion_sede,
+    //     resumen_hist: createEscuelaDto.resumen_hist,
+    //   })
+    //   .execute();
 
-    return escuela;
+    // return escuela;
   }
 
   createLugar(createLugarDto: CreateLugarDto) {

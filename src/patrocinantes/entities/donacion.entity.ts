@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Hist_Patrocinio } from "./hist_patrocinio.entity";
 
-@Entity({ name: 'Donacion' })
+@Entity({ name: 'donacion' })
 export class Donacion {
     @PrimaryGeneratedColumn()
     id: number;

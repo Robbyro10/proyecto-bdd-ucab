@@ -8,7 +8,7 @@ enum Grupo {
     Uno = "1",
 }
 
-@Entity({ name: 'Hist_Título_Carnaval' })
+@Entity({ name: 'hist_título_carnaval' })
 export class Hist_Titulo_Carnaval {
     @PrimaryColumn('int')
     año: number;

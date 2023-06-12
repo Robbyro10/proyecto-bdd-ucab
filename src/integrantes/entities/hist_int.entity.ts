@@ -1,15 +1,14 @@
 import { Escuela_Samba } from "src/escuelas/entities/escuela_samba.entity";
 import { Ganador } from "src/escuelas/entities/ganador.entity";
 import { Samba } from "src/samba/entities/samba.entity";
-import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Integrante } from "./integrante.entity";
 import { Org_carnaval } from "./org_carnaval.entity";
 
-@Entity({ name: 'Hist_Int' })
+@Entity({ name: 'hist_int' })
 export class Hist_Int {
 
-    //todo: must be date
-    @PrimaryGeneratedColumn()
+    @PrimaryColumn('date')
     fecha_ini: number;
     
     @Column({
@@ -29,7 +28,7 @@ export class Hist_Int {
     @ManyToOne(
         () => Integrante,
         (integrante) => integrante.hist_int)
-    @JoinColumn({ name: 'Id_Integrante' })
+    @JoinColumn({ name: 'id_integrante' })
     integrante: Integrante;
 
     @ManyToMany(()=> Samba, (samba)=> samba.hist_int)
@@ -46,7 +45,4 @@ export class Hist_Int {
         (ganador) => ganador.hist_int
     )
     ganadores: Ganador[];
-
-
-
 }

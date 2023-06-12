@@ -2,7 +2,7 @@ import { Telefono } from "src/telefonos/entities/telefono.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Hist_Patrocinio } from "./hist_patrocinio.entity";
 
-@Entity({ name: 'Patrocinante_empresa' })
+@Entity({ name: 'patrocinante_empresa' })
 export class Patrocinante_empresa {
     @PrimaryGeneratedColumn()
     id: number;

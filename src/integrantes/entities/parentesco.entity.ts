@@ -1,17 +1,13 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { Integrante } from './integrante.entity';
 
-@Entity({ name: 'Parentesco' })
+@Entity({ name: 'parentesco' })
 export class Parentesco {
   @Column('text')
   relacion: string;
 
-  //todo: needs work
   @PrimaryColumn('int')
   @ManyToOne(() => Integrante, (integrante) => integrante.parentesco)
+  @JoinColumn({ name: 'integrante2' })
   integrante1: Integrante;
-
-  @PrimaryColumn('int')
-  @ManyToOne(() => Integrante, (integrante) => integrante.parentesco)
-  integrante2: Integrante;
 }

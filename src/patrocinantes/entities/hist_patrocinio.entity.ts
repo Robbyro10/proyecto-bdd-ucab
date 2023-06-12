@@ -4,7 +4,7 @@ import { Patrocinante_empresa } from "./patrocinante_empresa.entity";
 import { Patrocinante_persona } from "./patrocinante_persona.entity";
 import { Donacion } from "./donacion.entity";
 
-@Entity({ name: 'Hist_Patrocinio' })
+@Entity({ name: 'hist_patrocinio' })
 export class Hist_Patrocinio {
     @PrimaryGeneratedColumn()
     id: number;

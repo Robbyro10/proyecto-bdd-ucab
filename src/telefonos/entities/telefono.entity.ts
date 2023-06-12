@@ -3,7 +3,7 @@ import { Patrocinante_empresa } from "src/patrocinantes/entities/patrocinante_em
 import { Patrocinante_persona } from "src/patrocinantes/entities/patrocinante_persona.entity";
 import { Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
-@Entity({ name: 'Telefono' })
+@Entity({ name: 'telefono' })
 export class Telefono {
     @PrimaryColumn('int')
     cod_int: number;
@@ -16,7 +16,7 @@ export class Telefono {
 
     @ManyToOne(
         ()=> Escuela_Samba,
-        (escuela) => escuela.telefono
+        (escuela) => escuela.telefonos
     )
     escuela: Escuela_Samba
 
