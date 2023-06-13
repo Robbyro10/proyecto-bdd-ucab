@@ -1,4 +1,4 @@
-import { IsString, MinLength } from "class-validator";
+import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateEscuelaDto {
     @IsString()
@@ -12,4 +12,8 @@ export class CreateEscuelaDto {
     @IsString()
     @MinLength(1)
     resumen_hist: string;
+
+    @IsNumber()
+    @IsOptional()
+    lugar_id: number;
 }
