@@ -2,7 +2,7 @@ import { Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 import { Hist_Int } from './hist_int.entity';
 import { Rol } from './rol.entity';
 
-@Entity({ name: 'org_carnaval' })
+@Entity({ name: 'agjorg_carnaval' })
 export class Org_carnaval {
   //todo: needs work
   @PrimaryColumn('int')

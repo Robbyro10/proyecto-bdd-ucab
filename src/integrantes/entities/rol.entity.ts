@@ -1,7 +1,7 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Org_carnaval } from "./org_carnaval.entity";
 
-@Entity({ name: 'rol' })
+@Entity({ name: 'agjrol' })
 export class Rol {
     @PrimaryGeneratedColumn()
     id: number;

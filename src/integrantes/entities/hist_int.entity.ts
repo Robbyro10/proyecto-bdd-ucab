@@ -5,21 +5,12 @@ import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryCo
 import { Integrante } from "./integrante.entity";
 import { Org_carnaval } from "./org_carnaval.entity";
 
-@Entity({ name: 'hist_int' })
+@Entity({ name: 'agjhist_int' })
 export class Hist_Int {
 
     @PrimaryColumn('date')
     fecha_ini: number;
     
-    @Column({
-        type: 'date',
-        nullable: true
-    })
-    fecha_fin: number;
-
-    @Column('text')
-    autoridad: string;
-
     @ManyToOne(
         () => Escuela_Samba,
         (escuela) => escuela.hist_int)
@@ -28,8 +19,17 @@ export class Hist_Int {
     @ManyToOne(
         () => Integrante,
         (integrante) => integrante.hist_int)
-    @JoinColumn({ name: 'id_integrante' })
+    @JoinColumn({ name: 'agjid_integrante' })
     integrante: Integrante;
+
+    @Column('text')
+    autoridad: string;
+
+    @Column({
+        type: 'date',
+        nullable: true
+    })
+    fecha_fin: number;
 
     @ManyToMany(()=> Samba, (samba)=> samba.hist_int)
     samba: Samba[];

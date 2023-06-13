@@ -8,22 +8,26 @@ enum Grupo {
     Uno = "1",
 }
 
-@Entity({ name: 'hist_título_carnaval' })
+@Entity({ name: 'agjhist_título_carnaval' })
 export class Hist_Titulo_Carnaval {
     @PrimaryColumn('int')
     año: number;
-
-    @Column({
-        type: 'enum',
-        enum: Grupo
-    })
-    grupo: string;
-
-    @Column('int')
-    monto_ganado: number;
 
     @ManyToOne(
         () => Escuela_Samba,
         (escuela) => escuela.hist_titulo_carnaval)
     escuela: Escuela_Samba;
+
+    @Column({
+        type: 'enum',
+        enum: Grupo,
+        nullable: true
+    })
+    grupo: string;
+
+    @Column({
+        type: 'int',
+        nullable: true
+    })
+    monto_ganado: number;
 }
