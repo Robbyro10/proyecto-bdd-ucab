@@ -1,7 +1,7 @@
 import { Hist_Int } from "src/integrantes/entities/hist_int.entity";
 import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ name: 'samba' })
+@Entity({ name: 'agjsamba' })
 export class Samba {
     @PrimaryGeneratedColumn()
     id: number;
@@ -24,7 +24,7 @@ export class Samba {
 
     @ManyToMany(()=> Hist_Int, (hist) => hist.samba)
     @JoinTable({
-        name: 'autor'
+        name: 'agjautor'
     })
     hist_int: Hist_Int[];
 }

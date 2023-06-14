@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColum
 import { Escuela_Samba } from "./escuela_samba.entity";
 import { Premio_especial } from "./premio_especial.entity";
 
-@Entity({ name: 'lugar' })
+@Entity({ name: 'agjlugar' })
 export class Lugar {
     @PrimaryGeneratedColumn()
     id: number;

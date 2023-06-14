@@ -3,7 +3,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn, Primar
 import { Escuela_Samba } from "./escuela_samba.entity";
 import { Premio_especial } from "./premio_especial.entity";
 
-@Entity({ name: 'ganador' })
+@Entity({ name: 'agjganador' })
 export class Ganador {
     @PrimaryColumn('int')
     año: number;
@@ -24,7 +24,6 @@ export class Ganador {
         () => Hist_Int,
         (hist) => hist.ganadores,
     )
-    @JoinColumn({ name: 'id_hist_int' })
     hist_int: Hist_Int;
 
 }

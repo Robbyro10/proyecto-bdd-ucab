@@ -8,7 +8,7 @@ import { Hist_Patrocinio } from "src/patrocinantes/entities/hist_patrocinio.enti
 import { Telefono } from "src/telefonos/entities/telefono.entity";
 import { Ganador } from "./ganador.entity";
 
-@Entity({ name: 'escuela_samba' })
+@Entity({ name: 'agjescuela_samba' })
 export class Escuela_Samba {
     @PrimaryGeneratedColumn()
     id: number;
@@ -51,7 +51,7 @@ export class Escuela_Samba {
 
     @ManyToMany(() => Color, (color) => color.escuelas)
     @JoinTable({
-        name: 'e_c'
+        name: 'agje_c'
     })
     colores: Color[]
 

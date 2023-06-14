@@ -3,7 +3,7 @@ import { Patrocinante_empresa } from "src/patrocinantes/entities/patrocinante_em
 import { Patrocinante_persona } from "src/patrocinantes/entities/patrocinante_persona.entity";
 import { Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
-@Entity({ name: 'telefono' })
+@Entity({ name: 'agjtelefono' })
 export class Telefono {
     @PrimaryColumn('int')
     cod_int: number;

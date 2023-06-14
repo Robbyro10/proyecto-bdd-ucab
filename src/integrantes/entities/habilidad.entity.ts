@@ -1,10 +1,10 @@
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Integrante } from "./integrante.entity";
 
-@Entity({ name: 'habilidad' })
+@Entity({ name: 'agjhabilidad' })
 export class Habilidad {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+    @PrimaryGeneratedColumn()
+    id: number;
 
     @Column('text')
     nombre: string;

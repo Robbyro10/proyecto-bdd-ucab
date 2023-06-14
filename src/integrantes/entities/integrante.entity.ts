@@ -8,26 +8,13 @@ enum Genero {
     Femenino = "F",
 }
 
-@Entity({ name: 'integrantes' })
+@Entity({ name: 'agjintegrantes' })
 export class Integrante {
     @PrimaryGeneratedColumn()
-    id_escuela: number;
-
-    @Column({
-        type: 'int',
-        nullable: true,
-        unique: true
-    })
-    doc_identidad: number;
+    id: number;
 
     @Column('text')
     primer_nombre: string;
-
-    @Column({
-        type: 'text',
-        nullable: true
-    })
-    segundo_nombre: string;
 
     @Column('text')
     primer_apellido: string;
@@ -44,14 +31,27 @@ export class Integrante {
     })
     genero: string;
 
+    @Column('text')
+    nacionalidad: string;
+
+    @Column({
+        type: 'int',
+        nullable: true,
+        unique: true
+    })
+    doc_identidad: number;
+
+    @Column({
+        type: 'text',
+        nullable: true
+    })
+    segundo_nombre: string;
+
     @Column({
         type: 'text',
         nullable: true
     })
     apodo: string;
-
-    @Column('text')
-    nacionalidad: string;
 
     @OneToMany(
         ()=> Hist_Int,
@@ -61,7 +61,7 @@ export class Integrante {
 
     @ManyToMany(() => Habilidad, (habilidad) => habilidad.integrantes)
     @JoinTable({
-        name: 'int_hab'
+        name: 'agjint_hab'
     })
     habilidades: Habilidad[];
 
