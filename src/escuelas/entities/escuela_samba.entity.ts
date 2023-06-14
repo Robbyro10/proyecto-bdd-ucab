@@ -1,4 +1,4 @@
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Lugar } from "./lugar.entity";
 import { Hist_Titulo_Carnaval } from "./Hist_Titulo_Carnaval.entity";
 import { Evento_Anual_Sem } from "./evento_anual_sem.entity";
@@ -28,6 +28,7 @@ export class Escuela_Samba {
     @ManyToOne(
         () => Lugar,
         (lugar) => lugar.escuelas)
+    @JoinColumn({ name: 'id_lugar' })
     lugar: Lugar
 
     @OneToMany(

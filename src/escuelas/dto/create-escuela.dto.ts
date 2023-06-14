@@ -14,6 +14,5 @@ export class CreateEscuelaDto {
     resumen_hist: string;
 
     @IsNumber()
-    @IsOptional()
-    lugar_id: number;
+    id_lugar: number;
 }

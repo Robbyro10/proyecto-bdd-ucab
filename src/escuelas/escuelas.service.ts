@@ -19,8 +19,9 @@ export class EscuelasService {
   async createEscuela(createEscuelaDto: CreateEscuelaDto) {
     const data = this.dataSource.query(
       `
-        INSERT INTO escuela_samba (nombre, direccion_sede, resumen_hist)
-        VALUES ('${createEscuelaDto.nombre}', '${createEscuelaDto.direccion_sede}', '${createEscuelaDto.resumen_hist}')
+        INSERT INTO escuela_samba (nombre, direccion_sede, resumen_hist, id_lugar)
+        VALUES ('${createEscuelaDto.nombre}', '${createEscuelaDto.direccion_sede}', 
+        '${createEscuelaDto.resumen_hist}', '${createEscuelaDto.id_lugar}')
         `,
     );
     return data;
