@@ -5,7 +5,7 @@ import { Hist_Patrocinio } from "./hist_patrocinio.entity";
 @Entity({ name: 'agjpatrocinante_persona' })
 export class Patrocinante_persona {
     @PrimaryGeneratedColumn()
-    id_escuela: number;
+    id: number;
 
     @Column('text')
     primer_nombre: string;

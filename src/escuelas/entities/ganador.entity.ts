@@ -24,7 +24,6 @@ export class Ganador {
         () => Hist_Int,
         (hist) => hist.ganadores,
     )
-    @JoinColumn({ name: 'agjid_hist_int' })
     hist_int: Hist_Int;
 
 }

@@ -10,10 +10,17 @@ export class Hist_Int {
 
     @PrimaryColumn('date')
     fecha_ini: number;
+
+    @PrimaryColumn('int')
+    agjid_escuela: number;
+
+    @PrimaryColumn('int')
+    agjid_integrante:number;
     
     @ManyToOne(
         () => Escuela_Samba,
         (escuela) => escuela.hist_int)
+    @JoinColumn({name:'agjid_escuela'})
     escuela: Escuela_Samba;
 
     @ManyToOne(

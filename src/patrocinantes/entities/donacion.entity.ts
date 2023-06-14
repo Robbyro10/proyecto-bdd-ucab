@@ -1,5 +1,5 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Hist_Patrocinio } from "./hist_patrocinio.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Hist_Patrocinio } from './hist_patrocinio.entity';
 
 @Entity({ name: 'agjdonacion' })
 export class Donacion {

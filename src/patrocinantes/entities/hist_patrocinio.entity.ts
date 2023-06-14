@@ -1,5 +1,5 @@
 import { Escuela_Samba } from "src/escuelas/entities/escuela_samba.entity";
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Patrocinante_empresa } from "./patrocinante_empresa.entity";
 import { Patrocinante_persona } from "./patrocinante_persona.entity";
 import { Donacion } from "./donacion.entity";
@@ -9,10 +9,14 @@ export class Hist_Patrocinio {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @PrimaryColumn('int')
+    agjid_escuela:number;
+
     @ManyToOne(
         ()=> Escuela_Samba,
         (escuela) => escuela.hist_patrocinio,
     )
+    @JoinColumn({name:"agjid_escuela"})
     escuela: Escuela_Samba
 
     @ManyToOne(
