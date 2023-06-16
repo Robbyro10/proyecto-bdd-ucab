@@ -1,0 +1,1 @@
+export const deleteTablesQuery = `DROP TABLE IF EXISTS persons`;
