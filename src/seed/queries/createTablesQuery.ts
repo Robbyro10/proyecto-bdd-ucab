@@ -1,10 +1,4 @@
 export const createTablesQuery = `
-CREATE TABLE persons (
-PersonID int,
-LastName varchar(255),
-FirstName varchar(255)
-);
-
 CREATE SEQUENCE IF NOT EXISTS agjlugar_id_seq;
 
 CREATE TABLE "public"."agjlugar" (
@@ -119,5 +113,75 @@ CREATE TABLE "public"."agjparentesco" (
     "agjintegrante2" int4,
     CONSTRAINT "FK" FOREIGN KEY ("agjintegrante2") REFERENCES "public"."agjintegrantes"("id"),
     PRIMARY KEY ("integrante1")
+);
+
+CREATE SEQUENCE IF NOT EXISTS agjpatrocinante_persona_id_seq;
+
+CREATE TABLE "public"."agjpatrocinante_persona" (
+    "id" int4 NOT NULL DEFAULT nextval('agjpatrocinante_persona_id_seq'::regclass),
+    "doc_identidad" int4 NOT NULL,
+    "primer_nombre" text NOT NULL,
+    "primer_apellido" text NOT NULL,
+    "segundo_apellido" text NOT NULL,
+    "fecha_nac" date NOT NULL,
+    "email_contacto" text NOT NULL
+    "segundo_nombre" text,
+    PRIMARY KEY ("id")
+);
+
+CREATE SEQUENCE IF NOT EXISTS agjpatrocinante_empresa_id_seq;
+
+CREATE TABLE "public"."agjpatrocinante_empresa" (
+    "id" int4 NOT NULL DEFAULT nextval('agjpatrocinante_empresa_id_seq'::regclass),
+    "nombre" text NOT NULL,
+    "email_contacto" text NOT NULL,
+    "mision" text
+    PRIMARY KEY ("id")
+);
+
+
+CREATE TABLE "public"."agjtelefono" (
+    "cod_int" int4 NOT NULL,
+    "cod_area" int4 NOT NULL,
+    "numero" int4 NOT NULL,
+    "escuelaId" int4,
+    "empresaId" int4,
+    "personaId" int4
+    CONSTRAINT "FK" FOREIGN KEY ("escuelaId") REFERENCES "public"."agjesucela_samba"("id"),
+    CONSTRAINT "FK" FOREING KEY ("empresaId") REFERENCES "public"."agjpatrocinante_empresa"("id"),
+    CONSTRAINT "FK" FOREING KEY ("personaId") REFERENCES "public"."agjpatrocinante_persona"("id")
+    PRIMARY KEY ("cod_int","cod_area","numero")
+);
+
+CREATE SEQUENCE IF NOT EXISTS agjrol_id_seq;
+
+CREATE TABLE "public"."agjrol" (
+    "id" int4 NOT NULL DEFAULT nextval('agjrol_id_seq'::regclass),
+    "nombre" text NOT NULL,
+    "descripcion" text NOT NULL
+    PRIMARY KEY ("id")
+);
+
+CREATE TABLE "public"."agjhist_int" (
+    "fecha_ini" date NOT NULL,
+    "autoridad" text NOT NULL,
+    "fecha_fin" date,
+    "agjid_escuela" int4 NOT NULL,
+    "agjid_integrante" int4 NOT NULL,
+    CONSTRAINT "FK" FOREIGN KEY ("agjid_escuela") REFERENCES "public"."agjescuela_samba"("id"),
+    CONSTRAINT "FK" FOREIGN KEY ("agjid_integrante") REFERENCES "public"."agjintegrantes"("id"),
+    PRIMARY KEY ("fecha_ini","agjid_escuela","agjid_integrante")
+);
+
+CREATE TABLE "public"."agjorg_carnaval" (
+    "año" int4 NOT NULL,
+    "agjid_rol" int4 NOT NULL,
+    "agjidhist_int" int4 NOT NULL,
+    "histIntFechaIni" date NOT NULL,
+    "histIntAgjidEscuela" int4 NOT NULL,
+    "histIntAgjidIntegrante" int4 NOT NULL,
+    CONSTRAINT "FK" FOREIGN KEY ("agjid_rol") REFERENCES "public"."agjrol"("id"),
+    CONSTRAINT "FK" FOREIGN KEY ("histIntFechaIni","histIntAgjidEscuela","histIntAgjidIntegrante") REFERENCES "public"."agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
+    PRIMARY KEY ("año","agjid_rol","histIntFechaIni","histIntAgjidEscuela","histIntAgjidIntegrante")
 );
 `
