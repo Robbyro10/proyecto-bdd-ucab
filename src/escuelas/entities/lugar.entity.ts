@@ -17,6 +17,7 @@ export class Lugar {
     tipo: string;
 
     @ManyToOne(() => Lugar, (lugar) => lugar.lugar_hijo)
+    @JoinColumn({name:'id_lugar_padre'})
     id_lugar_padre: Lugar
 
     @OneToMany(() => Lugar, (lugar) => lugar.id_lugar_padre)

@@ -1,4 +1,4 @@
-import { IsString, MinLength } from "class-validator";
+import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateLugarDto {
     @IsString()
@@ -8,4 +8,8 @@ export class CreateLugarDto {
     @IsString()
     @MinLength(1)
     tipo: string;
+
+    @IsNumber()
+    @IsOptional()
+    id_lugar_padre: number;
 }

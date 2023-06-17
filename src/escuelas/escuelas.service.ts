@@ -14,6 +14,7 @@ export class EscuelasService {
   constructor(
     @InjectDataSource()
     private readonly dataSource: DataSource,
+    private readonly commonService: CommonService
   ) {}
 
   async createEscuela(createEscuelaDto: CreateEscuelaDto) {
@@ -28,20 +29,31 @@ export class EscuelasService {
   }
 
   createLugar(createLugarDto: CreateLugarDto) {
-    this.dataSource.query(
-      `
-        INSERT INTO agjlugar (nombre, tipo)
-        VALUES ('${createLugarDto.nombre}', '${createLugarDto.tipo}')
+    if (!createLugarDto.id_lugar_padre) {
+      this.dataSource.query(
+        `
+          INSERT INTO agjlugar (nombre, tipo)
+          VALUES ('${createLugarDto.nombre}', '${createLugarDto.tipo}')
         `,
-    );
+      );
+      
+    } else {
+      this.dataSource.query(
+        `
+          INSERT INTO agjlugar (nombre, tipo, id_lugar_padre)
+          VALUES ('${createLugarDto.nombre}', '${createLugarDto.tipo}', '${createLugarDto.id_lugar_padre}')
+          `,
+      );
+    }
   }
 
   findAllEscuelas() {
-    return this.dataSource.query('SELECT * FROM agjescuela_samba;');
+    // return this.dataSource.query('SELECT * FROM agjescuela_samba;');
+    return this.commonService.find('agjescuela_samba');
   }
 
   findAllLugares() {
-    return this.dataSource.query('SELECT * FROM agjlugar;');
+    return this.commonService.find('agjlugar');
   }
 
   async findOneEscuela(id: number) {
@@ -85,7 +97,7 @@ export class EscuelasService {
   async removeEscuela(id: number) {
     const escuela = await this.findOneEscuela(id);
     if (escuela.length > 0) {
-      this.dataSource.query(`DELETE FROM agjescuela_samba WHERE id = ${id};`);
+      this.commonService.delete('agjescuela_samba', { id });
       return `Se ha borrado la escuela de id: ${id}`;
     }
     return 'No existe escuela de samba con id: ' + id;
@@ -94,7 +106,8 @@ export class EscuelasService {
   async removeLugar(id: number) {
     const lugar = await this.findOneLugar(id);
     if (lugar.length > 0) {
-      this.dataSource.query(`DELETE FROM agjlugar WHERE id = ${id};`);
+      // this.dataSource.query(`DELETE FROM agjlugar WHERE id = ${id};`);
+      this.commonService.delete('agjlugar', { id });
       return `Se ha borrado el lugar de id: ${id}`;
     }
     return 'No existe lugar con id: ' + id;
