@@ -117,7 +117,7 @@ CREATE TABLE "public"."agjparentesco" (
     "relacion" text NOT NULL,
     "integrante1" int4 NOT NULL,
     "agjintegrante2" int4,
-    CONSTRAINT "FK_55f2cb4a287fb1fc88dff1033bd" FOREIGN KEY ("agjintegrante2") REFERENCES "public"."agjintegrantes"("id"),
+    CONSTRAINT "FK" FOREIGN KEY ("agjintegrante2") REFERENCES "public"."agjintegrantes"("id"),
     PRIMARY KEY ("integrante1")
 );
 `
