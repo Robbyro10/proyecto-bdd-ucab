@@ -63,6 +63,8 @@ CREATE TABLE "agjcolor" (
 CREATE TABLE "agje_c" (
     "agjescuelaSambaId" int4 NOT NULL,
     "agjcolorId" int4 NOT NULL,
+    CONSTRAINT "FK27" FOREIGN KEY ("agjcolorId") REFERENCES "agjcolor"("id"),
+    CONSTRAINT "FK28" FOREIGN KEY ("agjescuelaSambaId") REFERENCES "agjescuela_samba"("id"),
     PRIMARY KEY ("agjcolorId","agjescuelaSambaId")
 );
 
@@ -194,6 +196,8 @@ CREATE TABLE "agjautor" (
     "agjhistIntFechaIni" date NOT NULL,
     "agjhistIntAgjidEscuela" int4 NOT NULL,
     "agjhistIntAgjidIntegrante" int4 NOT NULL,
+    CONSTRAINT "FK25" FOREIGN KEY ("agjsambaId) REFERENCES "agjsamba"("id"),
+    CONSTRAINT "FK26" FOREIGN KEY ("agjhistIntFechaIni","agjhistIntAgjidEscuela","agjhistIntAgjidIntegrante") REFERENCES "agjhis_int"("fecha_ini","agjid_escuela","agjid_integrante"),
     PRIMARY KEY("agjsambaId", "agjhistIntFechaIni","agjhistIntAgjidEscuela","agjhistIntAgjidIntegrante")
 );
 
