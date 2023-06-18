@@ -1,10 +1,12 @@
 export const createTablesQuery = `
 CREATE SEQUENCE IF NOT EXISTS agjlugar_id_seq;
+DROP TYPE IF EXISTS "agjlugar_tipo_enum";
+CREATE TYPE "agjlugar_tipo_enum" AS ENUM ('Estado','Ciudad');
 
 CREATE TABLE "agjlugar" (
     "id" int4 NOT NULL DEFAULT nextval('agjlugar_id_seq'::regclass),
     "nombre" text NOT NULL,
-    "tipo" text NOT NULL,
+    "tipo" "agjlugar_tipo_enum" NOT NULL,
     "idLugarPadreId" int4,
     CONSTRAINT "FK" FOREIGN KEY ("idLugarPadreId") REFERENCES "agjlugar"("id"),
     PRIMARY KEY ("id")
