@@ -1,14 +1,12 @@
 export const createTablesQuery = `
 CREATE SEQUENCE IF NOT EXISTS agjlugar_id_seq;
-DROP TYPE IF EXISTS "agjlugar_tipo_enum";
-CREATE TYPE "agjlugar_tipo_enum" AS ENUM ('Estado','Ciudad');
 
 CREATE TABLE "agjlugar" (
     "id" int4 NOT NULL DEFAULT nextval('agjlugar_id_seq'::regclass),
     "nombre" text NOT NULL,
-    "tipo" "agjlugar_tipo_enum" NOT NULL,
-    "idLugarPadreId" int4,
-    CONSTRAINT "FK" FOREIGN KEY ("idLugarPadreId") REFERENCES "agjlugar"("id"),
+    "tipo" text NOT NULL,
+    "id_lugar_padre" int4,
+    CONSTRAINT "FK" FOREIGN KEY ("id_lugar_padre") REFERENCES "agjlugar"("id"),
     PRIMARY KEY ("id")
 );
 
@@ -61,11 +59,9 @@ CREATE TABLE "agjcolor" (
 );
 
 CREATE TABLE "agje_c" (
-    "agjescuelaSambaId" int4 NOT NULL,
-    "agjcolorId" int4 NOT NULL,
-    CONSTRAINT "FK27" FOREIGN KEY ("agjcolorId") REFERENCES "agjcolor"("id"),
-    CONSTRAINT "FK28" FOREIGN KEY ("agjescuelaSambaId") REFERENCES "agjescuela_samba"("id"),
-    PRIMARY KEY ("agjcolorId","agjescuelaSambaId")
+    "agjescuela_samba_id" int4 NOT NULL,
+    "agjcolor_id" int4 NOT NULL,
+    PRIMARY KEY ("agjcolor_id","agjescuela_samba_id")
 );
 
 CREATE SEQUENCE IF NOT EXISTS agjsamba_id_seq;
@@ -196,8 +192,6 @@ CREATE TABLE "agjautor" (
     "agjhistIntFechaIni" date NOT NULL,
     "agjhistIntAgjidEscuela" int4 NOT NULL,
     "agjhistIntAgjidIntegrante" int4 NOT NULL,
-    CONSTRAINT "FK25" FOREIGN KEY ("agjsambaId) REFERENCES "agjsamba"("id"),
-    CONSTRAINT "FK26" FOREIGN KEY ("agjhistIntFechaIni","agjhistIntAgjidEscuela","agjhistIntAgjidIntegrante") REFERENCES "agjhis_int"("fecha_ini","agjid_escuela","agjid_integrante"),
     PRIMARY KEY("agjsambaId", "agjhistIntFechaIni","agjhistIntAgjidEscuela","agjhistIntAgjidIntegrante")
 );
 
