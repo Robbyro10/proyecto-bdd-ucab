@@ -11,7 +11,9 @@ import { Hist_Patrocinio } from './entities/hist_patrocinio.entity';
   controllers: [PatrocinantesController],
   providers: [PatrocinantesService],
   imports: [
-    TypeOrmModule.forFeature([ Patrocinante_empresa, Patrocinante_persona, Donacion, Hist_Patrocinio ]),
+    TypeOrmModule.forFeature([ 
+      // Patrocinante_empresa, Patrocinante_persona, Donacion, Hist_Patrocinio 
+    ]),
   ],
 })
 export class PatrocinantesModule {}

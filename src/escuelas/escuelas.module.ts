@@ -15,9 +15,11 @@ import { Ganador } from './entities/ganador.entity';
   controllers: [EscuelasController],
   providers: [EscuelasService],
   imports: [
-    TypeOrmModule.forFeature([ Escuela_Samba, Lugar, Color, 
-      Evento_Anual_Sem, Premio_especial, 
-      Hist_Titulo_Carnaval, Ganador ]),
+    TypeOrmModule.forFeature([ 
+      // Escuela_Samba, Lugar, Color, 
+      // Evento_Anual_Sem, Premio_especial, 
+      // Hist_Titulo_Carnaval, Ganador 
+    ]),
     CommonModule
   ],
 })

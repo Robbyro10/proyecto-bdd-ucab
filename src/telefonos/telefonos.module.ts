@@ -8,7 +8,9 @@ import { Telefono } from './entities/telefono.entity';
   controllers: [TelefonosController],
   providers: [TelefonosService],
   imports: [
-    TypeOrmModule.forFeature([ Telefono ]),
+    TypeOrmModule.forFeature([ 
+      // Telefono 
+    ]),
   ],
 })
 export class TelefonosModule {}

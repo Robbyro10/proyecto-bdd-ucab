@@ -8,7 +8,9 @@ import { Samba } from './entities/samba.entity';
   controllers: [SambaController],
   providers: [SambaService],
   imports: [
-    TypeOrmModule.forFeature([ Samba ]),
+    TypeOrmModule.forFeature([ 
+      // Samba 
+    ]),
   ],
 })
 export class SambaModule {}

@@ -1,1 +1,1 @@
-export const insertDataQuery = `INSERT INTO persons VALUES(1, 'hedderich', 'Juan')`;
+export const insertDataQuery = ``;

@@ -13,7 +13,9 @@ import { Parentesco } from './entities/parentesco.entity';
   controllers: [IntegrantesController],
   providers: [IntegrantesService],
   imports: [
-    TypeOrmModule.forFeature([ Integrante, Habilidad, Rol, Hist_Int, Org_carnaval, Parentesco ]),
+    TypeOrmModule.forFeature([ 
+      // Integrante, Habilidad, Rol, Hist_Int, Org_carnaval, Parentesco 
+    ]),
   ],
 })
 export class IntegrantesModule {}
