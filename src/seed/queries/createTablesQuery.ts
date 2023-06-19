@@ -41,7 +41,7 @@ CREATE TABLE "agjevento_anual_sem" (
 );
 
 DROP TYPE IF EXISTS "agjhist_título_carnaval_grupo_enum";
-CREATE TYPE "agjhist_título_carnaval_grupo_enum" AS ENUM ('A', 'Ac', 'E', '1');
+CREATE TYPE "agjhist_título_carnaval_grupo_enum" AS ENUM ('A', 'B', 'C', 'Ac', 'E', '1', '2', '3');
 
 CREATE TABLE "agjhist_título_carnaval" (
     "año" int4 NOT NULL,
@@ -181,7 +181,6 @@ CREATE TABLE "agjhist_int" (
 CREATE TABLE "agjorg_carnaval" (
     "año" int4 NOT NULL,
     "agjid_rol" int4 NOT NULL,
-    "agjidhist_int" int4 NOT NULL,
     "hist_int_fecha_ini" date NOT NULL,
     "hist_int_agjid_escuela" int4 NOT NULL,
     "hist_int_agjid_integrante" int4 NOT NULL,
