@@ -1,10 +1,12 @@
 export const createTablesQuery = `
 CREATE SEQUENCE IF NOT EXISTS agjlugar_id_seq;
+DROP TYPE IF EXISTS "agjlugar_tipo_enum";
+CREATE TYPE "agjlugar_tipo_enum" AS ENUM ('ESTADO','CIUDAD');
 
 CREATE TABLE "agjlugar" (
     "id" int4 NOT NULL DEFAULT nextval('agjlugar_id_seq'::regclass),
     "nombre" text NOT NULL,
-    "tipo" text NOT NULL,
+    "tipo" "agjlugar_tipo_enum" NOT NULL,
     "id_lugar_padre" int4,
     CONSTRAINT "FK" FOREIGN KEY ("id_lugar_padre") REFERENCES "agjlugar"("id"),
     PRIMARY KEY ("id")
@@ -61,6 +63,8 @@ CREATE TABLE "agjcolor" (
 CREATE TABLE "agje_c" (
     "agjescuela_samba_id" int4 NOT NULL,
     "agjcolor_id" int4 NOT NULL,
+    CONSTRAINT "FK27" FOREIGN KEY ("agjescuela_samba_id") REFERENCES "agjescuela_samba"("id"),
+    CONSTRAINT "FK28" FOREIGN KEY ("agjcolor_id") REFERENCES "agjcolor"("id"),
     PRIMARY KEY ("agjcolor_id","agjescuela_samba_id")
 );
 
@@ -102,11 +106,11 @@ CREATE TABLE "agjhabilidad" (
 );
 
 CREATE TABLE "agjint_hab" (
-    "agjintegrantesId" int4 NOT NULL,
-    "agjhabilidadId" int4 NOT NULL,
-    CONSTRAINT "FK21" FOREIGN KEY ("agjintegrantesId") REFERENCES "agjintegrantes"("id"),
-    CONSTRAINT "FK22" FOREIGN KEY ("agjhabilidadId") REFERENCES "agjhabilidad"("id"),
-    PRIMARY KEY ("agjintegrantesId","agjhabilidadId")
+    "agjintegrantes_id" int4 NOT NULL,
+    "agjhabilidad_id" int4 NOT NULL,
+    CONSTRAINT "FK21" FOREIGN KEY ("agjintegrantes_id") REFERENCES "agjintegrantes"("id"),
+    CONSTRAINT "FK22" FOREIGN KEY ("agjhabilidad_id") REFERENCES "agjhabilidad"("id"),
+    PRIMARY KEY ("agjintegrantes_id","agjhabilidad_id")
 );
 
 CREATE TABLE "agjparentesco" (
@@ -145,12 +149,12 @@ CREATE TABLE "agjtelefono" (
     "cod_int" int4 NOT NULL,
     "cod_area" int4 NOT NULL,
     "numero" int4 NOT NULL,
-    "escuelaId" int4,
-    "empresaId" int4,
-    "personaId" int4,
-    CONSTRAINT "FK5" FOREIGN KEY ("escuelaId") REFERENCES "agjescuela_samba"("id"),
-    CONSTRAINT "FK6" FOREIGN KEY ("empresaId") REFERENCES "agjpatrocinante_empresa"("id"),
-    CONSTRAINT "FK7" FOREIGN KEY ("personaId") REFERENCES "agjpatrocinante_persona"("id"),
+    "escuela_id" int4,
+    "empresa_id" int4,
+    "persona_id" int4,
+    CONSTRAINT "FK5" FOREIGN KEY ("escuela_id") REFERENCES "agjescuela_samba"("id"),
+    CONSTRAINT "FK6" FOREIGN KEY ("empresa_id") REFERENCES "agjpatrocinante_empresa"("id"),
+    CONSTRAINT "FK7" FOREIGN KEY ("persona_id") REFERENCES "agjpatrocinante_persona"("id"),
     PRIMARY KEY ("cod_int","cod_area","numero")
 );
 
@@ -178,20 +182,22 @@ CREATE TABLE "agjorg_carnaval" (
     "año" int4 NOT NULL,
     "agjid_rol" int4 NOT NULL,
     "agjidhist_int" int4 NOT NULL,
-    "histIntFechaIni" date NOT NULL,
-    "histIntAgjidEscuela" int4 NOT NULL,
-    "histIntAgjidIntegrante" int4 NOT NULL,
+    "hist_int_fecha_ini" date NOT NULL,
+    "hist_int_agjid_escuela" int4 NOT NULL,
+    "hist_int_agjid_integrante" int4 NOT NULL,
     CONSTRAINT "FK9" FOREIGN KEY ("agjid_rol") REFERENCES "agjrol"("id"),
-    CONSTRAINT "FK10" FOREIGN KEY ("histIntFechaIni","histIntAgjidEscuela","histIntAgjidIntegrante") REFERENCES "agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
-    PRIMARY KEY ("año","agjid_rol","histIntFechaIni","histIntAgjidEscuela","histIntAgjidIntegrante")
+    CONSTRAINT "FK10" FOREIGN KEY ("hist_int_fecha_ini","hist_int_agjid_escuela","hist_int_agjid_integrante") REFERENCES "agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
+    PRIMARY KEY ("año","agjid_rol","hist_int_fecha_ini","hist_int_agjid_escuela","hist_int_agjid_integrante")
 );
 
 CREATE TABLE "agjautor" (
-    "agjsambaId" int4 NOT NULL,
-    "agjhistIntFechaIni" date NOT NULL,
-    "agjhistIntAgjidEscuela" int4 NOT NULL,
-    "agjhistIntAgjidIntegrante" int4 NOT NULL,
-    PRIMARY KEY("agjsambaId", "agjhistIntFechaIni","agjhistIntAgjidEscuela","agjhistIntAgjidIntegrante")
+    "agjsamba_id" int4 NOT NULL,
+    "agjhist_int_fecha_ini" date NOT NULL,
+    "agjhist_int_agjid_escuela" int4 NOT NULL,
+    "agjhist_int_agjid_integrante" int4 NOT NULL,
+    CONSTRAINT "FK25" FOREIGN KEY ("agjsamba_id") REFERENCES "agjsamba"("id"),
+    CONSTRAINT "FK26" FOREIGN KEY ("agjhist_int_fecha_ini","agjhist_int_agjid_escuela","agjhist_int_agjid_integrante") REFERENCES "agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
+    PRIMARY KEY("agjsamba_id", "agjhist_int_fecha_ini","agjhist_int_agjid_escuela","agjhist_int_agjid_integrante")
 );
 
 CREATE SEQUENCE IF NOT EXISTS agjhist_patrocinio_id_seq;
@@ -201,11 +207,11 @@ CREATE TABLE "agjhist_patrocinio" (
     "fecha_ini" date NOT NULL,
     "fecha_fin" date,
     "agjid_escuela" int4 NOT NULL,
-    "empresaId" int4,
-    "personaId" int4,
+    "empresa_id" int4,
+    "persona_id" int4,
     CONSTRAINT "FK11" FOREIGN KEY ("agjid_escuela") REFERENCES "agjescuela_samba"("id"),
-    CONSTRAINT "FK12" FOREIGN KEY ("empresaId") REFERENCES "agjpatrocinante_empresa"("id"),
-    CONSTRAINT "FK13" FOREIGN KEY ("personaId") REFERENCES "agjpatrocinante_persona"("id"),
+    CONSTRAINT "FK12" FOREIGN KEY ("empresa_id") REFERENCES "agjpatrocinante_empresa"("id"),
+    CONSTRAINT "FK13" FOREIGN KEY ("persona_id") REFERENCES "agjpatrocinante_persona"("id"),
     PRIMARY KEY("id","agjid_escuela")
 );
 
@@ -214,11 +220,11 @@ CREATE SEQUENCE IF NOT EXISTS agjdonacion_id_seq;
 CREATE TABLE "agjdonacion" (
     "id" int4 NOT NULL DEFAULT nextval('agjdonacion_id_seq'::regclass),
     "fecha" date NOT NULL,
-    "montoR$" int4 NOT NULL,
-    "histPatrocinioId" int4,
-    "histPatrocinioAgjidEscuela" int4,
-    CONSTRAINT "FK14" FOREIGN KEY ("histPatrocinioId","histPatrocinioAgjidEscuela") REFERENCES "agjhist_patrocinio"("id","agjid_escuela"),
-    PRIMARY KEY ("id","histPatrocinioId","histPatrocinioAgjidEscuela")
+    "monto_r$" int4 NOT NULL,
+    "hist_patrocinio_id" int4,
+    "hist_patrocinio_agjid_escuela" int4,
+    CONSTRAINT "FK14" FOREIGN KEY ("hist_patrocinio_id","hist_patrocinio_agjid_escuela") REFERENCES "agjhist_patrocinio"("id","agjid_escuela"),
+    PRIMARY KEY ("id","hist_patrocinio_id","hist_patrocinio_agjid_escuela")
 );
 
 CREATE SEQUENCE IF NOT EXISTS agjpremio_especial_id_seq;
@@ -228,21 +234,21 @@ CREATE TABLE "agjpremio_especial" (
     "nombre" text NOT NULL,
     "descripcion" text NOT NULL,
     "tipo" text NOT NULL,
-    "lugarId" int4 NOT NULL,
-    CONSTRAINT "FK15" FOREIGN KEY ("lugarId") REFERENCES "agjlugar"("id"),
+    "lugar_id" int4 NOT NULL,
+    CONSTRAINT "FK15" FOREIGN KEY ("lugar_id") REFERENCES "agjlugar"("id"),
     PRIMARY KEY ("id")
 );
 
 CREATE TABLE "agjganador" (
     "año" int4 NOT NULL,
-    "escuelaId" int4,
-    "premioId" int4 NOT NULL,
-    "histIntFechaIni" date,
-    "histIntAgjidEscuela" int4,
-    "histIntAgjidIntegrante" int4,
-    CONSTRAINT "FK16" FOREIGN KEY ("escuelaId") REFERENCES "agjescuela_samba"("id"),
-    CONSTRAINT "FK17" FOREIGN KEY ("histIntFechaIni","histIntAgjidEscuela","histIntAgjidIntegrante") REFERENCES "agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
-    CONSTRAINT "FK18" FOREIGN KEY ("premioId") REFERENCES "agjpremio_especial"("id"),
-    PRIMARY KEY ("año","escuelaId")
+    "escuela_id" int4,
+    "premio_id" int4 NOT NULL,
+    "hist_int_fecha_ini" date,
+    "hist_int_agjid_escuela" int4,
+    "hist_int_agjid_integrante" int4,
+    CONSTRAINT "FK16" FOREIGN KEY ("escuela_id") REFERENCES "agjescuela_samba"("id"),
+    CONSTRAINT "FK17" FOREIGN KEY ("hist_int_fecha_ini","hist_int_agjid_escuela","hist_int_agjid_integrante") REFERENCES "agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
+    CONSTRAINT "FK18" FOREIGN KEY ("premio_id") REFERENCES "agjpremio_especial"("id"),
+    PRIMARY KEY ("año","escuela_id")
 );
 `

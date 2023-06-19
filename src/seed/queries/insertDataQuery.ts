@@ -1,18 +1,23 @@
 export const insertDataQuery = `
 
-INSERT INTO agjlugar (nombre,tipo) values('RIO DE JANEIRO','ESTADO');
-INSERT INTO agjlugar (nombre,tipo) values('SAO PAULO','ESTADO');
-INSERT INTO agjlugar (nombre,tipo) values('RIO GRANDE DEL SUR','ESTADO');
-INSERT INTO agjlugar (nombre,tipo) values('PERNAMBUCO','ESTADO');
-INSERT INTO agjlugar (nombre,tipo) values('MARANHAO','ESTADO');
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('RIO DE JANEIRO','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='RIO DE JANEIRO' AND tipo='ESTADO'));
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('SAO PAULO','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='SAO PAULO' AND tipo='ESTADO'));
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('PORTO ALEGRE','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='RIO GRANDE DEL SUR' AND tipo='ESTADO'));
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('RECIFE','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='PERNAMBUCO' AND tipo='ESTADO'));
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('SAO LUIS','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='MARANHAO' AND tipo='ESTADO'));
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('BELFORD ROXO','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='RIO DE JANEIRO' AND tipo='ESTADO'));
-INSERT INTO agjlugar (nombre,tipo) values('PARA','ESTADO');
-INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('BELEM','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='PARA' AND tipo='ESTADO'));
+INSERT INTO agjlugar (nombre, tipo) 
+VALUES
+('RIO DE JANEIRO','ESTADO'),
+('SAO PAULO','ESTADO'),
+('RIO GRANDE DEL SUR','ESTADO'),
+('PERNAMBUCO','ESTADO'),
+('MARANHAO','ESTADO'),
+('PARA','ESTADO');
+
+INSERT INTO agjlugar (nombre, tipo, id_lugar_padre) 
+VALUES
+('RIO DE JANEIRO','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='RIO DE JANEIRO' AND tipo='ESTADO')),
+('SAO PAULO','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='SAO PAULO' AND tipo='ESTADO')),
+('PORTO ALEGRE','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='RIO GRANDE DEL SUR' AND tipo='ESTADO')),
+('RECIFE','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='PERNAMBUCO' AND tipo='ESTADO')),
+('SAO LUIS','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='MARANHAO' AND tipo='ESTADO')),
+('BELFORD ROXO','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='RIO DE JANEIRO' AND tipo='ESTADO')),
+('BELEM','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='PARA' AND tipo='ESTADO'));
 
 
 INSERT INTO agjcolor (nombre) VALUES ('AZUL'), ('AMARILLO'), ('ROJO'), ('BLANCO'), ('VERDE'), ('ROSA'), ('PLATEADO'), ('NEGRO');
