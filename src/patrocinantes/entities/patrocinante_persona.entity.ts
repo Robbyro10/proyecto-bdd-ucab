@@ -22,9 +22,6 @@ export class Patrocinante_persona {
     })
     doc_identidad: number;
 
-    @Column('date')
-    fecha_nac: string;
-
     @Column('text')
     email_contacto: string;
 

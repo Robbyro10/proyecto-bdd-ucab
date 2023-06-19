@@ -125,7 +125,6 @@ CREATE TABLE "agjpatrocinante_persona" (
     "primer_nombre" text NOT NULL,
     "primer_apellido" text NOT NULL,
     "segundo_apellido" text NOT NULL,
-    "fecha_nac" date NOT NULL,
     "email_contacto" text NOT NULL,
     "segundo_nombre" text,
     PRIMARY KEY ("id")

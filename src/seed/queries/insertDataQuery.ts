@@ -15,15 +15,7 @@ INSERT INTO agjlugar (nombre,tipo) values('PARA','ESTADO');
 INSERT INTO agjlugar (nombre,tipo,id_lugar_padre) values('BELEM','CIUDAD',(SELECT l.id FROM agjlugar l where nombre='PARA' AND tipo='ESTADO'));
 
 
-INSERT INTO agjcolor (nombre) VALUES('AZUL');
-INSERT INTO agjcolor (nombre) VALUES('AMARILLO');
-INSERT INTO agjcolor (nombre) VALUES('ROJO');
-INSERT INTO agjcolor (nombre) VALUES('BLANCO');
-INSERT INTO agjcolor (nombre) VALUES('VERDE');
-INSERT INTO agjcolor (nombre) VALUES('ROSA');
-INSERT INTO agjcolor (nombre) VALUES('PLATEADO');
-INSERT INTO agjcolor (nombre) VALUES('NEGRO');
-
+INSERT INTO agjcolor (nombre) VALUES ('AZUL'), ('AMARILLO'), ('ROJO'), ('BLANCO'), ('VERDE'), ('ROSA'), ('PLATEADO'), ('NEGRO');
 
 
 INSERT INTO agjescuela_samba (nombre, direccion_sede, resumen_hist, id_lugar) VALUES(
@@ -80,100 +72,119 @@ INSERT INTO agjescuela_samba (nombre, direccion_sede, resumen_hist, id_lugar) VA
 'LA ESCUELA DE SAMBA IMPERIO DA TIJUCA FUE FUNDADA EN 1940, EN EL MORRO DA FORMIGA, UBICADO EN EL BARRIO DE TIJUCA, A PARTIR DE LA FUSION ENTRE LAS ANTIGUAS ESCUELAS RECREIO DA MOCIDADE Y ESTRELA DA TIJUCA. FUE LA PRIMERA ESCUELA DE SAMBA EN USAR EN SU NOMBRE EL TERMINO “IMPERIO”, RAZON POR LA CUAL TIENE UNA CORONA, SÍMBOLO DE LA NOBLEZA, EN SU BANDERA, ASI COMO RAMOS DE FUMO Y CAFE QUE TRADUCIAN LAS RIQUEZAS DEL BRASIL EN LA EPOCA',
 (SELECT l.id FROM agjlugar l WHERE nombre='RIO DE JANEIRO' AND tipo='CIUDAD'));
 
+INSERT INTO agjpatrocinante_empresa (nombre, email_contacto, mision)
+VALUES
+('NIKE', 'EVENTS@NIKE.COM', 'OFRECER INSPIRACION E INNOVACION A TODOS LOS ATLETAS DEL MUNDO'),
+('PROCTER & GAMBLE', 'CONTACT@P&G.COM', 'OFRECEMOS PRODUCTOS Y SERVICIOS DE MARCA DE UNA CALIDAD Y VALOR SUPERIOR'),
+('UNICEF','BRAZIL@UNICEF.ORG', 'PROMUEVE LOS DERECHOS Y EL BIENESTAR DE TODOS LOS NIÑOS Y NIÑAS, EN TODO LO QUE HACEMOS'),
+('PEPSI','CONSUMIDORES.55@PEPSICO.COM', 'BRINDAR A LOS CONSUMIDORES ALIMENTOS Y BEBIDAS DELICIOSOS, ASEQUIBLES, PRACTICOS Y COMPLEMENTARIOS'),
+('B3','NEGOCIACAO@B3.COM.BR ', 'IMPULSAR EL CRECIMIENTO DE BRASIL JUNTO CON SUS CLIENTES Y LA SOCIEDAD'),
+('RE/MAX','GERENCIA@ORION.REMAX.COM.BR', 'SER LOS LIDERES MUNDIALES EN BIENES RAICES, ALCANZANDO NUESTRAS METAS AYUDANDO A OTROS ALCANZAR LAS SUYAS'),
+('GRUPO MODELO','CONTACTO@GMODELO.COM.MX', 'IMPLEMENTAR LAS MEJORES PRACTICAS EN HERRAMIENTAS Y TECNICAS, ESTABLECIENDO LOS COMPORTAMIENTOS NECESARIOS PARA MANTENER LA CULTURA DE LA MEJORA CONTINUA'),
+('MARSHALL AMPLIFICATION','CONTACTUS@MARSHALL.COM', 'INNOVAR Y EMPUJAR LAS BARRERAS DE POSIBILIDAD PARA INSPIRAR A TODOS A CONSEGUIR SU SONIDO'),
+('UNITED HEALTH GROUP','SUSTAINABILITY@UHG.COM', 'AYUDAR A LAS PERSONAS A VIVIR VIDAS MAS SALUDABLES Y PROMOVER UN SISTEMA DE SALUD UE FUNCIONE MEJOR PARA TODOS');
 
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA TIJUCA'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA TIJUCA'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AZUL'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='TOM MAIOR'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='TOM MAIOR'),
-(SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='TOM MAIOR'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA ZONA NORTE'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA ZONA NORTE'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA ZONA NORTE'),
-(SELECT c.id FROM agjcolor c WHERE nombre='PLATEADO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='MANGUEIRA DO AMANHA'),
-(SELECT c.id FROM agjcolor c WHERE nombre='VERDE'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='MANGUEIRA DO AMANHA'),
-(SELECT c.id FROM agjcolor c WHERE nombre='ROSA'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
-(SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
-(SELECT c.id FROM agjcolor c WHERE nombre='NEGRO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO PEDREIRENSE'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AZUL'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO PEDREIRENSE'),
-(SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO PEDREIRENSE'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA BANGU'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA BANGU'),
-(SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='INOCENTES DA BELFORD ROXO'),
-(SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='INOCENTES DA BELFORD ROXO'),
-(SELECT c.id FROM agjcolor c WHERE nombre='AZUL'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='INOCENTES DA BELFORD ROXO'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA TIJUCA'),
-(SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
-
-INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
-(SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA TIJUCA'),
-(SELECT c.id FROM agjcolor c WHERE nombre='VERDE'));
+INSERT INTO agjpatrocinante_persona (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, doc_identidad, email_contacto) 
+VALUES
+('PEDRO', 'EDUARDO', 'PEREZ', 'IZAGUIRRE', '6911502', 'PEDRO@GMAIL.COM'),
+('LUISA', 'MARTA', 'RODRIGUEZ', 'LOINAZ', '10335089', 'LUISA_RO@GMAIL.COM'),
+('LUIS', NULL, 'TERRERO', 'TORRES', '28308949', 'JDTERRE@GMAIL.COM'),
+('MARIA', 'VALENTINA', 'GIL', 'BLANCO', '29658784', 'MVGIL@GMAIL.COM'),
+('VALENTINA', 'MARGARITA', 'CABRERA', 'GIMENEZ', '30986332', 'VCABRA25@GMAIL.COM');
 `;
+
+// INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA TIJUCA'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA TIJUCA'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AZUL'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='TOM MAIOR'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='TOM MAIOR'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='TOM MAIOR'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA ZONA NORTE'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA ZONA NORTE'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA ZONA NORTE'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='PLATEADO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='MANGUEIRA DO AMANHA'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='VERDE'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='MANGUEIRA DO AMANHA'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='ROSA'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AMARILLO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DE SAO MIGUEL'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='NEGRO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO PEDREIRENSE'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AZUL'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO PEDREIRENSE'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO PEDREIRENSE'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA BANGU'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='UNIDOS DA BANGU'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='INOCENTES DA BELFORD ROXO'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='ROJO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='INOCENTES DA BELFORD ROXO'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='AZUL'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='INOCENTES DA BELFORD ROXO'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA TIJUCA'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='BLANCO'));
+    
+//     INSERT INTO agje_c(agjescuela_samba_id,agjcolor_id) VALUES(
+//     (SELECT e.id FROM agjescuela_samba e WHERE nombre='IMPERIO DA TIJUCA'),
+//     (SELECT c.id FROM agjcolor c WHERE nombre='VERDE'));
