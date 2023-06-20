@@ -707,4 +707,33 @@ INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2011,
 INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2016,
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='FANTASIA'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
- `
+
+INSERT INTO agjevento_anual_sem (agjid_escuela, nombre, fecha_ini, fecha_fin, tipo, total_asistentes, costo_unitario_r$, descripcion) 
+ VALUES 
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DA TIJUCA'), 'MÚSICA E DANÇA', '2020-08-19','2021-08-19', 'TALLER',  56, 20, 'TALLER DE BAILE EN LA ESCUELA PARA TODO AQUEL QUE QUIERA DIVERTIRSE BAILANDO Y CANTANDO SAMBA' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DA TIJUCA'), 'CONCURSO DE DANÇA', '2010-05-03', '2010-11-03', 'CONCURSO', 40, 10, 'CONCURSO DE BAILE EN LA PLAYA CERCANA, QUIEN SERA EL MEJOR BAILARIN DE SAMBA?' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'TOM MAIOR'), 'NOITE DA CULTURA', '2009-04-10', '2009-10-10', 'VISITA', 23, 15, 'VISITA GUIADA A LA SEDE DE LA ESCUELA PARA APRENDER SOBRE LA HISTORIA DE LA ESCUELA Y SU PASION POR EL CARNAVAL' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA ZONA NORTE'), 'SAMBA DE FOME', '2017-12-20', '2018-12-20', 'FIESTA', 150, 30, 'FERIA EN LA PLAZA LOCAL DONDE NEGOCIOS LOCALES SIRVEN COMIDA Y LA ESCUELA PRESENTA SU SAMBA-ENREDO' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA ZONA NORTE'), 'PARECE NÓS', '2017-12-20', '2019-06-20', 'SERVICIO' , 20, 10, 'PUESTO DE MAQUILLAJE DE LA ESCUELA DONDE LA GENTE PUEDE VENIR Y SER MAQUILLADOS COMO LOS INTEGRANTES DEL SAMBA-ENREDO' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DA BANGU'), 'VESTIR-SE E DANÇAR', '2021-12-25', '2022-06-25', 'FIESTA', 49, 40, 'FIESTA EN LA ESCUELA DONDE LOS PARTICIPANTES PUEDEN VESTIRSE Y MAQUILLARSE COMO LOS INTEGRANTES DEL SAMBA-ENREDO Y RECIBIR UNA CLASE DE BAILE DE SAMBA' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'INOCENTES DA BELFORD ROXO'), 'CRIAR SAMBA', '2005-04-01', '2005-10-01', 'TALLER', 22, 30, 'TALLER DONDE SE ENSEÑA A LOS PARTICIPANTES A TOCAR SAMBA CON LOS DISTINTOS INSTRUMENTOS MUSICALES DEL GENERO' ),
+  ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DE SAO MIGUEL'), 'CONHEÇA SEU SAMBA', '2012-06-09', '2012-12-09', 'VISITA', 63, 10, 'VISITA GUIADA A LA ESCUELA PARA CONOCER A LOS INTEGRANTES Y LA HISTORIA DE LA ESCUELA' ),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA TIJUCA'), 'EXPLOSÃO DO SAMBA', '2022-10-15', '2023-10-15', 'FIESTA', 357, 20, 'FIESTA NOCTURNA QUE OFRECE COMIDA, BEBIDAS Y ENTRETENIMIENTO DE PARTE DE LOS BAILARINES Y MUSICOS DE LA ESCUELA' );
+
+INSERT INTO agjhist_patrocinio (agjid_escuela, fecha_ini, fecha_fin, empresa_id, persona_id) 
+VALUES 
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DA TIJUCA'), '2018-08-19','2021-08-19', (SELECT e.id FROM agjpatrocinante_empresa e WHERE nombre = 'PROCTER & GAMBLE'), NULL),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO PEDREIRENSE'), '2010-05-03', '2011-05-03', (SELECT e.id FROM agjpatrocinante_empresa e WHERE nombre = 'PROCTER & GAMBLE'), NULL),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'TOM MAIOR'), '2009-04-10', '2020-04-10', NULL, (SELECT e.id FROM agjpatrocinante_persona e WHERE primer_nombre = 'VALENTINA')),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA ZONA NORTE'), '2017-12-20', NULL, (SELECT e.id FROM agjpatrocinante_empresa e WHERE nombre = 'NIKE'), NULL ),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'MANGUEIRA DO AMANHA'), '2022-12-20', NULL, NULL, (SELECT e.id FROM agjpatrocinante_persona e WHERE primer_nombre = 'CLARISSA')),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DA BANGU'), '2005-08-01', '2016-08-01', (SELECT e.id FROM agjpatrocinante_empresa e WHERE nombre = 'REMAX'), NULL ),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'INOCENTES DA BELFORD ROXO'), '1987-04-01', '1990-10-01',  NULL, (SELECT e.id FROM agjpatrocinante_persona e WHERE primer_nombre = 'SOPHIA')),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DE SAO MIGUEL'), '2012-06-09', '2019-12-09', (SELECT e.id FROM agjpatrocinante_empresa e WHERE nombre = 'GRUPO MODELO'), NULL ),
+((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA TIJUCA'), '2022-10-15', NULL, NULL, (SELECT e.id FROM agjpatrocinante_persona e WHERE primer_nombre = 'SOPHIA'));
+
+
+`
+
+
+ 

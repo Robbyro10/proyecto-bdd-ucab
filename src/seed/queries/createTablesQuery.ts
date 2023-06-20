@@ -250,4 +250,5 @@ CREATE TABLE "agjganador" (
     CONSTRAINT "FK18" FOREIGN KEY ("premio_id") REFERENCES "agjpremio_especial"("id"),
     PRIMARY KEY ("año","premio_id")
 );
+
 `
