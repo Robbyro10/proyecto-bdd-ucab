@@ -248,6 +248,6 @@ CREATE TABLE "agjganador" (
     CONSTRAINT "FK16" FOREIGN KEY ("escuela_id") REFERENCES "agjescuela_samba"("id"),
     CONSTRAINT "FK17" FOREIGN KEY ("hist_int_fecha_ini","hist_int_agjid_escuela","hist_int_agjid_integrante") REFERENCES "agjhist_int"("fecha_ini","agjid_escuela","agjid_integrante"),
     CONSTRAINT "FK18" FOREIGN KEY ("premio_id") REFERENCES "agjpremio_especial"("id"),
-    PRIMARY KEY ("año","escuela_id")
+    PRIMARY KEY ("año","premio_id")
 );
 `
