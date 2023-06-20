@@ -558,15 +558,14 @@ INSERT INTO agjint_hab (agjintegrantes_id, agjhabilidad_id) VALUES
 
 INSERT INTO agjsamba (titulo, letra, año_carnaval, tipo) 
 VALUES
-('UM CORAÇÃO URBANO: MIGUEL, ARCANJO DAS ARTES, SAÚDA O POVO E PEDE PASSAGEM', 'INVADE MINHALMA A LINDA CANÇÃO NO TOM DA VITÓRIA CHEGOU MEU PAVÃO COM SAMBA NO PÉ NÓS VAMOS À LUTA TÔ NA BOCA DO POVO MEU NOME É TIJUCA INVADE MINHALMA A LINDA CANÇÃO NO TOM DA VITÓRIA CHEGOU MEU PAVÃO COM SAMBA NO PÉ NÓS VAMOS À LUTA TÔ NA BOCA DO POVO MEU NOME É TIJUCA SINTA O SOM É MELODIA MÚSICA NEGRO DOM QUE ACALENTAVA NOSSOS ANCESTRAIS É MUITO MAIS, É LIBERDADE A LUZ DA INSPIRAÇÃO HOJE A TIJUCA É QUEM DÁ O TOM EM NOTAS E ACORDES MUSICAIS VIAJE NA BARCA DAS CANÇÕES O JAZZ EMBALANDO OS CORAÇÕES NO SOPRO A SAUDADE, A MODA COUNTRY SE ETERNIZOU E O MEU BOREL AMERICANIZOU CHEGA, MY BROTHER, VEM VER A BATUCADA É DE ENLOUQUECER PURA CADÊNCIA DE BAMBAS JUNTOU GUITARRA E PANDEIRO TÁ AÍ O SOUL DE UM JEITO BRASILEIRO', '01-01-2018', 'SAMBA-ENREDO'),
-('SONHOS DELIRANTES', 'QUERO SENTIR O GOSTO AMARGO NA MINHA LÍNGUA E VIAJAR SOB AS CORES DO ARCO-ÍRIS QUERO EMBARCAR NUM SONHO PARA UM LUGAR LINDO DESBRAVANDO MUNDO AFORA SEM RECEIOS CONTEMPLO A LUA NO INFINITO HORIZONTE COM O SILÊNCIO DA NOITE A ME CONFORTAR QUERO ESQUECER UM POUCO DA REALIDADE QUE NOS SUFOCA TODO DIA SEM PARAR EU TIVE UM SONHO DELIRANTE EU TIVE UM SONHO DELIRANTE EU TIVE UM SONHO DELIRANTE EU TIVE UM SONHO DELIRANTE', '01-01-1963', 'SAMBA-ENREDO'),
-('O DONO DA TERRA', 'EU QUERIA SABER O QUE É O QUE É QUE EU VI NA TV DIZIA QUE O MUNDO NÃO É UM BRINQUEDO E TEM UM SEGREDO QUE EU NÃO SEI DIZER NÃO É CABRA-CEGA NÃO É PIQUE-ESCONDE NEM AMARELINHA NÃO É UM BRINQUEDO E TEM UM SEGREDO QUE EU QUERO SABER, QUE EU QUERO SABER MÃE ME EXPLICA DIREITINHO O QUE GENTE GRANDE ENTENDE MUITO BEM COMO PODE UMA BOMBA EXPLODIR DENTRO DE UM TREM? PAI ME EXPLICA DIREITINHO O QUE GENTE GRANDE SABE MUITO BEM COMO PODE UMA CRIANÇA POBRE DE MARRÉ DECI SEM NINGUÉM? VÊ QUAL É O NOME DO DONO DA TERRA INVENTOR DO CÉU E DO MAR PEGA O TELEFONE, LIGA PRA ESSE HOMEM DIZ QUE É PRA ELE... REINVENTAR VÊ QUAL É O NOME DO DONO DA TERRA INVENTOR DO CÉU E DO MAR PEGA O TELEFONE, LIGA PARA ESSE HOMEM DIZ QUE É PRA ELE... REINVENTAR', '01-01-1999', 'SAMBA-ENREDO'),
-('É SEGREDO!', 'ESTÁ PRESENTE A NAÇÃO TIJUCANA ALÔ BOREL ENTRA E SENTA TIJUCA É SEGREDO, NÃO CONTO À NINGUÉM SOU TIJUCA, VOU ALÉM O SEU OLHAR, VOU ILUDIR A TENTAÇÃO É DESCOBRIR É SEGREDO, NÃO CONTO À NINGUÉM SOU TIJUCA, VOU ALÉM O SEU OLHAR, VOU ILUDIR A TENTAÇÃO É DESCOBRIR DESVENDAR ESSE MISTÉRIO É CASO SÉRIO, QUEM SE ARRISCA A PROCURAR O DESCONHECIDO, NO TEMPO PERDIDO AQUELE PERGAMINHO MILENAR SÃO CINZAS NA POEIRA DA MEMÓRIA E BRINCAM COM A IMAGINAÇÃO UNIDOS DA TIJUCA, NÃO É SEGREDO EU AMAR VOCÊ DECIFRAR, ISSO EU NÃO SEI DIZER SÃO COISAS DO MEU CORAÇÃO EU QUERO VER ESSE LUGAR QUE O PRÓPRIO TEMPO ACABOU DE ESQUECER MEU DEUS, POR ONDE VOU PROCURAR SERÁ QUE ALGUÉM PODE ME RESPONDER? EU QUERO VER ESSE LUGAR QUE O PRÓPRIO TEMPO ACABOU DE ESQUECER MEU DEUS, POR ONDE VOU PROCURAR SERÁ QUE ALGUÉM PODE ME RESPONDER? QUEM SOME NA MULTIDÃO ESCONDE A SUA VERDADE IMAGINAÇÃO O HERÓI JAMAIS REVELA A IDENTIDADE SERÁ O MASCARADO NESSE BAILADO UM FOLIÃO? A SENHA, O SEGREDO DA VIDA A CHAVE PERDIDA É O X DA QUESTÃO CUIDADO, O QUE SE VÊ PODE NÃO SER, SERÁ? AO ENTENDER É MELHOR REVELAR NO SONHO DO MEU CARNAVAL PARE PRA PENSAR, VAI SE TRANSFORMAR OU ESCONDER ATÉ O FINAL? É SEGREDO, NÃO CONTO À NINGUÉM SOU TIJUCA, VOU ALÉM O SEU OLHAR, VOU ILUDIR A TENTAÇÃO É DESCOBRIR', '01-01-2010', 'SAMBA-ENREDO'),
-('ACELERA, TIJUCA!', 'ACELERA, TIJUCA EU VOU COM VOCÊ NOSSO LEMA É VENCER GUIANDO O FUTURO QUE UM SONHO CONSTRUIU AYRTON SENNA DO BRASIL VAI COMEÇAR LIBERE A PISTA PARA A EMOÇÃO FOI DADA A PARTIDA PREPARE O SEU CORAÇÃO TIJUCA, A HORA CHEGOU QUEM SERÁ O VENCEDOR? DOS ANIMAIS, AGILIDADE A INSPIRAR VELOCIDADE IMPRESSIONANTE A OUSADIA A INTERNET ULTRAPASSOU A ENERGIA A EQUIPE ANUNCIOU NO PIT STOP, O PILOTO PAROU E LÁ VÃO ELES NA PURA CADÊNCIA DO SAMBA NUMA CORRIDA MALUCA REPLETA DE BAMBAS TENTANDO TRAPACEAR, DEU MOLE RODOU NA PISTA FICOU PRA TRÁS O VIGARISTA ROMPENDO BARREIRAS, SUPERAM LIMITES ATLETAS BUSCANDO O PRIMEIRO LUGAR QUANDO DE REPENTE PISANDO NO BREQUE VI NO CALHAMBEQUE ALGUÉM ACENAR NA ÚLTIMA VOLTA DO MEU CARNAVAL DESPONTA UM GÊNIO TALENTO IMORTAL TRAZENDO NAS MÃOS A BANDEIRA DO NOSSO PAÍS NA RETA, A CONSAGRAÇÃO O TEMA A EMOCIONAR LÁ VEM O CAMPEÃO VOANDO BAIXO PRA VITÓRIA ALCANÇAR', '01-01-2014', 'SAMBA-ENREDO'),
-('ONDE MORAM OS SONHOS', 'DIRETAMENTE DO BOREL ALÔ TIJUCA, DÁ UM SHOW BATERIA TOCA PURA CADENCIA ADORO, ADORO A MINHA FELICIDADE MORA NESSE LUGAR EU SOU FAVELA O SAMBA NO COMPASSO É MUTIRÃO DE AMOR DIGNIDADE NÃO É LUXO, NEM FAVOR A MINHA FELICIDADE MORA NESSE LUGAR EU SOU FAVELA O SAMBA NO COMPASSO É MUTIRÃO DE AMOR DIGNIDADE NÃO É LUXO, NEM FAVOR O SONHO NASCE EM MINHA ALMA VAI TOMANDO O PEITO E GANHANDO JEITO SE ETERNIZANDO, TRADUZIDO EM FORMA O MAIS IMPERFEITO, PERFEIÇÃO SE TORNA LÁ NO MEU QUINTAL, EU VOU FAZER UM BANGALÔ JÁ FOI TAPERA FEITA EM PALHA E SAPÊ E UMA CAPELA QUE A CANDEIA ALUMIOU A LUA CHEIA VEM, É LINDO O ANOITECER VAI, EU MORRO DE SAUDADE TODO MUNDO UM DIA SONHA TER SEU CANTINHO NA CIDADE VEM, É LINDO O AOUVINDO TUDO O QUE VEJO, VOU VENDO TUDO O QUE OUÇONOITECER VAI, EU MORRO DE SAUDADE TODO MUNDO UM DIA SONHA TER SEU CANTINHO NA CIDADE', '01-01-2020', 'SAMBA-ENREDO'),
-('OUVINDO TUDO O QUE VEJO, VOU VENDO TUDO O QUE OUÇO', 'MINHA TIJUCA ABRE OS OLHOS PARA A MELODIA PARA OUVIR A GENIAL BATUTA REGENDO NOSSA SINFONIA SEGUINDO CAMINHOS DO SOM VÊ A POESIA BRINCAR NO SALÃO JOGA SERPENTINA EM VERSOS E RIMAS VIVENDO A MAGIA DE CADA CANÇÃO É A PURA CADÊNCIA BRASILEIRA ESSE REQUEBRADO QUE FASCINA DO BOTECO À GAFIEIRA O SAMBA ECOA EM CADA ESQUINA SUSPENSE ETERNIZADO NA TELA, UM BEIJO APAIXONADO O FILME QUE PASSA EM MINHA MENTE COM A MÚSICA, GANHA O CORAÇÃO CHEGA A EMOCIONAR VER A PLATÉIA DELIRAR VIBRA O MAESTRO VENDO O ARTISTA NA CONSAGRAÇÃO PISCAM LUZES COLORIDAS A NOITE, PRA DANÇAR CONVIDA SE A MÚSICA TOCOU A ALMA UM DIA SEMPRE TRAZ UMA IMAGEM QUE HOJE FAÇO FANTASIA', '01-01-2006', 'SAMBA-ENREDO'),
-('É HOJE', 'A MINHA ALEGRIA ATRAVESSOU O MAR E ANCOROU NA PASSARELA FEZ UM DESEMBARQUE FASCINANTE NO MAIOR SHOW DA TERRA SERÁ QUE EU SEREI O DONO DESSA FESTA UM REI NO MEIO DE UMA GENTE TÃO MODESTA EU VIM DESCENDO A SERRA CHEIO DE EUFORIA PARA DESFILAR O MUNDO INTEIRO ESPERA HOJE É DIA DO RISO CHORAR LEVEI O MEU SAMBA PRA MÃE DE SANTO REZAR CONTRA O MAL OLHADO EU CARREGO MEU PATUÁ ACREDITO SER O MAIS VALENTE NESSA LUTA DO ROCHEDO COM O MAR E COM O AR! É HOJE O DIA DA ALEGRIA É A TRISTEZA, NEM PODE PENSAR EM CHEGAR DIGA ESPELHO MEU SE HÁ NA AVENIDA ALGUÉM MAIS FELIZ QUE EU', '01-01-1976', 'SAMBA-ENREDO'),
-('WARANÃ - A REEXISTÊNCIA VERMELHA', 'ERÊ, ESSA MATA É SUA, É SUA ERÊ, VEM PROVAR DOCE MEL, DOCE MEL WARANÃ DA TIJUCA VEM BRINCAR NO BOREL ERÊ, ESSA MATA É SUA, É SUA ERÊ, VEM PROVAR DOCE MEL, DOCE MEL WARANÃ DA TIJUCA VEM BRINCAR NO BOREL ALTO CÉU DE TUPANA E YURUPARI DUAS FORÇAS QUE VÃO FLUIR A ENERGIA DE MONÃ QUE EQUILIBRA O BEM E O MAL UM LUGAR ONDE AS PEDRAS PODIAM FALAR ONDE IRMÃOS DESFRUTAVAM A BELEZA SINGULAR ANHYÃ, BELA E HABILIDOSA MAS A COBRA ARDILOSA USA A FLOR PRA LHE TOCAR E NASCE KAHU’Ê, O CURUMIM DE OLHOS ALEGRES, SEMPRE ASSIM PRESENÇA TÃO BREVE A INGENUIDADE SUCUMBE À MALDADE RENASCE KAHU’Ê, O CURUMIM SEUS OLHOS ALEGRES NÃO TÊM FIM POIS O BEM É MAIOR, VAI REEXISTIR', '01-01-2022', 'SAMBA-ENREDO');
+('UM CORAÇÃO URBANO: MIGUEL, ARCANJO DAS ARTES, SAÚDA O POVO E PEDE PASSAGEM', 'INVADE MINHALMA A LINDA CANÇÃO NO TOM DA VITÓRIA CHEGOU MEU PAVÃO COM SAMBA NO PÉ NÓS VAMOS À LUTA TÔ NA BOCA DO POVO MEU NOME É TIJUCA INVADE MINHALMA A LINDA CANÇÃO NO TOM DA VITÓRIA CHEGOU MEU PAVÃO COM SAMBA NO PÉ NÓS VAMOS À LUTA TÔ NA BOCA DO POVO MEU NOME É TIJUCA SINTA O SOM É MELODIA MÚSICA NEGRO DOM QUE ACALENTAVA NOSSOS ANCESTRAIS É MUITO MAIS, É LIBERDADE A LUZ DA INSPIRAÇÃO HOJE A TIJUCA É QUEM DÁ O TOM EM NOTAS E ACORDES MUSICAIS VIAJE NA BARCA DAS CANÇÕES O JAZZ EMBALANDO OS CORAÇÕES NO SOPRO A SAUDADE, A MODA COUNTRY SE ETERNIZOU E O MEU BOREL AMERICANIZOU CHEGA, MY BROTHER, VEM VER A BATUCADA É DE ENLOUQUECER PURA CADÊNCIA DE BAMBAS JUNTOU GUITARRA E PANDEIRO TÁ AÍ O SOUL DE UM JEITO BRASILEIRO', 2018, 'SAMBA-ENREDO'),
+('SONHOS DELIRANTES', 'QUERO SENTIR O GOSTO AMARGO NA MINHA LÍNGUA E VIAJAR SOB AS CORES DO ARCO-ÍRIS QUERO EMBARCAR NUM SONHO PARA UM LUGAR LINDO DESBRAVANDO MUNDO AFORA SEM RECEIOS CONTEMPLO A LUA NO INFINITO HORIZONTE COM O SILÊNCIO DA NOITE A ME CONFORTAR QUERO ESQUECER UM POUCO DA REALIDADE QUE NOS SUFOCA TODO DIA SEM PARAR EU TIVE UM SONHO DELIRANTE EU TIVE UM SONHO DELIRANTE EU TIVE UM SONHO DELIRANTE EU TIVE UM SONHO DELIRANTE', 1963, 'SAMBA-ENREDO'),
+('O DONO DA TERRA', 'EU QUERIA SABER O QUE É O QUE É QUE EU VI NA TV DIZIA QUE O MUNDO NÃO É UM BRINQUEDO E TEM UM SEGREDO QUE EU NÃO SEI DIZER NÃO É CABRA-CEGA NÃO É PIQUE-ESCONDE NEM AMARELINHA NÃO É UM BRINQUEDO E TEM UM SEGREDO QUE EU QUERO SABER, QUE EU QUERO SABER MÃE ME EXPLICA DIREITINHO O QUE GENTE GRANDE ENTENDE MUITO BEM COMO PODE UMA BOMBA EXPLODIR DENTRO DE UM TREM? PAI ME EXPLICA DIREITINHO O QUE GENTE GRANDE SABE MUITO BEM COMO PODE UMA CRIANÇA POBRE DE MARRÉ DECI SEM NINGUÉM? VÊ QUAL É O NOME DO DONO DA TERRA INVENTOR DO CÉU E DO MAR PEGA O TELEFONE, LIGA PRA ESSE HOMEM DIZ QUE É PRA ELE... REINVENTAR VÊ QUAL É O NOME DO DONO DA TERRA INVENTOR DO CÉU E DO MAR PEGA O TELEFONE, LIGA PARA ESSE HOMEM DIZ QUE É PRA ELE... REINVENTAR', 1999, 'SAMBA-ENREDO'),
+('É SEGREDO!', 'ESTÁ PRESENTE A NAÇÃO TIJUCANA ALÔ BOREL ENTRA E SENTA TIJUCA É SEGREDO, NÃO CONTO À NINGUÉM SOU TIJUCA, VOU ALÉM O SEU OLHAR, VOU ILUDIR A TENTAÇÃO É DESCOBRIR É SEGREDO, NÃO CONTO À NINGUÉM SOU TIJUCA, VOU ALÉM O SEU OLHAR, VOU ILUDIR A TENTAÇÃO É DESCOBRIR DESVENDAR ESSE MISTÉRIO É CASO SÉRIO, QUEM SE ARRISCA A PROCURAR O DESCONHECIDO, NO TEMPO PERDIDO AQUELE PERGAMINHO MILENAR SÃO CINZAS NA POEIRA DA MEMÓRIA E BRINCAM COM A IMAGINAÇÃO UNIDOS DA TIJUCA, NÃO É SEGREDO EU AMAR VOCÊ DECIFRAR, ISSO EU NÃO SEI DIZER SÃO COISAS DO MEU CORAÇÃO EU QUERO VER ESSE LUGAR QUE O PRÓPRIO TEMPO ACABOU DE ESQUECER MEU DEUS, POR ONDE VOU PROCURAR SERÁ QUE ALGUÉM PODE ME RESPONDER? EU QUERO VER ESSE LUGAR QUE O PRÓPRIO TEMPO ACABOU DE ESQUECER MEU DEUS, POR ONDE VOU PROCURAR SERÁ QUE ALGUÉM PODE ME RESPONDER? QUEM SOME NA MULTIDÃO ESCONDE A SUA VERDADE IMAGINAÇÃO O HERÓI JAMAIS REVELA A IDENTIDADE SERÁ O MASCARADO NESSE BAILADO UM FOLIÃO? A SENHA, O SEGREDO DA VIDA A CHAVE PERDIDA É O X DA QUESTÃO CUIDADO, O QUE SE VÊ PODE NÃO SER, SERÁ? AO ENTENDER É MELHOR REVELAR NO SONHO DO MEU CARNAVAL PARE PRA PENSAR, VAI SE TRANSFORMAR OU ESCONDER ATÉ O FINAL? É SEGREDO, NÃO CONTO À NINGUÉM SOU TIJUCA, VOU ALÉM O SEU OLHAR, VOU ILUDIR A TENTAÇÃO É DESCOBRIR', 2010, 'SAMBA-ENREDO'),
+('ACELERA, TIJUCA!', 'ACELERA, TIJUCA EU VOU COM VOCÊ NOSSO LEMA É VENCER GUIANDO O FUTURO QUE UM SONHO CONSTRUIU AYRTON SENNA DO BRASIL VAI COMEÇAR LIBERE A PISTA PARA A EMOÇÃO FOI DADA A PARTIDA PREPARE O SEU CORAÇÃO TIJUCA, A HORA CHEGOU QUEM SERÁ O VENCEDOR? DOS ANIMAIS, AGILIDADE A INSPIRAR VELOCIDADE IMPRESSIONANTE A OUSADIA A INTERNET ULTRAPASSOU A ENERGIA A EQUIPE ANUNCIOU NO PIT STOP, O PILOTO PAROU E LÁ VÃO ELES NA PURA CADÊNCIA DO SAMBA NUMA CORRIDA MALUCA REPLETA DE BAMBAS TENTANDO TRAPACEAR, DEU MOLE RODOU NA PISTA FICOU PRA TRÁS O VIGARISTA ROMPENDO BARREIRAS, SUPERAM LIMITES ATLETAS BUSCANDO O PRIMEIRO LUGAR QUANDO DE REPENTE PISANDO NO BREQUE VI NO CALHAMBEQUE ALGUÉM ACENAR NA ÚLTIMA VOLTA DO MEU CARNAVAL DESPONTA UM GÊNIO TALENTO IMORTAL TRAZENDO NAS MÃOS A BANDEIRA DO NOSSO PAÍS NA RETA, A CONSAGRAÇÃO O TEMA A EMOCIONAR LÁ VEM O CAMPEÃO VOANDO BAIXO PRA VITÓRIA ALCANÇAR', 2014, 'SAMBA-ENREDO'),
+('ONDE MORAM OS SONHOS', 'DIRETAMENTE DO BOREL ALÔ TIJUCA, DÁ UM SHOW BATERIA TOCA PURA CADENCIA ADORO, ADORO A MINHA FELICIDADE MORA NESSE LUGAR EU SOU FAVELA O SAMBA NO COMPASSO É MUTIRÃO DE AMOR DIGNIDADE NÃO É LUXO, NEM FAVOR A MINHA FELICIDADE MORA NESSE LUGAR EU SOU FAVELA O SAMBA NO COMPASSO É MUTIRÃO DE AMOR DIGNIDADE NÃO É LUXO, NEM FAVOR O SONHO NASCE EM MINHA ALMA VAI TOMANDO O PEITO E GANHANDO JEITO SE ETERNIZANDO, TRADUZIDO EM FORMA O MAIS IMPERFEITO, PERFEIÇÃO SE TORNA LÁ NO MEU QUINTAL, EU VOU FAZER UM BANGALÔ JÁ FOI TAPERA FEITA EM PALHA E SAPÊ E UMA CAPELA QUE A CANDEIA ALUMIOU A LUA CHEIA VEM, É LINDO O ANOITECER VAI, EU MORRO DE SAUDADE TODO MUNDO UM DIA SONHA TER SEU CANTINHO NA CIDADE VEM, É LINDO O AOUVINDO TUDO O QUE VEJO, VOU VENDO TUDO O QUE OUÇONOITECER VAI, EU MORRO DE SAUDADE TODO MUNDO UM DIA SONHA TER SEU CANTINHO NA CIDADE', 2020, 'SAMBA-ENREDO'),
+('OUVINDO TUDO O QUE VEJO, VOU VENDO TUDO O QUE OUÇO', 'MINHA TIJUCA ABRE OS OLHOS PARA A MELODIA PARA OUVIR A GENIAL BATUTA REGENDO NOSSA SINFONIA SEGUINDO CAMINHOS DO SOM VÊ A POESIA BRINCAR NO SALÃO JOGA SERPENTINA EM VERSOS E RIMAS VIVENDO A MAGIA DE CADA CANÇÃO É A PURA CADÊNCIA BRASILEIRA ESSE REQUEBRADO QUE FASCINA DO BOTECO À GAFIEIRA O SAMBA ECOA EM CADA ESQUINA SUSPENSE ETERNIZADO NA TELA, UM BEIJO APAIXONADO O FILME QUE PASSA EM MINHA MENTE COM A MÚSICA, GANHA O CORAÇÃO CHEGA A EMOCIONAR VER A PLATÉIA DELIRAR VIBRA O MAESTRO VENDO O ARTISTA NA CONSAGRAÇÃO PISCAM LUZES COLORIDAS A NOITE, PRA DANÇAR CONVIDA SE A MÚSICA TOCOU A ALMA UM DIA SEMPRE TRAZ UMA IMAGEM QUE HOJE FAÇO FANTASIA', 2006, 'SAMBA-ENREDO'),
+('WARANÃ - A REEXISTÊNCIA VERMELHA', 'ERÊ, ESSA MATA É SUA, É SUA ERÊ, VEM PROVAR DOCE MEL, DOCE MEL WARANÃ DA TIJUCA VEM BRINCAR NO BOREL ERÊ, ESSA MATA É SUA, É SUA ERÊ, VEM PROVAR DOCE MEL, DOCE MEL WARANÃ DA TIJUCA VEM BRINCAR NO BOREL ALTO CÉU DE TUPANA E YURUPARI DUAS FORÇAS QUE VÃO FLUIR A ENERGIA DE MONÃ QUE EQUILIBRA O BEM E O MAL UM LUGAR ONDE AS PEDRAS PODIAM FALAR ONDE IRMÃOS DESFRUTAVAM A BELEZA SINGULAR ANHYÃ, BELA E HABILIDOSA MAS A COBRA ARDILOSA USA A FLOR PRA LHE TOCAR E NASCE KAHU’Ê, O CURUMIM DE OLHOS ALEGRES, SEMPRE ASSIM PRESENÇA TÃO BREVE A INGENUIDADE SUCUMBE À MALDADE RENASCE KAHU’Ê, O CURUMIM SEUS OLHOS ALEGRES NÃO TÊM FIM POIS O BEM É MAIOR, VAI REEXISTIR', 2022, 'SAMBA-ENREDO');
 
 INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2014,'E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
@@ -717,7 +716,7 @@ INSERT INTO agjevento_anual_sem (agjid_escuela, nombre, fecha_ini, fecha_fin, ti
  ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA ZONA NORTE'), 'PARECE NÓS', '2017-12-20', '2019-06-20', 'SERVICIO' , 20, 10, 'PUESTO DE MAQUILLAJE DE LA ESCUELA DONDE LA GENTE PUEDE VENIR Y SER MAQUILLADOS COMO LOS INTEGRANTES DEL SAMBA-ENREDO' ),
  ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DA BANGU'), 'VESTIR-SE E DANÇAR', '2021-12-25', '2022-06-25', 'FIESTA', 49, 40, 'FIESTA EN LA ESCUELA DONDE LOS PARTICIPANTES PUEDEN VESTIRSE Y MAQUILLARSE COMO LOS INTEGRANTES DEL SAMBA-ENREDO Y RECIBIR UNA CLASE DE BAILE DE SAMBA' ),
  ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'INOCENTES DA BELFORD ROXO'), 'CRIAR SAMBA', '2005-04-01', '2005-10-01', 'TALLER', 22, 30, 'TALLER DONDE SE ENSEÑA A LOS PARTICIPANTES A TOCAR SAMBA CON LOS DISTINTOS INSTRUMENTOS MUSICALES DEL GENERO' ),
-  ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DE SAO MIGUEL'), 'CONHEÇA SEU SAMBA', '2012-06-09', '2012-12-09', 'VISITA', 63, 10, 'VISITA GUIADA A LA ESCUELA PARA CONOCER A LOS INTEGRANTES Y LA HISTORIA DE LA ESCUELA' ),
+ ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DE SAO MIGUEL'), 'CONHEÇA SEU SAMBA', '2012-06-09', '2012-12-09', 'VISITA', 63, 10, 'VISITA GUIADA A LA ESCUELA PARA CONOCER A LOS INTEGRANTES Y LA HISTORIA DE LA ESCUELA' ),
 ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA TIJUCA'), 'EXPLOSÃO DO SAMBA', '2022-10-15', '2023-10-15', 'FIESTA', 357, 20, 'FIESTA NOCTURNA QUE OFRECE COMIDA, BEBIDAS Y ENTRETENIMIENTO DE PARTE DE LOS BAILARINES Y MUSICOS DE LA ESCUELA' );
 
 INSERT INTO agjhist_patrocinio (agjid_escuela, fecha_ini, fecha_fin, empresa_id, persona_id) 
@@ -732,8 +731,240 @@ VALUES
 ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'UNIDOS DE SAO MIGUEL'), '2012-06-09', '2019-12-09', (SELECT e.id FROM agjpatrocinante_empresa e WHERE nombre = 'GRUPO MODELO'), NULL ),
 ((SELECT e.id FROM agjescuela_samba e WHERE nombre = 'IMPERIO DA TIJUCA'), '2022-10-15', NULL, NULL, (SELECT e.id FROM agjpatrocinante_persona e WHERE primer_nombre = 'SOPHIA'));
 
+INSERT INTO agjcolor (nombre) VALUES ('NARANJA');
 
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('MARTNALIA',NULL,'MENDOZA','FERREIRA','1965-9-7','F','BRASIL','MARTNALIA');
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2018-1-1','2018-12-31','NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='MARTNALIA'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='UM CORAÇÃO URBANO: MIGUEL, ARCANJO DAS ARTES, SAÚDA O POVO E PEDE PASSAGEM'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='MARTNALIA'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='MARTNALIA'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='MARTNALIA'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('HENRIQUE',NULL,'MESQUITA','ALVES','1895-3-15','M','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('1936-1-1','1936-12-31','NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='HENRIQUE' AND i.primer_apellido='MESQUITA'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='SONHOS DELIRANTES'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='HENRIQUE' AND i.primer_apellido='MESQUITA'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='HENRIQUE' AND i.primer_apellido='MESQUITA'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='HENRIQUE' AND i.primer_apellido='MESQUITA'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('CARLINHOS',NULL,'MELODIA','NEVES','1965-5-21','M','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('1984-1-1','1996-12-31','NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='O DONO DA TERRA'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'));
+
+INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('CIUDADAO SAMBA','REPRESENTANTE NOTORIO DE ESCUELA DE SAMBA','I',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
+
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(1995,
+(SELECT p.id FROM agjpremio_especial p WHERE p.nombre='CIUDADAO SAMBA'),
+((SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA')),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'));
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(1996,
+(SELECT p.id FROM agjpremio_especial p WHERE p.nombre='CIUDADAO SAMBA'),
+((SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA')),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('JULIO',NULL,'ALVES','LIMA','1978-11-1','M','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2006-1-1','2013-12-31','NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='JULIO' AND i.primer_apellido='ALVES'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='É SEGREDO!'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='JULIO' AND i.primer_apellido='ALVES'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='JULIO' AND i.primer_apellido='ALVES'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='JULIO' AND i.primer_apellido='ALVES'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('CAIO',NULL,'ALVES','LIMA','1982-2-12','M','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2014-1-1','2015-12-31','NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='CAIO' AND i.primer_apellido='ALVES'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='ACELERA, TIJUCA!'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CAIO' AND i.primer_apellido='ALVES'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CAIO' AND i.primer_apellido='ALVES'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CAIO' AND i.primer_apellido='ALVES'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('JOAO','EDUARDO','DE SALLES','NOBRE','1973-11-6','M','BRASIL','DUDU NOBRE');
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2020-1-1','2020-12-31','NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='DUDU NOBRE'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='ONDE MORAM OS SONHOS'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='DUDU NOBRE'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='DUDU NOBRE'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='DUDU NOBRE'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='OUVINDO TUDO O QUE VEJO, VOU VENDO TUDO O QUE OUÇO'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='DUDU NOBRE'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='DUDU NOBRE'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='DUDU NOBRE'));
+
+INSERT INTO agjsamba (titulo,letra,año_carnaval,tipo) VALUES('MULHERES DE BARRO','EU PRECISO FALAR DE UM BRASIL, ÔÔ ÔÔ QUE APRENDI A MOLDAR COM AS MÃOS, ÔÔ ÔÔ QUE ME DEU MATÉRIA PRIMA PRA COMPOR ALÉM DA RIMA A SENHORA PERFEIÇÃO ESSA ARTE GENUÍNA É HERANÇA FEMININA POR TALENTOS NATURAIS TEM O SOPRO DE TUPÃ QUE CONDUZ A ARTESÃ AO SABER DOS ANCESTRAIS É NO BARREIRO NO VALE DO MULEMBÁ QUE A MÃO PRETA SE ENCONTRA COM O CHÃO BARRO SAGRADO QUE VEIO DE LÁ QUE GANHA A FORMA DE VIDA EM TRANSFORMAÇÃO É NO FOGO! É NA FOGUEIRA! NA PANELA OU NA MORINGA QUE A VELHA PANELEIRA VAI BATENDO A MUXINGA FACE DO CONHECIMENTO QUE PARTILHA O SABER É FEITA DE MÃE PARA FILHA ENSINAR E APRENDER OH MOÇA, ISSO É COISA DE FAMÍLIA A ESPERANÇA NA ARGILA MODELANDO ESTE PAÍS MEU PRANTO É UM CORTEJO QUE DESFILA EM CADA CANTO, A MINHA RAIZ EM FEVEREIRO, OU EM JANEIRO AO SEXTO DIA VISTO A SUJA FANTASIA PRA ERGUER MINHA BANDEIRA TAMBOR DE CONGO CANTAR DE QUILOMBO A RESISTÊNCIA É A VOZ DA PANELEIRA É NA RENDA! É NA PALHA! O RETRATO DE UM BRASIL FEMININO, INOCENTE QUE ORGULHO A MÃE GENTIL É NA RENDA! É NA PALHA QUE SE VESTE UMA NAÇÃO PRA VER A ARTE DO BARRO AO BARRACÃO.',2023,'SAMBA-ENREDO');
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('CLAUDIO',NULL,'DE ARAUJO','MALHEIROS','1971-4-10','M','BRASIL','CLAUDIO RUSSO');
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2018-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'),
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='CLAUDIO RUSSO'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='MULHERES DE BARRO'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='CLAUDIO RUSSO'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='CLAUDIO RUSSO'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='CLAUDIO RUSSO'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('ANDERSON',NULL,'BENSON','SOUZA','1980-4-10','M','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2022-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='ANDERSON' AND i.primer_apellido='BENSON'));
+
+INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuela,agjhist_int_agjid_integrante) VALUES(
+(SELECT s.id FROM agjsamba s WHERE s.titulo='WARANÃ - A REEXISTÊNCIA VERMELHA'),
+(SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='ANDERSON' AND i.primer_apellido='BENSON'),
+(SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='ANDERSON' AND i.primer_apellido='BENSON'),
+(SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='ANDERSON' AND i.primer_apellido='BENSON'));
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('HERMANO',
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='JULIO' AND i.primer_apellido='ALVES'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='CAIO' AND i.primer_apellido='ALVES'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('GUILHERME','APARECIDO','DANTAS','PINTO','1992-11-10','M','BRASIL','MC GUIME');
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('ESPOSA',
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='LEXA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='MC GUIME'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('JOAO',NULL,'DA','CONCEICAO','2000-8-1','M','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2022-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='TOM MAIOR'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='JOAO' AND i.primer_apellido='DA' AND i.segundo_apellido='CONCEICAO'));
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('PADRE',
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='GILSINHO'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='JOAO' AND i.primer_apellido='DA' AND i.segundo_apellido='CONCEICAO'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('MANUELA',NULL,'DA','CONCEICAO','2002-10-21','F','BRASIL',NULL);
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2022-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='TOM MAIOR'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='MANUELA' AND i.primer_apellido='DA' AND i.segundo_apellido='CONCEICAO'));
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('PADRE',
+(SELECT i.id FROM agjintegrantes i WHERE i.apodo='GILSINHO'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='MANUELA' AND i.primer_apellido='DA' AND i.segundo_apellido='CONCEICAO'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('ANNA','MARIA','EDERSON','SANTOS','2009-7-17','F','BRASIL',NULL);
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('ISABEL','DANIELLA','EDERSON','SANTOS','2011-4-2','F','BRASIL',NULL);
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('HERMANA',
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='ANNA' AND i.primer_apellido='EDERSON'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='ISABEL' AND i.primer_apellido='EDERSON'));
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2020-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='MANGUEIRA DO AMANHA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='ANNA' AND i.primer_apellido='EDERSON' AND i.segundo_apellido='SANTOS'));
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2020-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='MANGUEIRA DO AMANHA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='ISABEL' AND i.primer_apellido='EDERSON' AND i.segundo_apellido='SANTOS'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('BRUNO',NULL,'MORREIRA','PRETO','2002-6-29','M','BRASIL',NULL);
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('FERNANDO',NULL,'MORREIRA','PRETO','2002-6-29','M','BRASIL',NULL);
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('HERMANO',
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='BRUNO' AND i.primer_apellido='MORREIRA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='FERNANDO' AND i.primer_apellido='MORREIRA'));
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2019-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='BRUNO' AND i.primer_apellido='MORREIRA'));
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2019-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='FERNANDO' AND i.primer_apellido='MORREIRA'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('LUCIA',NULL,'BRITO','RODRIGUES','1988-6-1','F','BRASIL',NULL);
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('PRIMO',
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='LUCIA' AND i.primer_apellido='BRITO'));
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2019-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='LUCIA' AND i.primer_apellido='BRITO'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('BERNARDO',NULL,'DIAS','ALVES','2003-4-28','M','BRASIL',NULL);
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('PADRE',
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='CARLOS' AND i.primer_apellido='DIAS'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='BERNARDO' AND i.primer_apellido='DIAS'));
+
+INSERT INTO agjhist_int (fecha_ini, fecha_fin, autoridad, agjid_escuela, agjid_integrante) VALUES
+('2021-1-1',NULL,'NO',
+(SELECT e.id FROM agjescuela_samba e WHERE e.nombre='TOM MAIOR'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='BERNARDO' AND i.primer_apellido='DIAS'));
+
+INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nac, genero, nacionalidad, apodo) VALUES
+('AFONSO',NULL,'PEREIRA','BATISTA','1966-9-23','M','BRASIL',NULL);
+
+INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('TIO',
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='AFONSO' AND i.primer_apellido='PEREIRA'),
+(SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 `
-
-
- 

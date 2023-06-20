@@ -74,7 +74,7 @@ CREATE TABLE "agjsamba" (
     "id" int4 NOT NULL DEFAULT nextval('agjsamba_id_seq'::regclass),
     "titulo" text NOT NULL,
     "letra" text NOT NULL,
-    "año_carnaval" date NOT NULL,
+    "año_carnaval" int4 NOT NULL,
     "tipo" text NOT NULL,
     PRIMARY KEY ("id")
 );
@@ -116,9 +116,10 @@ CREATE TABLE "agjint_hab" (
 CREATE TABLE "agjparentesco" (
     "relacion" text NOT NULL,
     "integrante1" int4 NOT NULL,
-    "agjintegrante2" int4,
-    CONSTRAINT "FK4" FOREIGN KEY ("agjintegrante2") REFERENCES "agjintegrantes"("id"),
-    PRIMARY KEY ("integrante1")
+    "integrante2" int4,
+    CONSTRAINT "FK30" FOREIGN KEY ("integrante1") REFERENCES "agjintegrantes"("id"),
+    CONSTRAINT "FK4" FOREIGN KEY ("integrante2") REFERENCES "agjintegrantes"("id"),
+    PRIMARY KEY ("integrante1","integrante2")
 );
 
 CREATE SEQUENCE IF NOT EXISTS agjpatrocinante_persona_id_seq;
