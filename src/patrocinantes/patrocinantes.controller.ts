@@ -19,9 +19,14 @@ export class PatrocinantesController {
     return this.patrocinantesService.createPersona(createPersonaDto);
   }
 
-  @Get()
-  findAll() {
-    return this.patrocinantesService.findAll();
+  @Get('/empresa')
+  findAllEmpresa() {
+    return this.patrocinantesService.findAllEmpresa();
+  }
+
+  @Get('/persona')
+  findAllPersona() {
+    return this.patrocinantesService.findAllPersona();
   }
 
   @Get(':id')

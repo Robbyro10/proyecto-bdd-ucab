@@ -10,6 +10,18 @@ export class CommonService {
         private readonly dataSource: DataSource,
     ) {}
 
+    public create(table: string, data: Object) {
+        const columns = Object.keys(data).join(', ');
+        const values = Object.values(data).map(value => {
+          if (typeof value === 'string') {
+            return `'${value}'`;
+          }
+          return value;
+        }).join(', ');
+      
+        return `INSERT INTO ${table} (${columns}) VALUES (${values});`;
+      }
+
     public find(table: string, options?: Object) {
         let query = `SELECT * FROM ${table}`;
       

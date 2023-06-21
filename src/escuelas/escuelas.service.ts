@@ -14,7 +14,7 @@ export class EscuelasService {
   constructor(
     @InjectDataSource()
     private readonly dataSource: DataSource,
-    private readonly commonService: CommonService
+    private readonly commonService: CommonService,
   ) {}
 
   async createEscuela(createEscuelaDto: CreateEscuelaDto) {
@@ -36,7 +36,6 @@ export class EscuelasService {
           VALUES ('${createLugarDto.nombre}', '${createLugarDto.tipo}')
         `,
       );
-      
     } else {
       this.dataSource.query(
         `
@@ -48,12 +47,22 @@ export class EscuelasService {
   }
 
   findAllEscuelas() {
-    // return this.dataSource.query('SELECT * FROM agjescuela_samba;');
-    return this.commonService.find('agjescuela_samba');
+    return this.dataSource.query(
+      `
+      SELECT agjescuela_samba.id, agjescuela_samba.nombre, direccion_sede, resumen_hist, agjlugar.nombre AS nombre_lugar
+      FROM agjescuela_samba
+      JOIN agjlugar
+      ON agjescuela_samba.id_lugar = agjlugar.id
+      `
+    );
+    // return this.commonService.find('agjescuela_samba');
   }
 
   findAllLugares() {
-    return this.commonService.find('agjlugar');
+    // return this.commonService.find('agjlugar');
+    return this.dataSource.query(`
+    SELECT id, nombre from agjlugar
+    `)
   }
 
   async findOneEscuela(id: number) {

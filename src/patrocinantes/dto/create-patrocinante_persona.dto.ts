@@ -1,4 +1,4 @@
-import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
+import { IsEmail, IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreatePersonaDto {
     @IsString()
@@ -6,9 +6,8 @@ export class CreatePersonaDto {
     primer_nombre: string;
 
     @IsString()
-    @MinLength(1)
     @IsOptional()
-    segundo_nombre: string;
+    segundo_nombre?: string;
 
     @IsString()
     @MinLength(1)
@@ -19,6 +18,9 @@ export class CreatePersonaDto {
     segundo_apellido: string;
 
     @IsNumber()
+    doc_identidad?: number;
+
+    @IsEmail()
     @MinLength(1)
-    doc_identidad: number;
+    email_contacto: string;
 }
