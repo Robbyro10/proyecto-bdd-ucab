@@ -67,7 +67,12 @@ export class EscuelasService {
 
   async findOneEscuela(id: number) {
     return await this.dataSource.query<Escuela_Samba[]>(
-      `SELECT * FROM agjescuela_samba WHERE id = ${id};`,
+      `SELECT agjescuela_samba.id, agjescuela_samba.nombre, direccion_sede, resumen_hist, agjlugar.nombre AS nombre_lugar, cod_int, cod_area, numero
+      FROM agjescuela_samba
+      LEFT JOIN agjlugar ON agjescuela_samba.id_lugar = agjlugar.id
+      LEFT JOIN agjtelefono ON agjescuela_samba.id = agjtelefono.escuela_id
+      WHERE agjescuela_samba.id = ${id}
+      `
     );
   }
 
@@ -78,16 +83,9 @@ export class EscuelasService {
   }
 
   async updateEscuela(id: number, updateEscuelaDto: UpdateEscuelaDto) {
-    const escuela = await this.findOneEscuela(id);
-    if (escuela.length > 0) {
-      this.dataSource.query<Escuela_Samba>(`
-          UPDATE agjescuela_samba SET 
-          nombre = '${updateEscuelaDto.nombre}', direccion_sede = '${updateEscuelaDto.direccion_sede}', resumen_hist = '${updateEscuelaDto.resumen_hist}'
-          WHERE id = ${id}
-          `);
-      return 'Se actualizo la escuela de id: ' + id;
-    }
-    return 'No existe escuela de samba con id: ' + id;
+    const query = this.commonService.update(updateEscuelaDto, 'agjescuela_samba' , id);
+    return this.dataSource.query(query);
+
   }
 
   async updateLugar(id: number, updateLugarDto: UpdateLugarDto) {

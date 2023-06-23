@@ -45,6 +45,21 @@ export class CommonService {
         return this.dataSource.query(query);
     }
 
+    public update(obj: Object, tableName: string, id: number) {
+      let query = `UPDATE ${tableName} SET `;
+      let updates = [];
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (key !== 'id') {
+            updates.push(`${key} = '${obj[key]}'`);
+          }
+        }
+      }
+      query += updates.join(', ');
+      query += ` WHERE id = ${id};`;
+      return query;
+    }
+
     public delete(table: string, options: Object) {
         let query = `DELETE FROM ${table}`;
 

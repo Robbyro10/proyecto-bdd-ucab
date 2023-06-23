@@ -29,12 +29,26 @@ export class IntegrantesService {
     );
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} integrante`;
+  async findOne(id: number) {
+    let integrante = await this.dataSource.query(
+    `SELECT *
+    FROM agjintegrantes
+    WHERE agjintegrantes.id = ${id};
+    `);
+
+    let habilidades = await this.dataSource.query(
+    `SELECT id AS id_habilidad, nombre AS nombre_habilidad
+    FROM agjhabilidad
+    LEFT JOIN agjint_hab
+    ON agjhabilidad.id = agjint_hab.agjhabilidad_id
+    WHERE agjint_hab.agjintegrantes_id = ${id};`);
+
+    return {habilidades, integrante}
   }
 
   update(id: number, updateIntegranteDto: UpdateIntegranteDto) {
-    return `This action updates a #${id} integrante`;
+    const query = this.commonService.update(updateIntegranteDto, 'agjintegrantes', id);
+    return this.dataSource.query(query);
   }
 
   remove(id: number) {

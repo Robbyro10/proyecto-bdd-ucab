@@ -29,9 +29,14 @@ export class PatrocinantesController {
     return this.patrocinantesService.findAllPersona();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.patrocinantesService.findOne(+id);
+  @Get('/empresa/:id')
+  findOneEmpresa(@Param('id') id: string) {
+    return this.patrocinantesService.findOneEmpresa(+id);
+  }
+
+  @Get('/persona/:id')
+  findOnePersona(@Param('id') id: string) {
+    return this.patrocinantesService.findOnePersona(+id);
   }
 
   @Patch('/empresa/:id')

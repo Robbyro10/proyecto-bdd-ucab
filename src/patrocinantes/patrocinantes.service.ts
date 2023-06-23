@@ -44,16 +44,39 @@ export class PatrocinantesService {
       ON agjpatrocinante_persona.id = agjtelefono.persona_id`);
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} patrocinante`;
+  findOneEmpresa(id: number) {
+    return this.dataSource.query(`
+    SELECT id, nombre, email_contacto, mision, cod_int, cod_area, numero
+    FROM agjpatrocinante_empresa
+    LEFT JOIN agjtelefono
+    ON agjpatrocinante_empresa.id = agjtelefono.empresa_id
+    WHERE agjpatrocinante_empresa.id = ${id}
+    `
+    );
+
+  }
+
+  findOnePersona(id: number) {
+    return this.dataSource.query(`
+      SELECT 
+        id, doc_identidad, primer_nombre, 
+        primer_apellido, segundo_apellido, email_contacto, 
+        segundo_nombre, cod_int, cod_area, numero
+        FROM agjpatrocinante_persona
+        LEFT JOIN agjtelefono
+        ON agjpatrocinante_persona.id = agjtelefono.persona_id
+        WHERE agjpatrocinante_persona.id = ${id}
+      `);
   }
 
   updateEmpresa(id: number, updateEmpresaDto: UpdateEmpresaDto) {
-    return `This action updates a #${id} patrocinante empresa`;
+    const query = this.commonService.update(updateEmpresaDto, 'agjpatrocinante_empresa', id);
+    return this.dataSource.query(query);
   }
 
   updatePersona(id: number, updatePersonaDto: UpdatePersonaDto) {
-    return `This action updates a #${id} patrocinante persona`;
+    const query = this.commonService.update(updatePersonaDto, 'agjpatrocinante_persona', id);
+    return this.dataSource.query(query);
   }
 
   remove(id: number) {

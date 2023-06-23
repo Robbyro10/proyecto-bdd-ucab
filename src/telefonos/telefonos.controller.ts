@@ -7,9 +7,9 @@ import { UpdateTelefonoDto } from './dto/update-telefono.dto';
 export class TelefonosController {
   constructor(private readonly telefonosService: TelefonosService) {}
 
-  @Post()
-  create(@Body() createTelefonoDto: CreateTelefonoDto) {
-    return this.telefonosService.create(createTelefonoDto);
+  @Post(':id')
+  create(@Param('id') id: string, @Body() createTelefonoDto: CreateTelefonoDto) {
+    return this.telefonosService.create(+id, createTelefonoDto);
   }
 
   @Get()
