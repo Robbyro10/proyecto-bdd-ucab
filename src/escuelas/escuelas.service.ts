@@ -53,7 +53,7 @@ export class EscuelasService {
       FROM agjescuela_samba
       JOIN agjlugar
       ON agjescuela_samba.id_lugar = agjlugar.id
-      `
+      `,
     );
     // return this.commonService.find('agjescuela_samba');
   }
@@ -62,18 +62,27 @@ export class EscuelasService {
     // return this.commonService.find('agjlugar');
     return this.dataSource.query(`
     SELECT id, nombre from agjlugar
-    `)
+    `);
   }
 
   async findOneEscuela(id: number) {
-    return await this.dataSource.query<Escuela_Samba[]>(
+    let escuela = await this.dataSource.query<Escuela_Samba[]>(
       `SELECT agjescuela_samba.id, agjescuela_samba.nombre, direccion_sede, resumen_hist, agjlugar.nombre AS nombre_lugar, cod_int, cod_area, numero
       FROM agjescuela_samba
       LEFT JOIN agjlugar ON agjescuela_samba.id_lugar = agjlugar.id
       LEFT JOIN agjtelefono ON agjescuela_samba.id = agjtelefono.escuela_id
       WHERE agjescuela_samba.id = ${id}
-      `
+      `,
     );
+
+    let colores = await this.dataSource.query(
+      `SELECT *
+      FROM agjcolor
+      JOIN agje_c ON agje_c.agjcolor_id = agjcolor.id
+      WHERE agjescuela_samba_id = ${id} `,
+    );
+
+    return { escuela, colores };
   }
 
   async findOneLugar(id: number) {
@@ -83,9 +92,12 @@ export class EscuelasService {
   }
 
   async updateEscuela(id: number, updateEscuelaDto: UpdateEscuelaDto) {
-    const query = this.commonService.update(updateEscuelaDto, 'agjescuela_samba' , id);
+    const query = this.commonService.update(
+      updateEscuelaDto,
+      'agjescuela_samba',
+      id,
+    );
     return this.dataSource.query(query);
-
   }
 
   async updateLugar(id: number, updateLugarDto: UpdateLugarDto) {
@@ -102,21 +114,12 @@ export class EscuelasService {
   }
 
   async removeEscuela(id: number) {
-    const escuela = await this.findOneEscuela(id);
-    if (escuela.length > 0) {
-      this.commonService.delete('agjescuela_samba', { id });
-      return `Se ha borrado la escuela de id: ${id}`;
-    }
-    return 'No existe escuela de samba con id: ' + id;
+    this.commonService.delete('agjescuela_samba', { id });
+    return `Se ha borrado la escuela de id: ${id}`;
   }
 
   async removeLugar(id: number) {
-    const lugar = await this.findOneLugar(id);
-    if (lugar.length > 0) {
-      // this.dataSource.query(`DELETE FROM agjlugar WHERE id = ${id};`);
-      this.commonService.delete('agjlugar', { id });
-      return `Se ha borrado el lugar de id: ${id}`;
-    }
-    return 'No existe lugar con id: ' + id;
+    this.commonService.delete('agjlugar', { id });
+    return `Se ha borrado el lugar de id: ${id}`;
   }
 }

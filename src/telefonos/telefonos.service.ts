@@ -39,6 +39,9 @@ export class TelefonosService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} telefono`;
+    return this.dataSource.query(`
+      DELETE FROM agjtelefono 
+      WHERE empresa_id = ${id} OR escuela_id = ${id} OR persona_id = ${id}
+    `)
   }
 }
