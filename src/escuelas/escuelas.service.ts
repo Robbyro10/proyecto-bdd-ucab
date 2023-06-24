@@ -8,6 +8,8 @@ import { Escuela_Samba } from './entities/escuela_samba.entity';
 import { CommonService } from 'src/common/common.service';
 import { Lugar } from './entities/lugar.entity';
 import { UpdateLugarDto } from './dto/update-lugar.dto';
+import { CreateColorDto } from './dto/create-color.dto';
+import { UpdateColorDto } from './dto/update-color.dto';
 
 @Injectable()
 export class EscuelasService {
@@ -26,6 +28,13 @@ export class EscuelasService {
         `,
     );
     return data;
+  }
+
+  addColor(createColorDto: CreateColorDto) {
+    return this.dataSource.query(`
+    INSERT INTO agje_c (agjescuela_samba_id, agjcolor_id)
+    VALUES (${createColorDto.escuela_id}, ${createColorDto.color_id}) 
+    `)
   }
 
   createLugar(createLugarDto: CreateLugarDto) {
@@ -55,18 +64,20 @@ export class EscuelasService {
       ON agjescuela_samba.id_lugar = agjlugar.id
       `,
     );
-    // return this.commonService.find('agjescuela_samba');
   }
 
   findAllLugares() {
-    // return this.commonService.find('agjlugar');
     return this.dataSource.query(`
     SELECT id, nombre from agjlugar
     `);
   }
 
+  findAllColores() {
+    return this.dataSource.query(`SELECT * from agjcolor`);
+  }
+
   async findOneEscuela(id: number) {
-    let escuela = await this.dataSource.query<Escuela_Samba[]>(
+    const escuela = await this.dataSource.query<Escuela_Samba[]>(
       `SELECT agjescuela_samba.id, agjescuela_samba.nombre, direccion_sede, resumen_hist, agjlugar.nombre AS nombre_lugar, cod_int, cod_area, numero
       FROM agjescuela_samba
       LEFT JOIN agjlugar ON agjescuela_samba.id_lugar = agjlugar.id
@@ -75,14 +86,31 @@ export class EscuelasService {
       `,
     );
 
-    let colores = await this.dataSource.query(
+    const colores = await this.dataSource.query(
       `SELECT *
       FROM agjcolor
       JOIN agje_c ON agje_c.agjcolor_id = agjcolor.id
       WHERE agjescuela_samba_id = ${id} `,
     );
 
-    return { escuela, colores };
+    const titulos = await this.dataSource.query(`
+      SELECT * FROM agjhist_título_carnaval
+      WHERE agjid_escuela = ${id}
+    `);
+
+    const empresas = await this.dataSource.query(`
+    SELECT agjhist_patrocinio.id AS id , fecha_ini, fecha_fin, empresa_id, nombre
+    FROM agjhist_patrocinio
+    JOIN agjpatrocinante_empresa ON agjhist_patrocinio.empresa_id = agjpatrocinante_empresa.id    
+    WHERE agjid_escuela = ${id}`);
+
+    const personas = await this.dataSource.query(`
+    SELECT agjhist_patrocinio.id AS id , fecha_ini, fecha_fin, empresa_id, primer_nombre, primer_apellido
+    FROM agjhist_patrocinio
+    JOIN agjpatrocinante_persona ON agjhist_patrocinio.persona_id = agjpatrocinante_persona.id    
+    WHERE agjid_escuela = ${id}`);
+
+    return { escuela, colores, titulos, empresas, personas };
   }
 
   async findOneLugar(id: number) {
@@ -121,5 +149,12 @@ export class EscuelasService {
   async removeLugar(id: number) {
     this.commonService.delete('agjlugar', { id });
     return `Se ha borrado el lugar de id: ${id}`;
+  }
+
+  async removeColor(id: number, updateColorDto: UpdateColorDto) {
+    return this.dataSource.query(
+      `DELETE FROM agje_c WHERE 
+      agjescuela_samba_id = ${id} AND agjcolor_id = ${updateColorDto.color_id}`
+    );
   }
 }

@@ -1,7 +1,11 @@
-import { IsString, MinLength } from "class-validator";
+import { IsNumber, IsOptional } from "class-validator";
+
 
 export class CreateColorDto {
-    @IsString()
-    @MinLength(1)
-    nombre: string;
+    @IsNumber()
+    @IsOptional()
+    escuela_id?: number;
+
+    @IsNumber()
+    color_id: number;
 }

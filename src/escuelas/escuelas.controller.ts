@@ -4,6 +4,8 @@ import { CreateEscuelaDto } from './dto/create-escuela.dto';
 import { UpdateEscuelaDto } from './dto/update-escuela.dto';
 import { CreateLugarDto } from './dto/create-lugar.dto';
 import { UpdateLugarDto } from './dto/update-lugar.dto';
+import { CreateColorDto } from './dto/create-color.dto';
+import { UpdateColorDto } from './dto/update-color.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
@@ -14,6 +16,11 @@ export class EscuelasController {
     return this.escuelasService.createLugar(createLugarDto);
   }
 
+  @Post('/color')
+  addColor(@Body() createColorDto: CreateColorDto) {
+    return this.escuelasService.addColor(createColorDto);
+  }
+
   @Post()
   createEscuela(@Body() createEscuelaDto: CreateEscuelaDto) {
     return this.escuelasService.createEscuela(createEscuelaDto);
@@ -22,6 +29,11 @@ export class EscuelasController {
   @Get('/lugar')
   findAllLugares() {
     return this.escuelasService.findAllLugares();
+  }
+
+  @Get('/color')
+  findAllColores() {
+    return this.escuelasService.findAllColores();
   }
 
   @Get('/lugar/:id')
@@ -42,6 +54,12 @@ export class EscuelasController {
   @Patch('/lugar/:id')
   updateLugar(@Param('id') id: string, @Body() updateLugarDto: UpdateLugarDto) {
     return this.escuelasService.updateLugar(+id, updateLugarDto);
+  }
+
+  //Its weird but it works
+  @Patch('/color/:id')
+  removeColor(@Param('id') id: string, @Body() updateColorDto: UpdateColorDto) {
+    return this.escuelasService.removeColor(+id, updateColorDto);
   }
   
   @Delete('/lugar/:id')

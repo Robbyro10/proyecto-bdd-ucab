@@ -967,4 +967,31 @@ INSERT INTO agjintegrantes (primer_nombre, segundo_nombre, primer_apellido, segu
 INSERT INTO agjparentesco (relacion,integrante1,integrante2) VALUES('TIO',
 (SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='AFONSO' AND i.primer_apellido='PEREIRA'),
 (SELECT i.id FROM agjintegrantes i WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2020-03-03',10323,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='UNIDOS DA TIJUCA'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='UNIDOS DA TIJUCA'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2010-05-30',10010,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='TOM MAIOR'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='TOM MAIOR'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2023-10-03',10940,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='IMPERIO DA ZONA NORTE'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='IMPERIO DA ZONA NORTE'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2023-06-20',45340,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='MANGUEIRA DO AMANHA'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='MANGUEIRA DO AMANHA'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2017-12-25',25000,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='UNIDOS DE SAO MIGUEL'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='UNIDOS DE SAO MIGUEL'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2011-01-01',1450,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='IMPERIO PEDREIRENSE'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='IMPERIO PEDREIRENSE'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2011-11-11',111111,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='UNIDOS DA BANGU'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='UNIDOS DA BANGU'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('1989-10-10',99999,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='INOCENTES DA BELFORD ROXO'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='INOCENTES DA BELFORD ROXO'));
+
+INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
+('2023-01-01',1034523,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='IMPERIO DA TIJUCA'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='IMPERIO DA TIJUCA'));
 `
