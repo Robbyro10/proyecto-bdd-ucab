@@ -110,7 +110,9 @@ export class EscuelasService {
     JOIN agjpatrocinante_persona ON agjhist_patrocinio.persona_id = agjpatrocinante_persona.id    
     WHERE agjid_escuela = ${id}`);
 
-    return { escuela, colores, titulos, empresas, personas };
+    const eventos = await this.dataSource.query(`SELECT * from agjevento_anual_sem WHERE agjid_escuela=${id}`);
+
+    return { escuela, colores, titulos, empresas, personas, eventos };
   }
 
   async findOneLugar(id: number) {
