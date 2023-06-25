@@ -49,8 +49,13 @@ export class PatrocinantesController {
     return this.patrocinantesService.updatePersona(+id, updatePersonaDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.patrocinantesService.remove(+id);
+  @Delete('empresa/:id')
+  removeEmpresa(@Param('id') id: string) {
+    return this.patrocinantesService.removeEmpresa(+id);
+  }
+
+  @Delete('persona/:id')
+  removePersona(@Param('id') id: string) {
+    return this.patrocinantesService.removePersona(+id);
   }
 }

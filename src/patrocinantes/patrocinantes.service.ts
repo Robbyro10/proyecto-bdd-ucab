@@ -79,7 +79,13 @@ export class PatrocinantesService {
     return this.dataSource.query(query);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} patrocinante`;
+  removeEmpresa(id: number) {
+    this.commonService.delete('agjpatrocinante_empresa', { id });
+    return `Se ha borrado la empresa de id: ${id}`;
+  }
+
+  removePersona(id: number) {
+    this.commonService.delete('agjpatrocinante_persona', { id });
+    return `Se ha borrado la persona de id: ${id}`;
   }
 }

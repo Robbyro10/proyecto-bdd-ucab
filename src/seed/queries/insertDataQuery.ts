@@ -350,172 +350,172 @@ INSERT INTO agjrol (nombre, descripcion) VALUES
 ('DIRETOR DE HARMONIA','DIRIGE LOS INSTRUMENTOS DE CUERDA Y DE VIENTO QUE FORMAN PARTE DE LA BANDA');
 
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2020,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2020-02-23',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2021,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2021-02-24',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2022,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2022-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2023,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2023-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='LEXA'));
 
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2022,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2022-02-24',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='GILSINHO'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='GILSINHO'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='GILSINHO'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2023,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2023-02-27',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='GILSINHO'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='GILSINHO'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='GILSINHO'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(1983,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('1983-02-24',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1983-1-1'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1983-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1983-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(1984,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('1984-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1983-1-1'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1983-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1983-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(1986,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('1986-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1986-1-1'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1986-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='SOBRINHO' AND hi.fecha_ini='1986-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2019,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2019-02-23',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2020,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2020-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2021,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2021-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2022,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2022-02-23',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2023,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2023-02-22',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2013,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2013-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2013-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2013-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2013-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2016,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2016-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DOWGLAS' AND i.primer_apellido='DINIZ'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DOWGLAS' AND i.primer_apellido='DINIZ'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DOWGLAS' AND i.primer_apellido='DINIZ'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2017,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2017-02-27',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DOWGLAS' AND i.primer_apellido='DINIZ'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DOWGLAS' AND i.primer_apellido='DINIZ'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DOWGLAS' AND i.primer_apellido='DINIZ'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2012,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2012-02-24',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2012-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO' AND hi.fecha_ini='2012-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO' AND hi.fecha_ini='2012-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2013,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2013-02-24',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2012-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO' AND hi.fecha_ini='2012-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO' AND hi.fecha_ini='2012-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2023,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2023-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 '2023-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO' AND hi.fecha_ini='2023-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='THIAGO' AND i.primer_apellido='BRITO' AND hi.fecha_ini='2023-1-1'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2017,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2017-02-28',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2018,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2018-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2019,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2019-02-28',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2020,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2020-02-23',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2021,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2021-02-24',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2022,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2022-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2023,(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
+('2023-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='RAINHA DE BATERIA'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='RAISSA' AND i.primer_apellido='MARTINS'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2017,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2017-02-26',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2018,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2018-02-23',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2019,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2019-02-23',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2020,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2020-02-22',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2021,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2021-02-22',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2022,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2022-02-25',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
 INSERT INTO agjorg_carnaval (año,agjid_rol,hist_int_fecha_ini,hist_int_agjid_escuela,hist_int_agjid_integrante) VALUES
-(2023,(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
+('2023-02-27',(SELECT r.id FROM agjrol r WHERE r.nombre='INTERPRETE'),
 (SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='DANIEL' AND i.primer_apellido='SILVA'));
@@ -567,143 +567,143 @@ VALUES
 ('OUVINDO TUDO O QUE VEJO, VOU VENDO TUDO O QUE OUÇO', 'MINHA TIJUCA ABRE OS OLHOS PARA A MELODIA PARA OUVIR A GENIAL BATUTA REGENDO NOSSA SINFONIA SEGUINDO CAMINHOS DO SOM VÊ A POESIA BRINCAR NO SALÃO JOGA SERPENTINA EM VERSOS E RIMAS VIVENDO A MAGIA DE CADA CANÇÃO É A PURA CADÊNCIA BRASILEIRA ESSE REQUEBRADO QUE FASCINA DO BOTECO À GAFIEIRA O SAMBA ECOA EM CADA ESQUINA SUSPENSE ETERNIZADO NA TELA, UM BEIJO APAIXONADO O FILME QUE PASSA EM MINHA MENTE COM A MÚSICA, GANHA O CORAÇÃO CHEGA A EMOCIONAR VER A PLATÉIA DELIRAR VIBRA O MAESTRO VENDO O ARTISTA NA CONSAGRAÇÃO PISCAM LUZES COLORIDAS A NOITE, PRA DANÇAR CONVIDA SE A MÚSICA TOCOU A ALMA UM DIA SEMPRE TRAZ UMA IMAGEM QUE HOJE FAÇO FANTASIA', 2006, 'SAMBA-ENREDO'),
 ('WARANÃ - A REEXISTÊNCIA VERMELHA', 'ERÊ, ESSA MATA É SUA, É SUA ERÊ, VEM PROVAR DOCE MEL, DOCE MEL WARANÃ DA TIJUCA VEM BRINCAR NO BOREL ERÊ, ESSA MATA É SUA, É SUA ERÊ, VEM PROVAR DOCE MEL, DOCE MEL WARANÃ DA TIJUCA VEM BRINCAR NO BOREL ALTO CÉU DE TUPANA E YURUPARI DUAS FORÇAS QUE VÃO FLUIR A ENERGIA DE MONÃ QUE EQUILIBRA O BEM E O MAL UM LUGAR ONDE AS PEDRAS PODIAM FALAR ONDE IRMÃOS DESFRUTAVAM A BELEZA SINGULAR ANHYÃ, BELA E HABILIDOSA MAS A COBRA ARDILOSA USA A FLOR PRA LHE TOCAR E NASCE KAHU’Ê, O CURUMIM DE OLHOS ALEGRES, SEMPRE ASSIM PRESENÇA TÃO BREVE A INGENUIDADE SUCUMBE À MALDADE RENASCE KAHU’Ê, O CURUMIM SEUS OLHOS ALEGRES NÃO TÊM FIM POIS O BEM É MAIOR, VAI REEXISTIR', 2022, 'SAMBA-ENREDO');
 
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2014,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2014-02-23','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1936,'1',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1936-02-25','1',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2010,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2010-02-21','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2012,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2012-02-22','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1980,'Ac',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1980-02-24','Ac',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1987,'Ac',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1987-02-27','Ac',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1999,'Ac',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1999-02-20','Ac',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA TIJUCA'));
 
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1995,'Ac',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1995-02-26','Ac',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='TOM MAIOR'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1999,'Ac',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1999-02-21','Ac',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='TOM MAIOR'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1992,'1',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1992-02-23','1',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='TOM MAIOR'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1982,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1982-02-28','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2008,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2008-02-19','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1976,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1976-02-19','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1986,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1986-02-21','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1995,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1995-02-23','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2005,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2005-02-25','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2004,'B',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2004-02-26','B',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2006,'3',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2006-02-22','3',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DE SAO MIGUEL'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1991,'1',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1991-02-25','1',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DE SAO MIGUEL'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1989,'2',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1989-02-28','2',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DE SAO MIGUEL'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1981,'3',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1981-02-26','3',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DE SAO MIGUEL'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2003,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2003-02-27','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO PEDREIRENSE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2006,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2006-02-24','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO PEDREIRENSE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2009,'E',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2009-02-26','E',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO PEDREIRENSE'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1957,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1957-02-22','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1962,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1962-02-21','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2014,'B',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2014-02-18','B',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2017,'B',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2017-02-25','B',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1998,'C',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1998-02-24','C',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2008,'B',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2008-02-22','B',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2012,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2012-02-27','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1964,'2',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1964-02-28','2',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1970,'2',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1970-02-21','2',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1976,'2',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1976-02-26','2',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(1979,'2',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('1979-02-27','2',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2006,'B',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2006-02-21','B',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
-INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES(2013,'A',
+INSERT INTO agjhist_título_carnaval(año,grupo,agjid_escuela) VALUES('2013-02-27','A',
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('S@MBA-NET','MEJOR INTERPRETE','I',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(2022,
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES('2022-02-27',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='S@MBA-NET' AND p.descripcion='MEJOR INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
-INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(2019,
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES('2019-02-26',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='S@MBA-NET' AND p.descripcion='MEJOR INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('TAMBORIM DE OURO','MEJOR INTERPRETE','I',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(2019,
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES('2019-02-26',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='TAMBORIM DE OURO' AND p.descripcion='MEJOR INTERPRETE'),
 '2019-1-1',
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.apodo='WANTUIR' AND hi.fecha_ini='2019-1-1'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('ESTANDARTE DE OURO','BATERIA','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2013,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2013-02-27',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='BATERIA'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2014,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2014-02-26',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='BATERIA'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('ESTANDARTE DE OURO','ALA DE BAIANAS','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2013,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2013-02-27',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='ALA DE BAIANAS'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2016,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2016-02-25',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='ALA DE BAIANAS'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('S@MBA-NET','GALERIA DE VELHA GUARDA MAS ELEGANTE','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2018,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2018-02-26',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='S@MBA-NET' AND p.descripcion='GALERIA DE VELHA GUARDA MAS ELEGANTE'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='UNIDOS DA BANGU'));
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('S@MBA-NET','MEJOR SAMBA-ENREDO','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('ESTANDARTE DE OURO','MEJOR SAMBA-ENREDO','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2022,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2022-02-27',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='S@MBA-NET' AND p.descripcion='MEJOR SAMBA-ENREDO'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2022,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2022-02-24',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='MEJOR SAMBA-ENREDO'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='INOCENTES DA BELFORD ROXO'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('S@MBA-NET','DESTAQUE DE LUXO','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2015,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2015-02-25',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='S@MBA-NET' AND p.descripcion='DESTAQUE DE LUXO'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2016,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2016-02-25',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='S@MBA-NET' AND p.descripcion='DESTAQUE DE LUXO'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA TIJUCA'));
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('ESTANDARTE DE OURO','FANTASIA','E',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2011,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2011-02-27',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='FANTASIA'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
-INSERT INTO agjganador (año, premio_id, escuela_id) VALUES(2016,
+INSERT INTO agjganador (año, premio_id, escuela_id) VALUES('2016-02-25',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='ESTANDARTE DE OURO' AND p.descripcion='FANTASIA'),
 (SELECT e.id FROM agjescuela_samba e WHERE e.nombre='IMPERIO DA ZONA NORTE'));
 
@@ -777,12 +777,12 @@ INSERT INTO agjautor (agjsamba_id,agjhist_int_fecha_ini,agjhist_int_agjid_escuel
 
 INSERT INTO agjpremio_especial (nombre, descripcion, tipo, lugar_id) VALUES('CIUDADAO SAMBA','REPRESENTANTE NOTORIO DE ESCUELA DE SAMBA','I',(SELECT l.id FROM agjlugar l WHERE l.nombre='RIO DE JANEIRO' AND l.tipo='CIUDAD'));
 
-INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(1995,
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES('1995-02-26',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='CIUDADAO SAMBA'),
 ((SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA')),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'),
 (SELECT hi.agjid_integrante FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'));
-INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES(1996,
+INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante) VALUES('1996-02-25',
 (SELECT p.id FROM agjpremio_especial p WHERE p.nombre='CIUDADAO SAMBA'),
 ((SELECT hi.fecha_ini FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA')),
 (SELECT hi.agjid_escuela FROM agjhist_int hi JOIN agjintegrantes i ON hi.agjid_integrante=i.id WHERE i.primer_nombre='CARLINHOS' AND i.primer_apellido='MELODIA'),
@@ -994,4 +994,5 @@ INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid
 
 INSERT INTO agjdonacion (fecha,monto_r$,hist_patrocinio_id,hist_patrocinio_agjid_escuela) VALUES 
 ('2023-01-01',1034523,(SELECT p.id FROM agjhist_patrocinio p JOIN agjescuela_samba e ON e.id=p.agjid_escuela WHERE e.nombre='IMPERIO DA TIJUCA'),(SELECT pa.agjid_escuela FROM agjhist_patrocinio pa JOIN agjescuela_samba e ON e.id=pa.agjid_escuela WHERE e.nombre='IMPERIO DA TIJUCA'));
+
 `

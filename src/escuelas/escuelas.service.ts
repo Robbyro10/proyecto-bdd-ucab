@@ -105,14 +105,19 @@ export class EscuelasService {
     WHERE agjid_escuela = ${id}`);
 
     const personas = await this.dataSource.query(`
-    SELECT agjhist_patrocinio.id AS id , fecha_ini, fecha_fin, empresa_id, primer_nombre, primer_apellido
+    SELECT agjhist_patrocinio.id AS id , fecha_ini, fecha_fin, persona_id, primer_nombre, primer_apellido
     FROM agjhist_patrocinio
     JOIN agjpatrocinante_persona ON agjhist_patrocinio.persona_id = agjpatrocinante_persona.id    
     WHERE agjid_escuela = ${id}`);
 
     const eventos = await this.dataSource.query(`SELECT * from agjevento_anual_sem WHERE agjid_escuela=${id}`);
 
-    return { escuela, colores, titulos, empresas, personas, eventos };
+    const integrantes = await this.dataSource.query(`
+    SELECT i.id, i.primer_nombre, i.primer_apellido, i.segundo_apellido 
+    from agjescuela_samba e JOIN agjhist_int h on e.id=h.agjid_escuela join 
+    agjintegrantes i on i.id=h.agjid_integrante WHERE e.id=${id} and h.fecha_fin is null;`);
+
+    return { escuela, colores, titulos, empresas, personas, eventos, integrantes };
   }
 
   async findOneLugar(id: number) {
