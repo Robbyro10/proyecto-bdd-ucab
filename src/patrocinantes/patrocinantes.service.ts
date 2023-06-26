@@ -16,12 +16,18 @@ export class PatrocinantesService {
   ) {}
 
   async createEmpresa(createEmpresaDto: CreateEmpresaDto) {
-    const query = this.commonService.create('agjpatrocinante_empresa', createEmpresaDto);
+    const query = this.commonService.create(
+      'agjpatrocinante_empresa',
+      createEmpresaDto,
+    );
     await this.dataSource.query(query);
   }
 
   async createPersona(createPersonaDto: CreatePersonaDto) {
-    const query = this.commonService.create('agjpatrocinante_persona', createPersonaDto);
+    const query = this.commonService.create(
+      'agjpatrocinante_persona',
+      createPersonaDto,
+    );
     await this.dataSource.query(query);
   }
 
@@ -44,20 +50,27 @@ export class PatrocinantesService {
       ON agjpatrocinante_persona.id = agjtelefono.persona_id`);
   }
 
-  findOneEmpresa(id: number) {
-    return this.dataSource.query(`
+  async findOneEmpresa(id: number) {
+    const empresa = await this.dataSource.query(`
     SELECT id, nombre, email_contacto, mision, cod_int, cod_area, numero
     FROM agjpatrocinante_empresa
     LEFT JOIN agjtelefono
     ON agjpatrocinante_empresa.id = agjtelefono.empresa_id
     WHERE agjpatrocinante_empresa.id = ${id}
-    `
-    );
+    `);
 
+    const escuelas = await this.dataSource.query(`
+    SELECT e.nombre, h.fecha_ini, h.fecha_fin, e.id 
+    FROM agjpatrocinante_empresa p 
+    JOIN agjhist_patrocinio h ON p.id=h.empresa_id 
+    JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE p.id=${id}
+    `);
+
+    return { empresa, escuelas };
   }
 
-  findOnePersona(id: number) {
-    return this.dataSource.query(`
+  async findOnePersona(id: number) {
+    const persona = await this.dataSource.query(`
       SELECT 
         id, doc_identidad, primer_nombre, 
         primer_apellido, segundo_apellido, email_contacto, 
@@ -67,15 +80,30 @@ export class PatrocinantesService {
         ON agjpatrocinante_persona.id = agjtelefono.persona_id
         WHERE agjpatrocinante_persona.id = ${id}
       `);
+
+    const escuelas = await this.dataSource.query(`
+      SELECT e.nombre, e.id, h.fecha_ini, h.fecha_fin FROM agjpatrocinante_persona p 
+      JOIN agjhist_patrocinio h ON p.id=h.persona_id 
+      JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE p.id=${id}`);
+
+    return { persona, escuelas };
   }
 
   updateEmpresa(id: number, updateEmpresaDto: UpdateEmpresaDto) {
-    const query = this.commonService.update(updateEmpresaDto, 'agjpatrocinante_empresa', id);
+    const query = this.commonService.update(
+      updateEmpresaDto,
+      'agjpatrocinante_empresa',
+      id,
+    );
     return this.dataSource.query(query);
   }
 
   updatePersona(id: number, updatePersonaDto: UpdatePersonaDto) {
-    const query = this.commonService.update(updatePersonaDto, 'agjpatrocinante_persona', id);
+    const query = this.commonService.update(
+      updatePersonaDto,
+      'agjpatrocinante_persona',
+      id,
+    );
     return this.dataSource.query(query);
   }
 

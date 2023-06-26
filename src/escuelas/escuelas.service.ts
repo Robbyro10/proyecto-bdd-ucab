@@ -1,15 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CreateEscuelaDto } from './dto/create-escuela.dto';
 import { UpdateEscuelaDto } from './dto/update-escuela.dto';
 import { CreateLugarDto } from './dto/create-lugar.dto';
 import { InjectDataSource } from '@nestjs/typeorm';
-import { DataSource, Repository } from 'typeorm';
+import { DataSource } from 'typeorm';
 import { Escuela_Samba } from './entities/escuela_samba.entity';
 import { CommonService } from 'src/common/common.service';
 import { Lugar } from './entities/lugar.entity';
 import { UpdateLugarDto } from './dto/update-lugar.dto';
 import { CreateColorDto } from './dto/create-color.dto';
 import { UpdateColorDto } from './dto/update-color.dto';
+import { CreateTituloDto } from './dto/create-titulo.dto';
 
 @Injectable()
 export class EscuelasService {
@@ -35,6 +36,12 @@ export class EscuelasService {
     INSERT INTO agje_c (agjescuela_samba_id, agjcolor_id)
     VALUES (${createColorDto.escuela_id}, ${createColorDto.color_id}) 
     `)
+  }
+
+  async addTitulo(createTituloDto: CreateTituloDto) {
+    const query = this.commonService.create('agjhist_título_carnaval', createTituloDto);
+    console.log(query)
+    return this.dataSource.query(query);
   }
 
   createLugar(createLugarDto: CreateLugarDto) {
@@ -117,7 +124,16 @@ export class EscuelasService {
     from agjescuela_samba e JOIN agjhist_int h on e.id=h.agjid_escuela join 
     agjintegrantes i on i.id=h.agjid_integrante WHERE e.id=${id} and h.fecha_fin is null;`);
 
-    return { escuela, colores, titulos, empresas, personas, eventos, integrantes };
+    const sambas = await this.dataSource.query(`
+    SELECT s.titulo, s.tipo, s.año_carnaval, s.letra, i.primer_nombre, i.primer_apellido 
+    FROM agjsamba s 
+    JOIN agjautor a ON s.id=a.agjsamba_id 
+    JOIN agjintegrantes i ON a.agjhist_int_agjid_integrante=i.id 
+    JOIN agjescuela_samba e ON a.agjhist_int_agjid_escuela=e.id 
+    WHERE e.id=${id}
+    `);
+
+    return { escuela, colores, titulos, empresas, personas, eventos, integrantes, sambas };
   }
 
   async findOneLugar(id: number) {

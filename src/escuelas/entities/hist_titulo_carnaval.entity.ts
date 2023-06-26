@@ -3,9 +3,13 @@ import { Escuela_Samba } from "./escuela_samba.entity";
 
 enum Grupo {
     Acceso = "A",
+    B = "B",
+    C = "C",
     Femenino = "Ac",
     Especiales = "E",
     Uno = "1",
+    Dos = "2",
+    Tres = "3",
 }
 
 @Entity({ name: 'agjhist_título_carnaval' })

@@ -6,6 +6,7 @@ import { CreateLugarDto } from './dto/create-lugar.dto';
 import { UpdateLugarDto } from './dto/update-lugar.dto';
 import { CreateColorDto } from './dto/create-color.dto';
 import { UpdateColorDto } from './dto/update-color.dto';
+import { CreateTituloDto } from './dto/create-titulo.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
@@ -19,6 +20,12 @@ export class EscuelasController {
   @Post('/color')
   addColor(@Body() createColorDto: CreateColorDto) {
     return this.escuelasService.addColor(createColorDto);
+  }
+
+  
+  @Post('/titulo')
+  addTitulo(@Body() createTituloDto: CreateTituloDto) {
+    return this.escuelasService.addTitulo(createTituloDto);
   }
 
   @Post()

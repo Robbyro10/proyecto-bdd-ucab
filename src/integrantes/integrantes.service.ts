@@ -31,12 +31,7 @@ export class IntegrantesService {
   }
 
   async findAll() {
-    return this.dataSource.query(
-      `
-      SELECT id, primer_nombre, segundo_nombre, primer_apellido, fecha_nac, genero, apodo, nacionalidad
-      FROM agjintegrantes
-      `,
-    );
+    return this.commonService.find('agjintegrantes');
   }
 
   async findAllHabilidades() {
@@ -44,14 +39,14 @@ export class IntegrantesService {
   }
 
   async findOne(id: number) {
-    let integrante = await this.dataSource.query(
+    const integrante = await this.dataSource.query(
       `SELECT *
     FROM agjintegrantes
     WHERE agjintegrantes.id = ${id};
     `,
     );
 
-    let habilidades = await this.dataSource.query(
+    const habilidades = await this.dataSource.query(
       `SELECT id AS id_habilidad, nombre AS nombre_habilidad
     FROM agjhabilidad
     LEFT JOIN agjint_hab
@@ -59,7 +54,27 @@ export class IntegrantesService {
     WHERE agjint_hab.agjintegrantes_id = ${id};`,
     );
 
-    return { habilidades, integrante };
+    const escuela = await this.dataSource.query(`
+    SELECT e.id, e.nombre 
+    FROM agjescuela_samba e 
+    JOIN agjhist_int h ON h.agjid_escuela=e.id 
+    JOIN agjintegrantes i ON i.id=h.agjid_integrante WHERE i.id=${id}
+    `);
+
+    const roles = await this.dataSource.query(`
+    SELECT r.id, r.nombre, r.descripcion, o.año, e.nombre 
+    FROM agjrol r JOIN agjorg_carnaval o ON o.agjid_rol=r.id 
+    JOIN agjintegrantes i ON o.hist_int_agjid_integrante=i.id 
+    JOIN agjescuela_samba e ON o.hist_int_agjid_escuela=e.id WHERE i.id=${id}`);
+
+    const parientes = await this.dataSource.query(`
+    SELECT p.integrante1, i.primer_nombre, i.primer_apellido, i.segundo_apellido,  p.relacion, p.integrante2,
+    i2.primer_nombre,i2.primer_apellido,i2.segundo_apellido 
+    FROM agjparentesco p JOIN agjintegrantes i on i.id=p.integrante1 
+    JOIN agjintegrantes i2 on i2.id=p.integrante2 where i.id=${id};
+    `);
+
+    return { habilidades, integrante, escuela, roles, parientes };
   }
 
   update(id: number, updateIntegranteDto: UpdateIntegranteDto) {
