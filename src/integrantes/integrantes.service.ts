@@ -6,6 +6,7 @@ import { DataSource } from 'typeorm';
 import { CommonService } from 'src/common/common.service';
 import { CreateHabilidadDto } from './dto/create-habilidad.dto';
 import { UpdateHabilidadDto } from './dto/update-habilidad.dto';
+import { CreateIntEscuelaDto } from './dto/create-int-escuela.dto';
 
 @Injectable()
 export class IntegrantesService {
@@ -28,6 +29,11 @@ export class IntegrantesService {
     const query = this.commonService.create('agjhabilidad', createHabilidadDto);
     const data = this.dataSource.query(query);
     return data;
+  }
+
+  createIntEscuela(createIntEscuelaDto: CreateIntEscuelaDto) {
+    const query = this.commonService.create('agjhist_int', createIntEscuelaDto);
+    return this.dataSource.query(query)
   }
 
   async findAll() {
@@ -55,7 +61,7 @@ export class IntegrantesService {
     );
 
     const escuela = await this.dataSource.query(`
-    SELECT e.id, e.nombre 
+    SELECT e.id, e.nombre, h.fecha_ini, h.fecha_fin 
     FROM agjescuela_samba e 
     JOIN agjhist_int h ON h.agjid_escuela=e.id 
     JOIN agjintegrantes i ON i.id=h.agjid_integrante WHERE i.id=${id}

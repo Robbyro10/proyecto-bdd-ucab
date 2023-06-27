@@ -6,6 +6,7 @@ import { UpdatePersonaDto } from './dto/update-patrocinante_persona.dto';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { CommonService } from 'src/common/common.service';
+import { CreatePatroEscuelaDto } from './dto/create-patro-escuela.dto';
 
 @Injectable()
 export class PatrocinantesService {
@@ -29,6 +30,30 @@ export class PatrocinantesService {
       createPersonaDto,
     );
     await this.dataSource.query(query);
+  }
+
+  async addEscuelaEmpresa(createPatroEscuelaDto: CreatePatroEscuelaDto) {
+    const patroEmpresaDto = Object.assign({}, createPatroEscuelaDto, {
+      empresa_id: createPatroEscuelaDto.patrocinante_id,
+    });
+    delete patroEmpresaDto.patrocinante_id;
+    const query = this.commonService.create(
+      'agjhist_patrocinio',
+      patroEmpresaDto,
+    );
+    return this.dataSource.query(query);
+  }
+
+  async addEscuelaPersona(createPatroEscuelaDto: CreatePatroEscuelaDto) {
+    const patroPersonaDto = Object.assign({}, createPatroEscuelaDto, {
+      persona_id: createPatroEscuelaDto.patrocinante_id,
+    });
+    delete patroPersonaDto.patrocinante_id;
+    const query = this.commonService.create(
+      'agjhist_patrocinio',
+      patroPersonaDto,
+    );
+    return this.dataSource.query(query);
   }
 
   findAllEmpresa() {

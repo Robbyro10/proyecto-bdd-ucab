@@ -8,6 +8,8 @@ import { CreateColorDto } from './dto/create-color.dto';
 import { UpdateColorDto } from './dto/update-color.dto';
 import { CreateTituloDto } from './dto/create-titulo.dto';
 import { UpdateTituloDto } from './dto/update-titulo.dto';
+import { CreateEventoDto } from './dto/create-evento.dto';
+import { UpdateEventoDto } from './dto/update-evento.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
@@ -16,6 +18,11 @@ export class EscuelasController {
   @Post('/lugar')
   createLugar(@Body() createLugarDto: CreateLugarDto) {
     return this.escuelasService.createLugar(createLugarDto);
+  }
+
+  @Post('/evento')
+  createEvento(@Body() createEventoDto: CreateEventoDto) {
+    return this.escuelasService.createEvento(createEventoDto);
   }
 
   @Post('/color')
@@ -69,6 +76,11 @@ export class EscuelasController {
     return this.escuelasService.updateTitulo(id, updateTituloDto);
   }
 
+  @Patch('/evento/:id')
+  updateEvento(@Param('id') id: string, @Body() updateEventoDto: UpdateEventoDto) {
+    return this.escuelasService.updateEvento(+id, updateEventoDto);
+  }
+
   //Its weird but it works
   @Patch('/color/:id')
   removeColor(@Param('id') id: string, @Body() updateColorDto: UpdateColorDto) {
@@ -88,6 +100,11 @@ export class EscuelasController {
   @Delete('/samba/:id')
   removeSamba(@Param('id') id: string) {
     return this.escuelasService.removeSamba(+id);
+  }
+
+  @Delete('/evento/:id')
+  removeEvento(@Param('id') id: string) {
+    return this.escuelasService.removeEvento(+id);
   }
 
   @Delete('/titulo/:id')

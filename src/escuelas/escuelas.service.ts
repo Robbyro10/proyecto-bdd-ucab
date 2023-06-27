@@ -12,6 +12,8 @@ import { CreateColorDto } from './dto/create-color.dto';
 import { UpdateColorDto } from './dto/update-color.dto';
 import { CreateTituloDto } from './dto/create-titulo.dto';
 import { UpdateTituloDto } from './dto/update-titulo.dto';
+import { CreateEventoDto } from './dto/create-evento.dto';
+import { UpdateEventoDto } from './dto/update-evento.dto';
 
 @Injectable()
 export class EscuelasService {
@@ -61,6 +63,13 @@ export class EscuelasService {
           `,
       );
     }
+  }
+  
+  createEvento(createEventoDto: CreateEventoDto) {
+    const query = this.commonService.create('agjevento_anual_sem', createEventoDto);
+    console.log(query);
+    return this.dataSource.query(query);
+
   }
 
   findAllEscuelas() {
@@ -121,7 +130,7 @@ export class EscuelasService {
     const eventos = await this.dataSource.query(`SELECT * from agjevento_anual_sem WHERE agjid_escuela=${id}`);
 
     const integrantes = await this.dataSource.query(`
-    SELECT i.id, i.primer_nombre, i.primer_apellido, i.segundo_apellido 
+    SELECT i.id, i.primer_nombre, i.primer_apellido, i.segundo_apellido, h.fecha_ini, h.fecha_fin 
     from agjescuela_samba e JOIN agjhist_int h on e.id=h.agjid_escuela join 
     agjintegrantes i on i.id=h.agjid_integrante WHERE e.id=${id} and h.fecha_fin is null;`);
 
@@ -147,6 +156,15 @@ export class EscuelasService {
     const query = this.commonService.update(
       updateEscuelaDto,
       'agjescuela_samba',
+      id,
+    );
+    return this.dataSource.query(query);
+  }
+
+  async updateEvento(id: number, updateEventoDto: UpdateEventoDto) {
+    const query = this.commonService.update(
+      updateEventoDto,
+      'agjevento_anual_sem',
       id,
     );
     return this.dataSource.query(query);
@@ -198,6 +216,11 @@ export class EscuelasService {
   async removeLugar(id: number) {
     this.commonService.delete('agjlugar', { id });
     return `Se ha borrado el lugar de id: ${id}`;
+  }
+
+  async removeEvento(id: number) {
+    this.commonService.delete('agjevento_anual_sem', { id });
+    return `Se ha borrado el evento de id: ${id}`;
   }
 
   async removeColor(id: number, updateColorDto: UpdateColorDto) {

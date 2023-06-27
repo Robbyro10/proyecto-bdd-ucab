@@ -4,6 +4,7 @@ import { CreateIntegranteDto } from './dto/create-integrante.dto';
 import { UpdateIntegranteDto } from './dto/update-integrante.dto';
 import { CreateHabilidadDto } from './dto/create-habilidad.dto';
 import { UpdateHabilidadDto } from './dto/update-habilidad.dto';
+import { CreateIntEscuelaDto } from './dto/create-int-escuela.dto';
 
 @Controller('integrantes')
 export class IntegrantesController {
@@ -12,6 +13,11 @@ export class IntegrantesController {
   @Post('habilidad')
   createHabilidad(@Body() createHabilidadDto: CreateHabilidadDto) {
     return this.integrantesService.createHabilidad(createHabilidadDto);
+  }
+
+  @Post('int-escuela')
+  createIntEscuela(@Body() createIntEscuelaDto: CreateIntEscuelaDto) {
+    return this.integrantesService.createIntEscuela(createIntEscuelaDto);
   }
 
   @Post()

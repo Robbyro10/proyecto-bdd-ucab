@@ -4,6 +4,7 @@ import { CreateEmpresaDto } from './dto/create-patrocinante_empresa.dto';
 import { UpdateEmpresaDto } from './dto/update-patrocinante_empresa.dto';
 import { CreatePersonaDto } from './dto/create-patrocinante_persona.dto';
 import { UpdatePersonaDto } from './dto/update-patrocinante_persona.dto';
+import { CreatePatroEscuelaDto } from './dto/create-patro-escuela.dto';
 
 @Controller('patrocinantes')
 export class PatrocinantesController {
@@ -17,6 +18,16 @@ export class PatrocinantesController {
   @Post('/persona')
   createPersona(@Body() createPersonaDto: CreatePersonaDto) {
     return this.patrocinantesService.createPersona(createPersonaDto);
+  }
+
+  @Post('empresa/escuela')
+  addEscuelaEmpresa(@Body() createPatroEscuelaDto: CreatePatroEscuelaDto) {
+    return this.patrocinantesService.addEscuelaEmpresa(createPatroEscuelaDto)
+  }
+
+  @Post('persona/escuela')
+  addEscuelaPersona(@Body() createPatroEscuelaDto: CreatePatroEscuelaDto) {
+    return this.patrocinantesService.addEscuelaPersona(createPatroEscuelaDto)
   }
 
   @Get('/empresa')
