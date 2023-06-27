@@ -66,27 +66,39 @@ export class PatrocinantesService {
     JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE p.id=${id}
     `);
 
-    return { empresa, escuelas };
+    const donaciones = await this.dataSource.query(`
+    SELECT d.fecha, d.monto_r$, e.nombre, e.id FROM agjdonacion d 
+    JOIN agjhist_patrocinio h ON d.hist_patrocinio_id=h.id 
+    JOIN agjescuela_samba e ON h.agjid_escuela=e.id 
+    WHERE h.empresa_id=${id}`);
+
+    return { empresa, escuelas, donaciones };
   }
 
   async findOnePersona(id: number) {
     const persona = await this.dataSource.query(`
       SELECT 
-        id, doc_identidad, primer_nombre, 
-        primer_apellido, segundo_apellido, email_contacto, 
-        segundo_nombre, cod_int, cod_area, numero
-        FROM agjpatrocinante_persona
-        LEFT JOIN agjtelefono
-        ON agjpatrocinante_persona.id = agjtelefono.persona_id
-        WHERE agjpatrocinante_persona.id = ${id}
-      `);
+      id, doc_identidad, primer_nombre, 
+      primer_apellido, segundo_apellido, email_contacto, 
+      segundo_nombre, cod_int, cod_area, numero
+      FROM agjpatrocinante_persona
+      LEFT JOIN agjtelefono
+      ON agjpatrocinante_persona.id = agjtelefono.persona_id
+      WHERE agjpatrocinante_persona.id = ${id}
+    `);
 
     const escuelas = await this.dataSource.query(`
       SELECT e.nombre, e.id, h.fecha_ini, h.fecha_fin FROM agjpatrocinante_persona p 
       JOIN agjhist_patrocinio h ON p.id=h.persona_id 
       JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE p.id=${id}`);
 
-    return { persona, escuelas };
+    const donaciones = await this.dataSource.query(`
+      SELECT d.fecha, d.monto_r$, e.nombre, e.id FROM agjdonacion d 
+      JOIN agjhist_patrocinio h ON d.hist_patrocinio_id=h.id 
+      JOIN agjescuela_samba e ON h.agjid_escuela=e.id 
+      WHERE h.persona_id=${id}`);
+
+    return { persona, escuelas, donaciones };
   }
 
   updateEmpresa(id: number, updateEmpresaDto: UpdateEmpresaDto) {

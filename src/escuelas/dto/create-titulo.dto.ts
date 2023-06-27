@@ -2,13 +2,18 @@ import { IsEnum, IsNumber, IsOptional, IsString } from "class-validator";
 
 enum Grupo {
     Acceso = "A",
+    B = "B",
+    C = "C",
     Femenino = "Ac",
     Especiales = "E",
     Uno = "1",
+    Dos = "2",
+    Tres = "3",
 }
 
 export class CreateTituloDto {
     @IsString()
+    @IsOptional()
     año: string;
 
     @IsEnum(Grupo)
@@ -20,5 +25,6 @@ export class CreateTituloDto {
     monto_ganado?: number;
 
     @IsNumber()
-    agjid_escuela: number;
+    @IsOptional()
+    agjid_escuela?: number;
 }

@@ -7,6 +7,7 @@ import { UpdateLugarDto } from './dto/update-lugar.dto';
 import { CreateColorDto } from './dto/create-color.dto';
 import { UpdateColorDto } from './dto/update-color.dto';
 import { CreateTituloDto } from './dto/create-titulo.dto';
+import { UpdateTituloDto } from './dto/update-titulo.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
@@ -63,6 +64,11 @@ export class EscuelasController {
     return this.escuelasService.updateLugar(+id, updateLugarDto);
   }
 
+  @Patch('/titulo/:id')
+  updateTitulo(@Param('id') id: string, @Body() updateTituloDto: UpdateTituloDto) {
+    return this.escuelasService.updateTitulo(id, updateTituloDto);
+  }
+
   //Its weird but it works
   @Patch('/color/:id')
   removeColor(@Param('id') id: string, @Body() updateColorDto: UpdateColorDto) {
@@ -77,6 +83,16 @@ export class EscuelasController {
   @Patch(':id')
   updateEscuela(@Param('id') id: string, @Body() updateEscuelaDto: UpdateEscuelaDto) {
     return this.escuelasService.updateEscuela(+id, updateEscuelaDto);
+  }
+
+  @Delete('/samba/:id')
+  removeSamba(@Param('id') id: string) {
+    return this.escuelasService.removeSamba(+id);
+  }
+
+  @Delete('/titulo/:id')
+  removeTitulo(@Param('id') id: string) {
+    return this.escuelasService.removeTitulo(id);
   }
   
   @Delete(':id')

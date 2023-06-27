@@ -11,6 +11,7 @@ import { UpdateLugarDto } from './dto/update-lugar.dto';
 import { CreateColorDto } from './dto/create-color.dto';
 import { UpdateColorDto } from './dto/update-color.dto';
 import { CreateTituloDto } from './dto/create-titulo.dto';
+import { UpdateTituloDto } from './dto/update-titulo.dto';
 
 @Injectable()
 export class EscuelasService {
@@ -125,7 +126,7 @@ export class EscuelasService {
     agjintegrantes i on i.id=h.agjid_integrante WHERE e.id=${id} and h.fecha_fin is null;`);
 
     const sambas = await this.dataSource.query(`
-    SELECT s.titulo, s.tipo, s.año_carnaval, s.letra, i.primer_nombre, i.primer_apellido 
+    SELECT s.id, s.titulo, s.tipo, s.año_carnaval, s.letra, i.primer_nombre, i.primer_apellido 
     FROM agjsamba s 
     JOIN agjautor a ON s.id=a.agjsamba_id 
     JOIN agjintegrantes i ON a.agjhist_int_agjid_integrante=i.id 
@@ -151,6 +152,22 @@ export class EscuelasService {
     return this.dataSource.query(query);
   }
 
+  async updateTitulo(año: string, updateTituloDto: UpdateTituloDto) {
+    let query = `UPDATE agjhist_título_carnaval SET `;
+      let updates = [];
+      for (let key in updateTituloDto) {
+        if (updateTituloDto.hasOwnProperty(key)) {
+          if (key !== 'id') {
+            updates.push(`${key} = '${updateTituloDto[key]}'`);
+          }
+        }
+      }
+      query += updates.join(', ');
+      query += ` WHERE año = '${año}';`;
+  
+   return this.dataSource.query(query);
+  }
+
   async updateLugar(id: number, updateLugarDto: UpdateLugarDto) {
     const lugar = await this.findOneLugar(id);
     if (lugar.length > 0) {
@@ -167,6 +184,15 @@ export class EscuelasService {
   async removeEscuela(id: number) {
     this.commonService.delete('agjescuela_samba', { id });
     return `Se ha borrado la escuela de id: ${id}`;
+  }
+
+  async removeSamba(id: number) {
+    this.commonService.delete('agjsamba', { id });
+    return `Se ha borrado la samba de id: ${id}`;
+  }
+
+  async removeTitulo(año: string) {
+    this.dataSource.query(`DELETE FROM agjhist_título_carnaval WHERE año = '${año}'`)
   }
 
   async removeLugar(id: number) {
