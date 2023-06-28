@@ -5,6 +5,8 @@ import { UpdateIntegranteDto } from './dto/update-integrante.dto';
 import { CreateHabilidadDto } from './dto/create-habilidad.dto';
 import { UpdateHabilidadDto } from './dto/update-habilidad.dto';
 import { CreateIntEscuelaDto } from './dto/create-int-escuela.dto';
+import { UpdateIntEscuela } from './dto/update-int-escuela.dto';
+import { CreateParentescoDto } from './dto/create-parentesco.dto';
 
 @Controller('integrantes')
 export class IntegrantesController {
@@ -18,6 +20,11 @@ export class IntegrantesController {
   @Post('int-escuela')
   createIntEscuela(@Body() createIntEscuelaDto: CreateIntEscuelaDto) {
     return this.integrantesService.createIntEscuela(createIntEscuelaDto);
+  }
+
+  @Post('parentesco')
+  createParentesco(@Body() createParentescoDto: CreateParentescoDto) {
+    return this.integrantesService.createParentesco(createParentescoDto);
   }
 
   @Post()
@@ -38,6 +45,11 @@ export class IntegrantesController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.integrantesService.findOne(+id);
+  }
+
+  @Patch('int-escuela/:id')
+  updateIntEscuela(@Param('id') id: string, @Body() updateIntEscuela: UpdateIntEscuela) {
+    return this.integrantesService.updateIntEscuela(id, updateIntEscuela);
   }
 
   @Patch('habilidad/:id')

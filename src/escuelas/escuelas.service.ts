@@ -14,6 +14,8 @@ import { CreateTituloDto } from './dto/create-titulo.dto';
 import { UpdateTituloDto } from './dto/update-titulo.dto';
 import { CreateEventoDto } from './dto/create-evento.dto';
 import { UpdateEventoDto } from './dto/update-evento.dto';
+import { CreatePremioDto } from './dto/create-premio.dto';
+import { CreateRolDto } from './dto/create-rol.dto';
 
 @Injectable()
 export class EscuelasService {
@@ -41,35 +43,30 @@ export class EscuelasService {
     `)
   }
 
+  async createPremio(createPremioDto: CreatePremioDto) {
+    const query = this.commonService.create('agjpremio_especial', createPremioDto);
+    return this.dataSource.query(query);
+  }
+
   async addTitulo(createTituloDto: CreateTituloDto) {
     const query = this.commonService.create('agjhist_título_carnaval', createTituloDto);
     console.log(query)
     return this.dataSource.query(query);
   }
 
+  createRol(createRolDto: CreateRolDto) {
+    const query = this.commonService.create('agjrol', createRolDto)
+    return this.dataSource.query(query);
+  }
+
   createLugar(createLugarDto: CreateLugarDto) {
-    if (!createLugarDto.id_lugar_padre) {
-      this.dataSource.query(
-        `
-          INSERT INTO agjlugar (nombre, tipo)
-          VALUES ('${createLugarDto.nombre}', '${createLugarDto.tipo}')
-        `,
-      );
-    } else {
-      this.dataSource.query(
-        `
-          INSERT INTO agjlugar (nombre, tipo, id_lugar_padre)
-          VALUES ('${createLugarDto.nombre}', '${createLugarDto.tipo}', '${createLugarDto.id_lugar_padre}')
-          `,
-      );
-    }
+    const query = this.commonService.create('agjlugar', createLugarDto);
+    return this.dataSource.query(query);
   }
   
   createEvento(createEventoDto: CreateEventoDto) {
     const query = this.commonService.create('agjevento_anual_sem', createEventoDto);
-    console.log(query);
     return this.dataSource.query(query);
-
   }
 
   findAllEscuelas() {
@@ -130,7 +127,7 @@ export class EscuelasService {
     const eventos = await this.dataSource.query(`SELECT * from agjevento_anual_sem WHERE agjid_escuela=${id}`);
 
     const integrantes = await this.dataSource.query(`
-    SELECT i.id, i.primer_nombre, i.primer_apellido, i.segundo_apellido, h.fecha_ini, h.fecha_fin 
+    SELECT i.id, i.primer_nombre, i.primer_apellido, i.segundo_apellido, h.fecha_ini, h.fecha_fin, h.autoridad 
     from agjescuela_samba e JOIN agjhist_int h on e.id=h.agjid_escuela join 
     agjintegrantes i on i.id=h.agjid_integrante WHERE e.id=${id} and h.fecha_fin is null;`);
 
@@ -143,7 +140,14 @@ export class EscuelasService {
     WHERE e.id=${id}
     `);
 
-    return { escuela, colores, titulos, empresas, personas, eventos, integrantes, sambas };
+    const premios = await this.dataSource.query(`
+    SELECT p.id, p.nombre, p.descripcion, p.tipo, g.año, l.nombre AS nombreLugar
+    FROM agjpremio_especial p 
+    JOIN agjlugar l ON p.lugar_id = l.id
+    JOIN agjganador g ON p.id=g.premio_id JOIN agjescuela_samba e ON e.id=g.escuela_id 
+    WHERE e.id=${id}`);
+
+    return { escuela, colores, titulos, empresas, personas, eventos, integrantes, sambas, premios };
   }
 
   async findOneLugar(id: number) {

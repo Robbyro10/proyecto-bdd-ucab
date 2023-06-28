@@ -1,11 +1,21 @@
 import { Injectable } from '@nestjs/common';
 import { CreateSambaDto } from './dto/create-samba.dto';
 import { UpdateSambaDto } from './dto/update-samba.dto';
+import { InjectDataSource } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
+import { CommonService } from 'src/common/common.service';
 
 @Injectable()
 export class SambaService {
+  constructor(
+    @InjectDataSource()
+    private readonly dataSource: DataSource,
+    private readonly commonService: CommonService,
+  ) {}
+
   create(createSambaDto: CreateSambaDto) {
-    return 'This action adds a new samba';
+    const query = this.commonService.create('agjsamba', createSambaDto)
+    return this.dataSource.query(query);
   }
 
   findAll() {
@@ -17,10 +27,11 @@ export class SambaService {
   }
 
   update(id: number, updateSambaDto: UpdateSambaDto) {
-    return `This action updates a #${id} samba`;
+    const query = this.commonService.update(updateSambaDto, 'agjsamba', id);
+    return this.dataSource.query(query);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} samba`;
+    return this.dataSource.query(`DELETE FROM agjsamba WHERE id = ${id}`)
   }
 }

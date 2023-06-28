@@ -7,6 +7,8 @@ import { CommonService } from 'src/common/common.service';
 import { CreateHabilidadDto } from './dto/create-habilidad.dto';
 import { UpdateHabilidadDto } from './dto/update-habilidad.dto';
 import { CreateIntEscuelaDto } from './dto/create-int-escuela.dto';
+import { UpdateIntEscuela } from './dto/update-int-escuela.dto';
+import { CreateParentescoDto } from './dto/create-parentesco.dto';
 
 @Injectable()
 export class IntegrantesService {
@@ -31,8 +33,14 @@ export class IntegrantesService {
     return data;
   }
 
+  createParentesco(createParentescoDto: CreateParentescoDto) {
+    const query = this.commonService.create('agjparentesco', createParentescoDto);
+    return this.dataSource.query(query);
+  }
+
   createIntEscuela(createIntEscuelaDto: CreateIntEscuelaDto) {
     const query = this.commonService.create('agjhist_int', createIntEscuelaDto);
+    console.log(query)
     return this.dataSource.query(query)
   }
 
@@ -61,7 +69,7 @@ export class IntegrantesService {
     );
 
     const escuela = await this.dataSource.query(`
-    SELECT e.id, e.nombre, h.fecha_ini, h.fecha_fin 
+    SELECT e.id, e.nombre, h.fecha_ini, h.fecha_fin, h.autoridad 
     FROM agjescuela_samba e 
     JOIN agjhist_int h ON h.agjid_escuela=e.id 
     JOIN agjintegrantes i ON i.id=h.agjid_integrante WHERE i.id=${id}
@@ -80,7 +88,13 @@ export class IntegrantesService {
     JOIN agjintegrantes i2 on i2.id=p.integrante2 where i.id=${id};
     `);
 
-    return { habilidades, integrante, escuela, roles, parientes };
+    const premios = await this.dataSource.query(`
+    SELECT p.id, p.nombre, p.descripcion, i.primer_nombre, i.primer_apellido, i.segundo_apellido, g.año 
+    FROM agjpremio_especial p 
+    JOIN agjganador g ON p.id=g.premio_id 
+    JOIN agjintegrantes i ON i.id=g.hist_int_agjid_integrante WHERE i.id=${id}`)
+
+    return { habilidades, integrante, escuela, roles, parientes, premios };
   }
 
   update(id: number, updateIntegranteDto: UpdateIntegranteDto) {
@@ -90,6 +104,13 @@ export class IntegrantesService {
       id,
     );
     return this.dataSource.query(query);
+  }
+
+  updateIntEscuela(año: string, updateIntEscuela: UpdateIntEscuela) {
+    return this.dataSource.query(`
+    UPDATE agjhist_int 
+    SET fecha_fin = '${updateIntEscuela.fecha_fin}'
+    WHERE fecha_ini = '${año}' AND agjid_integrante = ${updateIntEscuela.agjid_integrante}`);
   }
 
   removeHabilidad(id: number, updateHabilidadDto: UpdateHabilidadDto) {

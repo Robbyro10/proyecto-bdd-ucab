@@ -10,6 +10,8 @@ import { CreateTituloDto } from './dto/create-titulo.dto';
 import { UpdateTituloDto } from './dto/update-titulo.dto';
 import { CreateEventoDto } from './dto/create-evento.dto';
 import { UpdateEventoDto } from './dto/update-evento.dto';
+import { CreatePremioDto } from './dto/create-premio.dto';
+import { CreateRolDto } from './dto/create-rol.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
@@ -25,6 +27,11 @@ export class EscuelasController {
     return this.escuelasService.createEvento(createEventoDto);
   }
 
+  @Post('/premio')
+  createPremio(@Body() createPremioDto: CreatePremioDto) {
+    return this.escuelasService.createPremio(createPremioDto);
+  }
+
   @Post('/color')
   addColor(@Body() createColorDto: CreateColorDto) {
     return this.escuelasService.addColor(createColorDto);
@@ -34,6 +41,11 @@ export class EscuelasController {
   @Post('/titulo')
   addTitulo(@Body() createTituloDto: CreateTituloDto) {
     return this.escuelasService.addTitulo(createTituloDto);
+  }
+
+  @Post('/rol')
+  createRol(@Body() createRolDto: CreateRolDto) {
+    return this.escuelasService.createRol(createRolDto);
   }
 
   @Post()

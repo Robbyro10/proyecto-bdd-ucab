@@ -7,6 +7,8 @@ import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { CommonService } from 'src/common/common.service';
 import { CreatePatroEscuelaDto } from './dto/create-patro-escuela.dto';
+import { CreateDonacionDto } from './dto/create-donacion.dto';
+import { UpdatePatroEscuelaDto } from './dto/update-patro-escuela.dto';
 
 @Injectable()
 export class PatrocinantesService {
@@ -30,6 +32,11 @@ export class PatrocinantesService {
       createPersonaDto,
     );
     await this.dataSource.query(query);
+  }
+
+  async addDonacion(createDonacionDto: CreateDonacionDto) {
+    const query = this.commonService.create('agjdonacion', createDonacionDto);
+    return this.dataSource.query(query);
   }
 
   async addEscuelaEmpresa(createPatroEscuelaDto: CreatePatroEscuelaDto) {
@@ -85,7 +92,7 @@ export class PatrocinantesService {
     `);
 
     const escuelas = await this.dataSource.query(`
-    SELECT e.nombre, h.fecha_ini, h.fecha_fin, e.id 
+    SELECT e.nombre, h.fecha_ini, h.id AS hist_id, h.fecha_fin, e.id 
     FROM agjpatrocinante_empresa p 
     JOIN agjhist_patrocinio h ON p.id=h.empresa_id 
     JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE p.id=${id}
@@ -113,7 +120,7 @@ export class PatrocinantesService {
     `);
 
     const escuelas = await this.dataSource.query(`
-      SELECT e.nombre, e.id, h.fecha_ini, h.fecha_fin FROM agjpatrocinante_persona p 
+      SELECT e.nombre, e.id, h.fecha_ini, h.id AS hist_id, h.fecha_fin FROM agjpatrocinante_persona p 
       JOIN agjhist_patrocinio h ON p.id=h.persona_id 
       JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE p.id=${id}`);
 
@@ -124,6 +131,24 @@ export class PatrocinantesService {
       WHERE h.persona_id=${id}`);
 
     return { persona, escuelas, donaciones };
+  }
+
+  updateHistEmpresa (id: number, updatePatroEscuelaDto: UpdatePatroEscuelaDto) {
+    const patroEmpresaDto = Object.assign({}, updatePatroEscuelaDto, {
+      empresa_id: updatePatroEscuelaDto.patrocinante_id,
+    });
+    delete patroEmpresaDto.patrocinante_id;
+    const query = this.commonService.update(patroEmpresaDto, 'agjhist_patrocinio', id);
+    return this.dataSource.query(query);
+  }
+
+  updateHistPersona (id: number, updatePatroEscuelaDto: UpdatePatroEscuelaDto) {
+    const patroPersonaDto = Object.assign({}, updatePatroEscuelaDto, {
+      persona_id: updatePatroEscuelaDto.patrocinante_id,
+    });
+    delete patroPersonaDto.patrocinante_id;
+    const query = this.commonService.update(patroPersonaDto, 'agjhist_patrocinio', id);
+    return this.dataSource.query(query);
   }
 
   updateEmpresa(id: number, updateEmpresaDto: UpdateEmpresaDto) {

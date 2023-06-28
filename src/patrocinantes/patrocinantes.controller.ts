@@ -5,6 +5,8 @@ import { UpdateEmpresaDto } from './dto/update-patrocinante_empresa.dto';
 import { CreatePersonaDto } from './dto/create-patrocinante_persona.dto';
 import { UpdatePersonaDto } from './dto/update-patrocinante_persona.dto';
 import { CreatePatroEscuelaDto } from './dto/create-patro-escuela.dto';
+import { CreateDonacionDto } from './dto/create-donacion.dto';
+import { UpdatePatroEscuelaDto } from './dto/update-patro-escuela.dto';
 
 @Controller('patrocinantes')
 export class PatrocinantesController {
@@ -18,6 +20,11 @@ export class PatrocinantesController {
   @Post('/persona')
   createPersona(@Body() createPersonaDto: CreatePersonaDto) {
     return this.patrocinantesService.createPersona(createPersonaDto);
+  }
+
+  @Post('/donacion')
+  addDonacion(@Body() createDonacionDto: CreateDonacionDto) {
+    return this.patrocinantesService.addDonacion(createDonacionDto);
   }
 
   @Post('empresa/escuela')
@@ -48,6 +55,16 @@ export class PatrocinantesController {
   @Get('/persona/:id')
   findOnePersona(@Param('id') id: string) {
     return this.patrocinantesService.findOnePersona(+id);
+  }
+
+  @Patch('/empresa/escuela/:id')
+  updateHistEmpresa(@Param('id') id: string, @Body() updatePatroEscuelaDto: UpdatePatroEscuelaDto) {
+    return this.patrocinantesService.updateHistEmpresa(+id, updatePatroEscuelaDto);
+  }
+
+  @Patch('/persona/escuela/:id')
+  updateHistPersona(@Param('id') id: string, @Body() updatePatroEscuelaDto: UpdatePatroEscuelaDto) {
+    return this.patrocinantesService.updateHistPersona(+id, updatePatroEscuelaDto);
   }
 
   @Patch('/empresa/:id')
