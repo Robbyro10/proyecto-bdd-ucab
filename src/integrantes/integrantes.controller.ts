@@ -7,6 +7,7 @@ import { UpdateHabilidadDto } from './dto/update-habilidad.dto';
 import { CreateIntEscuelaDto } from './dto/create-int-escuela.dto';
 import { UpdateIntEscuela } from './dto/update-int-escuela.dto';
 import { CreateParentescoDto } from './dto/create-parentesco.dto';
+import { CreateOrgCarnavalDto } from './dto/create-org-carnaval.dto';
 
 @Controller('integrantes')
 export class IntegrantesController {
@@ -27,6 +28,11 @@ export class IntegrantesController {
     return this.integrantesService.createParentesco(createParentescoDto);
   }
 
+  @Post('rol')
+  addRol(@Body() createOrgCarnavalDto: CreateOrgCarnavalDto) {
+    return this.integrantesService.addRol(createOrgCarnavalDto);
+  }
+
   @Post()
   create(@Body() createIntegranteDto: CreateIntegranteDto) {
     return this.integrantesService.create(createIntegranteDto);
@@ -40,6 +46,11 @@ export class IntegrantesController {
   @Get('habilidad')
   findAllHabilidades() {
     return this.integrantesService.findAllHabilidades();
+  }
+
+  @Get('rol')
+  findAllRoles() {
+    return this.integrantesService.findAllRoles();
   }
 
   @Get('hist/:id')

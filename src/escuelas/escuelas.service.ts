@@ -98,7 +98,7 @@ export class EscuelasService {
 
   findAllLugares() {
     return this.dataSource.query(`
-    SELECT id, nombre from agjlugar
+    SELECT * from agjlugar
     `);
   }
 

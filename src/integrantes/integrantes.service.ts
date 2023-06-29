@@ -9,6 +9,7 @@ import { UpdateHabilidadDto } from './dto/update-habilidad.dto';
 import { CreateIntEscuelaDto } from './dto/create-int-escuela.dto';
 import { UpdateIntEscuela } from './dto/update-int-escuela.dto';
 import { CreateParentescoDto } from './dto/create-parentesco.dto';
+import { CreateOrgCarnavalDto } from './dto/create-org-carnaval.dto';
 
 @Injectable()
 export class IntegrantesService {
@@ -25,6 +26,11 @@ export class IntegrantesService {
     );
     const data = this.dataSource.query(query);
     return data;
+  }
+  
+  addRol(createOrgCarnavalDto: CreateOrgCarnavalDto) {
+    const query = this.commonService.create('agjorg_carnaval', createOrgCarnavalDto);
+    return this.dataSource.query(query);
   }
 
   createHabilidad(createHabilidadDto: CreateHabilidadDto) {
@@ -60,6 +66,10 @@ export class IntegrantesService {
 
   async findAllHabilidades() {
     return this.commonService.find('agjhabilidad');
+  }
+
+  async findAllRoles() {
+    return this.commonService.find('agjrol');
   }
 
   async findOne(id: number) {
