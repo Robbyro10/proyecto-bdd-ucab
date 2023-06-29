@@ -16,6 +16,7 @@ import { CreateEventoDto } from './dto/create-evento.dto';
 import { UpdateEventoDto } from './dto/update-evento.dto';
 import { CreatePremioDto } from './dto/create-premio.dto';
 import { CreateRolDto } from './dto/create-rol.dto';
+import { CreateGanadorDto } from './dto/create-ganador.dto';
 
 @Injectable()
 export class EscuelasService {
@@ -46,6 +47,21 @@ export class EscuelasService {
   async createPremio(createPremioDto: CreatePremioDto) {
     const query = this.commonService.create('agjpremio_especial', createPremioDto);
     return this.dataSource.query(query);
+  }
+
+  addPremioEscuela(createGanadorDto: CreateGanadorDto) {
+    return this.dataSource.query(`
+    INSERT INTO agjganador (año, escuela_id, premio_id)
+    VALUES ('${createGanadorDto.año}', ${createGanadorDto.escuela_id}, ${createGanadorDto.premio_id})
+    `);
+  }
+
+  addPremioIntegrante(createGanadorDto: CreateGanadorDto) {
+    return this.dataSource.query(`
+    INSERT INTO agjganador (año, premio_id, hist_int_fecha_ini, hist_int_agjid_escuela, hist_int_agjid_integrante)
+    VALUES ('${createGanadorDto.año}', ${createGanadorDto.premio_id}, '${createGanadorDto.hist_int_fecha_ini}',
+    ${createGanadorDto.hist_int_agjid_escuela}, ${createGanadorDto.hist_int_agjid_integrante}); 
+    `)
   }
 
   async addTitulo(createTituloDto: CreateTituloDto) {
@@ -88,6 +104,14 @@ export class EscuelasService {
 
   findAllColores() {
     return this.dataSource.query(`SELECT * from agjcolor`);
+  }
+
+  findAllPremiosEscuela() {
+    return this.dataSource.query(`SELECT * from agjpremio_especial WHERE tipo='E'`);
+  }
+
+  findAllPremiosIntegrante() {
+    return this.dataSource.query(`SELECT * from agjpremio_especial WHERE tipo='I'`);
   }
 
   async findOneEscuela(id: number) {
@@ -175,19 +199,19 @@ export class EscuelasService {
   }
 
   async updateTitulo(año: string, updateTituloDto: UpdateTituloDto) {
-    let query = `UPDATE agjhist_título_carnaval SET `;
-      let updates = [];
-      for (let key in updateTituloDto) {
-        if (updateTituloDto.hasOwnProperty(key)) {
-          if (key !== 'id') {
-            updates.push(`${key} = '${updateTituloDto[key]}'`);
-          }
-        }
-      }
-      query += updates.join(', ');
-      query += ` WHERE año = '${año}';`;
-  
-   return this.dataSource.query(query);
+    if (updateTituloDto.monto_ganado) {
+      return this.dataSource.query(`
+      UPDATE agjhist_título_carnaval SET monto_ganado = ${updateTituloDto.monto_ganado}, 
+      grupo = '${updateTituloDto.grupo}' 
+      WHERE año = '${año}' AND agjid_escuela = ${updateTituloDto.agjid_escuela};
+      `);
+
+    } else {
+      return this.dataSource.query(`
+      UPDATE agjhist_título_carnaval SET grupo = '${updateTituloDto.grupo}'  
+      WHERE año = '${año}' AND agjid_escuela = ${updateTituloDto.agjid_escuela};
+      `)
+    }
   }
 
   async updateLugar(id: number, updateLugarDto: UpdateLugarDto) {

@@ -12,6 +12,7 @@ import { CreateEventoDto } from './dto/create-evento.dto';
 import { UpdateEventoDto } from './dto/update-evento.dto';
 import { CreatePremioDto } from './dto/create-premio.dto';
 import { CreateRolDto } from './dto/create-rol.dto';
+import { CreateGanadorDto } from './dto/create-ganador.dto';
 
 @Controller('escuelas')
 export class EscuelasController {
@@ -27,6 +28,16 @@ export class EscuelasController {
     return this.escuelasService.createEvento(createEventoDto);
   }
 
+  @Post('/premio/E')
+  addPremioEscuela(@Body() createGanadorDto: CreateGanadorDto) {
+    return this.escuelasService.addPremioEscuela(createGanadorDto);
+  }
+
+  @Post('/premio/I')
+  addPremioIntegrante(@Body() createGanadorDto: CreateGanadorDto) {
+    return this.escuelasService.addPremioIntegrante(createGanadorDto);
+  }
+
   @Post('/premio')
   createPremio(@Body() createPremioDto: CreatePremioDto) {
     return this.escuelasService.createPremio(createPremioDto);
@@ -37,7 +48,6 @@ export class EscuelasController {
     return this.escuelasService.addColor(createColorDto);
   }
 
-  
   @Post('/titulo')
   addTitulo(@Body() createTituloDto: CreateTituloDto) {
     return this.escuelasService.addTitulo(createTituloDto);
@@ -51,6 +61,16 @@ export class EscuelasController {
   @Post()
   createEscuela(@Body() createEscuelaDto: CreateEscuelaDto) {
     return this.escuelasService.createEscuela(createEscuelaDto);
+  }
+
+  @Get('/premio/E')
+  findAllPremiosEscuela() {
+    return this.escuelasService.findAllPremiosEscuela();
+  }
+
+  @Get('/premio/I')
+  findAllPremiosIntegrante() {
+    return this.escuelasService.findAllPremiosIntegrante();
   }
 
   @Get('/lugar')

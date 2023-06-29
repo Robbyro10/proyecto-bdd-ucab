@@ -42,6 +42,11 @@ export class IntegrantesController {
     return this.integrantesService.findAllHabilidades();
   }
 
+  @Get('hist/:id')
+  findAllHist(@Param('id') id: string) {
+    return this.integrantesService.findAllHist(+id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.integrantesService.findOne(+id);

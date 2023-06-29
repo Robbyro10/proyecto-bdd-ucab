@@ -34,18 +34,28 @@ export class IntegrantesService {
   }
 
   createParentesco(createParentescoDto: CreateParentescoDto) {
-    const query = this.commonService.create('agjparentesco', createParentescoDto);
+    const query = this.commonService.create(
+      'agjparentesco',
+      createParentescoDto,
+    );
     return this.dataSource.query(query);
   }
 
   createIntEscuela(createIntEscuelaDto: CreateIntEscuelaDto) {
     const query = this.commonService.create('agjhist_int', createIntEscuelaDto);
-    console.log(query)
-    return this.dataSource.query(query)
+    return this.dataSource.query(query);
   }
 
   async findAll() {
     return this.commonService.find('agjintegrantes');
+  }
+
+  async findAllHist(id: number) {
+    return this.dataSource.query(`
+    SELECT e.nombre, h.fecha_ini, h.fecha_fin, h.agjid_escuela
+    FROM agjhist_int h
+    JOIN agjescuela_samba e ON e.id = h.agjid_escuela
+    WHERE h.agjid_integrante = ${id}`);
   }
 
   async findAllHabilidades() {
@@ -92,7 +102,7 @@ export class IntegrantesService {
     SELECT p.id, p.nombre, p.descripcion, i.primer_nombre, i.primer_apellido, i.segundo_apellido, g.año 
     FROM agjpremio_especial p 
     JOIN agjganador g ON p.id=g.premio_id 
-    JOIN agjintegrantes i ON i.id=g.hist_int_agjid_integrante WHERE i.id=${id}`)
+    JOIN agjintegrantes i ON i.id=g.hist_int_agjid_integrante WHERE i.id=${id}`);
 
     return { habilidades, integrante, escuela, roles, parientes, premios };
   }
