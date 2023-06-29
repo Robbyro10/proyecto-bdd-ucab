@@ -83,6 +83,11 @@ export class EscuelasController {
     return this.escuelasService.findAllColores();
   }
 
+  @Get('money/:id')
+  findMoney(@Param('id') id: string) {
+    return this.escuelasService.findMoney(+id);
+  }
+
   @Get('/lugar/:id')
   findOneLugar(@Param('id') id: string) {
     return this.escuelasService.findOneLugar(+id);

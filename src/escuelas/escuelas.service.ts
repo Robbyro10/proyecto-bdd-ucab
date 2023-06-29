@@ -102,6 +102,36 @@ export class EscuelasService {
     `);
   }
 
+  async findMoney(id: number) {
+    const empresas = await this.dataSource.query(
+      `SELECT d.fecha, d.monto_r$, p.nombre
+      FROM agjdonacion d JOIN agjhist_patrocinio h ON d.hist_patrocinio_id=h.id 
+      JOIN agjpatrocinante_empresa p ON h.empresa_id=p.id JOIN agjescuela_samba e
+      ON h.agjid_escuela=e.id WHERE e.id=${id}; `,
+    );
+
+    const personas = await this.dataSource.query(`
+    SELECT d.fecha, d.monto_r$, p.primer_nombre, p.primer_apellido 
+    FROM agjdonacion d JOIN agjhist_patrocinio h ON d.hist_patrocinio_id=h.id 
+    JOIN agjpatrocinante_persona p ON h.persona_id=p.id 
+    JOIN agjescuela_samba e ON h.agjid_escuela=e.id WHERE e.id=${id};
+    `);
+
+    const titulos = await this.dataSource.query(`
+    SELECT t.año, t.monto_ganado FROM agjhist_título_carnaval t 
+    JOIN agjescuela_samba e ON t.agjid_escuela=e.id 
+    WHERE e.id=${id} and t.monto_ganado is not null;
+    `);
+
+    const eventos = await this.dataSource.query(`
+    SELECT ev.nombre, ev.tipo, ev.costo_unitario_r$*ev.total_asistentes 
+    "Ingreso Total" FROM agjevento_anual_sem ev 
+    JOIN agjescuela_samba e ON e.id=ev.agjid_escuela WHERE e.id=${id}
+    `);
+
+    return {empresas, personas, titulos, eventos}
+  }
+
   findAllColores() {
     return this.dataSource.query(`SELECT * from agjcolor`);
   }
