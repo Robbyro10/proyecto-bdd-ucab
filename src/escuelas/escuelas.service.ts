@@ -125,7 +125,7 @@ export class EscuelasService {
 
     const eventos = await this.dataSource.query(`
     SELECT ev.nombre, ev.tipo, ev.costo_unitario_r$*ev.total_asistentes 
-    "Ingreso Total" FROM agjevento_anual_sem ev 
+    "ingresoTotal" FROM agjevento_anual_sem ev 
     JOIN agjescuela_samba e ON e.id=ev.agjid_escuela WHERE e.id=${id}
     `);
 
